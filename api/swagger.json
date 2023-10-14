@@ -1,0 +1,1891 @@
+{
+  "openapi": "3.0.0",
+  "x-stoplight": {
+    "id": "e8gmx2ebqj4di"
+  },
+  "info": {
+    "title": "Trello Clone API",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://trello-clone-api-v1.onrender.com"
+    }
+  ],
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "summary": "Login",
+        "operationId": "post-api-auth-login",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuthenticationResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginRequest"
+              }
+            }
+          },
+          "description": ""
+        },
+        "x-internal": false,
+        "description": "Login as user",
+        "tags": ["Auth"]
+      }
+    },
+    "/api/auth/register": {
+      "post": {
+        "summary": "Register",
+        "operationId": "post-api-auth-register",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AuthenticationResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "5liw8bu60qkhh"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRegisterRequest"
+              }
+            }
+          }
+        },
+        "tags": ["Auth"],
+        "description": "Register as a user"
+      }
+    },
+    "/api/authenticated/boards": {
+      "get": {
+        "summary": "Get All",
+        "tags": ["boards"],
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/BoardListResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "operationId": "get-api-authenticated-boards",
+        "x-stoplight": {
+          "id": "wvpolen41l8wp"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/Embed"
+          },
+          {
+            "$ref": "#/components/parameters/Query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "userId"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Order"
+          }
+        ],
+        "description": "Get all boards on the API"
+      },
+      "post": {
+        "summary": "Create",
+        "operationId": "post-api-authenticated-boards",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Board"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "lv6kwro7nsda8"
+        },
+        "description": "Create a board",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBoardRequest"
+              }
+            }
+          }
+        },
+        "tags": ["boards"]
+      },
+      "parameters": []
+    },
+    "/api/authenticated/boards/{Id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/Id"
+        }
+      ],
+      "get": {
+        "summary": "Get By ID",
+        "tags": ["boards"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Board"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "operationId": "get-api-authenticated-boards-Id",
+        "x-stoplight": {
+          "id": "e9ghq501f4q74"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/Embed"
+          }
+        ],
+        "description": "Get a board by ID"
+      },
+      "patch": {
+        "summary": "Update by ID",
+        "operationId": "patch-api-authenticated-boards-Id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Board"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "dyx5vyjyuna6y"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBoardRequest"
+              }
+            }
+          }
+        },
+        "tags": ["boards"],
+        "description": "Update a board by ID"
+      },
+      "delete": {
+        "summary": "Delete By ID",
+        "operationId": "delete-api-authenticated-boards-Id",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "4itut11ere6zk"
+        },
+        "tags": ["boards"],
+        "description": "Delete a board by ID"
+      }
+    },
+    "/api/authenticated/boardColumns": {
+      "get": {
+        "summary": "Get All",
+        "tags": ["boardColumns"],
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/BoardColumnListResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "operationId": "get-api-authenticated-boardColumns",
+        "x-stoplight": {
+          "id": "qi3y8rcyu5oxd"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/Embed"
+          },
+          {
+            "$ref": "#/components/parameters/Query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "boardId"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Order"
+          }
+        ],
+        "description": "Get all board columns"
+      },
+      "post": {
+        "summary": "Create",
+        "operationId": "post-api-authenticated-boardColumns",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BoardColumn"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "h30bity4fbrsq"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBoardColumnRequest"
+              }
+            }
+          }
+        },
+        "tags": ["boardColumns"],
+        "description": "Create a new board column"
+      }
+    },
+    "/api/authenticated/boardColumns/{Id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/Id"
+        }
+      ],
+      "get": {
+        "summary": "Get By ID",
+        "tags": ["boardColumns"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BoardColumn"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "operationId": "get-api-authenticated-boardColumns-Id",
+        "x-stoplight": {
+          "id": "dxi9vpmt29qp5"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/Embed"
+          }
+        ],
+        "description": "Get a board column by ID"
+      },
+      "patch": {
+        "summary": "Update By ID",
+        "operationId": "patch-api-authenticated-boardColumns-Id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BoardColumn"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "wfk8gyx3d2e0c"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBoardColumnRequest"
+              }
+            }
+          }
+        },
+        "tags": ["boardColumns"],
+        "description": "Update a board column by ID"
+      },
+      "delete": {
+        "summary": "Delete By ID",
+        "operationId": "delete-api-authenticated-boardColumns-Id",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "bws6kst7gj4qh"
+        },
+        "tags": ["boardColumns"],
+        "description": "Delete a board column by ID"
+      }
+    },
+    "/api/authenticated/boardMembers": {
+      "get": {
+        "summary": "Get All",
+        "tags": ["boardMembers"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/BoardMemberListResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "operationId": "get-api-authenticated-boardMembers",
+        "x-stoplight": {
+          "id": "a7t9zsl5yv0j1"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/Embed"
+          },
+          {
+            "$ref": "#/components/parameters/Query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "boardId"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "userId"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Order"
+          }
+        ],
+        "description": "Get all board members on the system"
+      },
+      "post": {
+        "summary": "Create",
+        "operationId": "post-api-authenticated-boardMembers",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BoardMember"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "u96ezs9w43ftm"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBoardMember"
+              }
+            }
+          }
+        },
+        "tags": ["boardMembers"],
+        "description": "Create a board member"
+      }
+    },
+    "/api/authenticated/boardMembers/{Id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/Id"
+        }
+      ],
+      "get": {
+        "summary": "Get By ID",
+        "tags": ["boardMembers"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BoardMember"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "operationId": "get-api-authenticated-boardMembers-Id",
+        "x-stoplight": {
+          "id": "wg6us7o8935ch"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/Embed"
+          }
+        ],
+        "description": "Get board member by ID"
+      },
+      "patch": {
+        "summary": "Update By ID",
+        "operationId": "patch-api-authenticated-boardMembers-Id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BoardMember"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "ddmerx1s12mbc"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBoardMember"
+              }
+            }
+          }
+        },
+        "tags": ["boardMembers"],
+        "description": "Update board member by ID"
+      },
+      "delete": {
+        "summary": "Delete By ID",
+        "operationId": "delete-api-authenticated-boardMembers-Id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "h40hz4ghpy11c"
+        },
+        "tags": ["boardMembers"],
+        "description": "Delete board member by ID"
+      }
+    },
+    "/api/authenticated/tasks": {
+      "get": {
+        "summary": "Get All",
+        "tags": ["tasks"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/TaskListResponse"
+          }
+        },
+        "operationId": "get-api-authenticated-tasks",
+        "x-stoplight": {
+          "id": "ym6ahlzj2fsi5"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/Embed"
+          },
+          {
+            "$ref": "#/components/parameters/Query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "boardMemberId"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "boardColumnId"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Order"
+          }
+        ],
+        "description": "Get all tasks on the API"
+      },
+      "post": {
+        "summary": "Create",
+        "operationId": "post-api-authenticated-tasks",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          }
+        },
+        "x-stoplight": {
+          "id": "s40hho54837wr"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTaskRequest"
+              }
+            }
+          }
+        },
+        "tags": ["tasks"],
+        "description": "Create a new task"
+      }
+    },
+    "/api/authenticated/tasks/{Id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/Id"
+        }
+      ],
+      "get": {
+        "summary": "Get By ID",
+        "tags": ["tasks"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "operationId": "get-api-authenticated-tasks-Id",
+        "x-stoplight": {
+          "id": "1fralfoohgsof"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/Embed"
+          }
+        ],
+        "description": "Get a task by Id"
+      },
+      "patch": {
+        "summary": "Update By ID",
+        "operationId": "patch-api-authenticated-tasks-Id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "xoe0qq9b640fo"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTaskRequest"
+              }
+            }
+          }
+        },
+        "tags": ["tasks"],
+        "description": "Update a task by Id"
+      },
+      "delete": {
+        "summary": "Delete By ID",
+        "operationId": "delete-api-authenticated-tasks-Id",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "x-stoplight": {
+          "id": "6eoc7i3f38t9x"
+        },
+        "tags": ["tasks"],
+        "description": "Delete a task by Id"
+      }
+    },
+    "/api/authenticated/users": {
+      "get": {
+        "summary": "Get All",
+        "tags": ["users"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UserListResponse"
+          }
+        },
+        "operationId": "get-api-authenticated-users",
+        "x-stoplight": {
+          "id": "hp8x65meurxwf"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Page"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/Embed"
+          },
+          {
+            "$ref": "#/components/parameters/Query"
+          },
+          {
+            "$ref": "#/components/parameters/Sort"
+          },
+          {
+            "$ref": "#/components/parameters/Order"
+          }
+        ],
+        "description": "Get all users on the API"
+      }
+    },
+    "/api/authenticated/users/{Id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/Id"
+        }
+      ],
+      "get": {
+        "summary": "Get By ID",
+        "tags": ["users"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-api-authenticated-users-Id",
+        "x-stoplight": {
+          "id": "l6dr3f74xoyqw"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Expand"
+          },
+          {
+            "$ref": "#/components/parameters/Embed"
+          }
+        ],
+        "description": "Get a user by Id"
+      }
+    },
+    "/api/authenticated/me": {
+      "get": {
+        "summary": "Current User",
+        "tags": ["profile"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        },
+        "operationId": "get-api-authenticated-me",
+        "x-stoplight": {
+          "id": "dev5c8banmg9j"
+        },
+        "description": "Get a current user information"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    },
+    "schemas": {
+      "User": {
+        "title": "User",
+        "x-stoplight": {
+          "id": "e9rwo8qm3gidd"
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "yyahr5zs27r3h"
+            },
+            "format": "uuid"
+          },
+          "email": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "ght4jsrgjk101"
+            },
+            "format": "email"
+          },
+          "fullName": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "9dqronot28f02"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "u1utlppe9x1k0"
+            },
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "94xpddsjoxbs1"
+            },
+            "format": "date-time"
+          }
+        },
+        "required": ["id", "email", "fullName", "createdAt"]
+      },
+      "UserLoginRequest": {
+        "title": "UserLoginRequest",
+        "x-stoplight": {
+          "id": "d16pcfk25fugj"
+        },
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "pxb938nso0p50"
+            },
+            "format": "email"
+          },
+          "password": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "ur443b07lx11d"
+            },
+            "minLength": 6,
+            "maxLength": 128
+          }
+        },
+        "required": ["email", "password"]
+      },
+      "UserRegisterRequest": {
+        "title": "UserRegisterRequest",
+        "x-stoplight": {
+          "id": "4hi2bfr2p8a5t"
+        },
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "i4w9yqaw42zuo"
+            },
+            "format": "email"
+          },
+          "password": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "vatxvh1wtd41b"
+            },
+            "minLength": 6,
+            "maxLength": 128
+          },
+          "fullName": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "h2g70uev3f92m"
+            }
+          }
+        },
+        "required": ["email", "password", "fullName"]
+      },
+      "CreateBoardRequest": {
+        "title": "CreateBoardRequest",
+        "x-stoplight": {
+          "id": "f8j1tcf3sxpw2"
+        },
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "bdiq9eyegb8e0"
+            },
+            "format": "uuid"
+          },
+          "title": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "v3jnhxz26mm4k"
+            },
+            "minLength": 3,
+            "maxLength": 255
+          },
+          "visibility": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "rlsa2rnz1g766"
+            },
+            "enum": ["public", "private"]
+          },
+          "color": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "x0zbiiwjxoey1"
+            }
+          }
+        },
+        "required": ["userId", "title", "visibility", "color"]
+      },
+      "Board": {
+        "type": "object",
+        "x-examples": {
+          "Example 1": {
+            "id": "22",
+            "userId": "11",
+            "title": "Board 1",
+            "visibility": "public",
+            "color": "#000000",
+            "createdAt": "2023-10-14T10:03:30.689Z",
+            "updatedAt": null
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "userId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "title": {
+            "type": "string"
+          },
+          "visibility": {
+            "type": "string",
+            "enum": ["private", "public"]
+          },
+          "color": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "myt1or47eumu2"
+            },
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "userId",
+          "title",
+          "visibility",
+          "color",
+          "createdAt"
+        ]
+      },
+      "Meta": {
+        "type": "object",
+        "x-examples": {
+          "Example 1": {
+            "pagination": {
+              "currentPage": 1,
+              "previousPage": null,
+              "nextPage": null,
+              "limit": 25,
+              "totalPagesCount": 1,
+              "totalCount": 1,
+              "isFirstPage": true,
+              "isLastPage": true
+            }
+          }
+        },
+        "properties": {
+          "pagination": {
+            "type": "object",
+            "required": [
+              "currentPage",
+              "limit",
+              "totalPagesCount",
+              "totalCount",
+              "isFirstPage",
+              "isLastPage"
+            ],
+            "properties": {
+              "currentPage": {
+                "type": "integer"
+              },
+              "previousPage": {
+                "type": "number",
+                "nullable": true
+              },
+              "nextPage": {
+                "type": "number",
+                "nullable": true
+              },
+              "limit": {
+                "type": "integer"
+              },
+              "totalPagesCount": {
+                "type": "integer"
+              },
+              "totalCount": {
+                "type": "integer"
+              },
+              "isFirstPage": {
+                "type": "boolean"
+              },
+              "isLastPage": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "required": ["pagination"]
+      },
+      "UpdateBoardRequest": {
+        "title": "UpdateBoardRequest",
+        "x-stoplight": {
+          "id": "qm69qa7bqa2ym"
+        },
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "xmp4p309iu8jc"
+            },
+            "minLength": 3,
+            "maxLength": 255
+          },
+          "visibility": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "717frw2rd83cf"
+            },
+            "enum": ["private", "public"]
+          },
+          "color": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "wuc6vb6l3rouv"
+            }
+          }
+        }
+      },
+      "BoardColumn": {
+        "type": "object",
+        "x-examples": {
+          "Example 1": {
+            "id": "3e6262ed-6ee3-400a-9fc6-af50f96b2e56",
+            "boardId": "9512adeb-f956-4e7e-be80-c73e081830de",
+            "title": "deneme",
+            "order": 1,
+            "createdAt": "2023-10-14T12:44:43.236Z",
+            "updatedAt": null
+          }
+        },
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "boardId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "title": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "required": ["id", "boardId", "title", "order", "createdAt"],
+        "title": ""
+      },
+      "CreateBoardColumnRequest": {
+        "type": "object",
+        "x-examples": {
+          "Example 1": {
+            "boardId": "9512adeb-f956-4e7e-be80-c73e081830de",
+            "title": "deneme",
+            "order": 1
+          }
+        },
+        "properties": {
+          "boardId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "title": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer"
+          }
+        },
+        "required": ["boardId", "title", "order"],
+        "title": ""
+      },
+      "UpdateBoardColumnRequest": {
+        "type": "object",
+        "x-stoplight": {
+          "id": "89pcf7fci8t3t"
+        },
+        "x-examples": {
+          "Example 1": {
+            "boardId": "9512adeb-f956-4e7e-be80-c73e081830de",
+            "title": "deneme",
+            "order": 1
+          }
+        },
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer"
+          }
+        }
+      },
+      "CreateBoardMember": {
+        "title": "CreateBoardMember",
+        "x-stoplight": {
+          "id": "kkzufg9kukro4"
+        },
+        "type": "object",
+        "properties": {
+          "boardId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "keirz5lrlg4h1"
+            },
+            "format": "uuid"
+          },
+          "userId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "ukphxnzy34q7e"
+            },
+            "format": "uuid"
+          }
+        },
+        "required": ["boardId", "userId"]
+      },
+      "UpdateBoardMember": {
+        "title": "UpdateBoardMember",
+        "x-stoplight": {
+          "id": "f1cs6qu7emjxc"
+        },
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "fpflbzx0r2yx0"
+            },
+            "format": "uuid"
+          },
+          "boardId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "6029pj8c2cuhj"
+            },
+            "format": "uuid"
+          }
+        }
+      },
+      "BoardMember": {
+        "title": "BoardMember",
+        "x-stoplight": {
+          "id": "91z2lsr39c073"
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "hnzcvgw4jsj7h"
+            },
+            "format": "uuid"
+          },
+          "boardId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "4qkqph6bapsld"
+            },
+            "format": "uuid"
+          },
+          "userId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "nxdgomyje6g0g"
+            },
+            "format": "uuid"
+          },
+          "createdAt": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "1mtun2xl6q0ix"
+            },
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "dm6nvwtw5jpvj"
+            },
+            "format": "date-time"
+          }
+        },
+        "required": ["id", "boardId", "userId", "createdAt"]
+      },
+      "Task": {
+        "title": "Task",
+        "x-stoplight": {
+          "id": "ibg5jjws8666q"
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "53mefhiczkf50"
+            },
+            "format": "uuid"
+          },
+          "title": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "l1enw8x1a50lx"
+            },
+            "maxLength": 255
+          },
+          "order": {
+            "type": "number",
+            "x-stoplight": {
+              "id": "20d7l41ftljgi"
+            },
+            "minimum": 0
+          },
+          "description": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "coudhsa55b5hh"
+            },
+            "maxLength": 500
+          },
+          "boardMemberId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "joqr0lm52hk5g"
+            },
+            "format": "uuid"
+          },
+          "boardColumnId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "f01w1usj467hy"
+            },
+            "format": "uuid"
+          },
+          "createdAt": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "rylmarow6two8"
+            },
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "xwvds6wxu0c32"
+            },
+            "format": "date-time"
+          }
+        },
+        "required": ["id", "title", "order", "boardColumnId", "createdAt"]
+      },
+      "CreateTaskRequest": {
+        "title": "CreateTaskRequest",
+        "x-stoplight": {
+          "id": "s6pb7zj159btu"
+        },
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "z0i6d8zy9g8fz"
+            },
+            "maxLength": 255
+          },
+          "order": {
+            "x-stoplight": {
+              "id": "2n0uz3auzdwbr"
+            },
+            "type": "number",
+            "minimum": 0
+          },
+          "description": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "gofjfd91b93lu"
+            },
+            "maxLength": 500
+          },
+          "boardMemberId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "zg8zz92oqtc65"
+            },
+            "format": "uuid"
+          },
+          "boardColumnId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "bnuy47y3cojde"
+            },
+            "format": "uuid"
+          }
+        },
+        "required": ["title", "order", "boardColumnId"]
+      },
+      "UpdateTaskRequest": {
+        "title": "UpdateTaskRequest",
+        "x-stoplight": {
+          "id": "qyvy7kxm7juq4"
+        },
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "g489l59yp9cbk"
+            },
+            "maxLength": 255
+          },
+          "order": {
+            "type": "number",
+            "x-stoplight": {
+              "id": "2sgc6y31rtdq0"
+            },
+            "minimum": 0
+          },
+          "description": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "on8gifu2ma5qx"
+            },
+            "maxLength": 500
+          },
+          "boardMemberId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "fh8i5d6spt1xj"
+            },
+            "format": "uuid"
+          },
+          "boardColumnId": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "swuwp1su40bjy"
+            },
+            "format": "uuid"
+          }
+        }
+      }
+    },
+    "requestBodies": {},
+    "responses": {
+      "AuthenticationResponse": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "accessToken": {
+                  "type": "string",
+                  "x-stoplight": {
+                    "id": "qp66mbisx80xm"
+                  }
+                },
+                "user": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "tokenType": {
+                  "type": "string",
+                  "x-stoplight": {
+                    "id": "ygkgu3yg8obhy"
+                  },
+                  "default": "Bearer"
+                },
+                "expiresIn": {
+                  "type": "string",
+                  "x-stoplight": {
+                    "id": "ydrkvgu3lga57"
+                  }
+                }
+              },
+              "required": ["accessToken", "user", "tokenType", "expiresIn"]
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "errors": {
+                  "type": "array",
+                  "x-stoplight": {
+                    "id": "g7tzhj1ibiav6"
+                  },
+                  "items": {
+                    "x-stoplight": {
+                      "id": "nldc8xmk5thg6"
+                    },
+                    "type": "string"
+                  }
+                }
+              },
+              "required": ["errors"]
+            }
+          }
+        }
+      },
+      "BoardListResponse": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "x-examples": {
+                "Example 1": {
+                  "data": [],
+                  "meta": {
+                    "pagination": {
+                      "currentPage": 1,
+                      "previousPage": null,
+                      "nextPage": null,
+                      "limit": 25,
+                      "totalPagesCount": 1,
+                      "totalCount": 1,
+                      "isFirstPage": true,
+                      "isLastPage": true
+                    }
+                  }
+                }
+              },
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Board"
+                  }
+                },
+                "meta": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              },
+              "required": ["data", "meta"]
+            }
+          }
+        }
+      },
+      "BoardColumnListResponse": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "x-stoplight": {
+                    "id": "59zcnx02w3ncn"
+                  },
+                  "items": {
+                    "$ref": "#/components/schemas/BoardColumn"
+                  }
+                },
+                "meta": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              },
+              "required": ["data", "meta"]
+            }
+          }
+        }
+      },
+      "BoardMemberListResponse": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "x-stoplight": {
+                    "id": "mnujuc0ndh6wi"
+                  },
+                  "items": {
+                    "$ref": "#/components/schemas/BoardMember"
+                  }
+                },
+                "meta": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              },
+              "required": ["data", "meta"]
+            }
+          }
+        }
+      },
+      "TaskListResponse": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "x-stoplight": {
+                    "id": "dn64eeae5n6kz"
+                  },
+                  "items": {
+                    "$ref": "#/components/schemas/Task"
+                  }
+                },
+                "meta": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              },
+              "required": ["data", "meta"]
+            }
+          }
+        }
+      },
+      "UserListResponse": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "x-stoplight": {
+                    "id": "vi2qr2gkncd5v"
+                  },
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                },
+                "meta": {
+                  "$ref": "#/components/schemas/Meta"
+                }
+              },
+              "required": ["data", "meta"]
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "Page": {
+        "name": "_page",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "number"
+        }
+      },
+      "Limit": {
+        "name": "_limit",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "number"
+        }
+      },
+      "Expand": {
+        "name": "_expand",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Embed": {
+        "name": "_embed",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Id": {
+        "name": "Id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "Query": {
+        "name": "q",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Sort": {
+        "name": "_sort",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "Order": {
+        "name": "_order",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ]
+}
