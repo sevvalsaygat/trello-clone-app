@@ -1,0 +1,6 @@
+additionalProperties:
+  apiPackage: api
+  modelPackage: model
+  withSeparateModelsAndApi: true
+  generateAliasAsModel: true
+  withInterfaces: true
