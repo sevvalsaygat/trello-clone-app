@@ -24,11 +24,11 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { BoardMember } from '../model';
 // @ts-ignore
+import { BoardMemberListResponse } from '../model';
+// @ts-ignore
 import { CreateBoardMember } from '../model';
 // @ts-ignore
-import { GetApiAuthenticatedBoardMembers200Response } from '../model';
-// @ts-ignore
-import { PostApiAuthLogin400Response } from '../model';
+import { ErrorResponse } from '../model';
 // @ts-ignore
 import { UpdateBoardMember } from '../model';
 /**
@@ -317,7 +317,7 @@ export const BoardMembersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getApiAuthenticatedBoardMembers(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, userId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetApiAuthenticatedBoardMembers200Response>> {
+        async getApiAuthenticatedBoardMembers(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, userId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BoardMemberListResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getApiAuthenticatedBoardMembers(page, limit, expand, embed, q, boardId, userId, sort, order, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -392,7 +392,7 @@ export const BoardMembersApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getApiAuthenticatedBoardMembers(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, userId?: string, sort?: string, order?: string, options?: any): AxiosPromise<GetApiAuthenticatedBoardMembers200Response> {
+        getApiAuthenticatedBoardMembers(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, userId?: string, sort?: string, order?: string, options?: any): AxiosPromise<BoardMemberListResponse> {
             return localVarFp.getApiAuthenticatedBoardMembers(page, limit, expand, embed, q, boardId, userId, sort, order, options).then((request) => request(axios, basePath));
         },
         /**
@@ -463,7 +463,7 @@ export interface BoardMembersApiInterface {
      * @throws {RequiredError}
      * @memberof BoardMembersApiInterface
      */
-    getApiAuthenticatedBoardMembers(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, userId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): AxiosPromise<GetApiAuthenticatedBoardMembers200Response>;
+    getApiAuthenticatedBoardMembers(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, userId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): AxiosPromise<BoardMemberListResponse>;
 
     /**
      * Get board member by ID

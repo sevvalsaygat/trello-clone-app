@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { PostApiAuthLogin400Response } from '../model';
+import { ErrorResponse } from '../model';
 // @ts-ignore
 import { User } from '../model';
 /**

@@ -24,11 +24,11 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { CreateTaskRequest } from '../model';
 // @ts-ignore
-import { GetApiAuthenticatedTasks200Response } from '../model';
-// @ts-ignore
-import { PostApiAuthLogin400Response } from '../model';
+import { ErrorResponse } from '../model';
 // @ts-ignore
 import { Task } from '../model';
+// @ts-ignore
+import { TaskListResponse } from '../model';
 // @ts-ignore
 import { UpdateTaskRequest } from '../model';
 /**
@@ -317,7 +317,7 @@ export const TasksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getApiAuthenticatedTasks(page: number, limit: number, expand?: string, embed?: string, q?: string, boardMemberId?: string, boardColumnId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetApiAuthenticatedTasks200Response>> {
+        async getApiAuthenticatedTasks(page: number, limit: number, expand?: string, embed?: string, q?: string, boardMemberId?: string, boardColumnId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TaskListResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getApiAuthenticatedTasks(page, limit, expand, embed, q, boardMemberId, boardColumnId, sort, order, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -392,7 +392,7 @@ export const TasksApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getApiAuthenticatedTasks(page: number, limit: number, expand?: string, embed?: string, q?: string, boardMemberId?: string, boardColumnId?: string, sort?: string, order?: string, options?: any): AxiosPromise<GetApiAuthenticatedTasks200Response> {
+        getApiAuthenticatedTasks(page: number, limit: number, expand?: string, embed?: string, q?: string, boardMemberId?: string, boardColumnId?: string, sort?: string, order?: string, options?: any): AxiosPromise<TaskListResponse> {
             return localVarFp.getApiAuthenticatedTasks(page, limit, expand, embed, q, boardMemberId, boardColumnId, sort, order, options).then((request) => request(axios, basePath));
         },
         /**
@@ -463,7 +463,7 @@ export interface TasksApiInterface {
      * @throws {RequiredError}
      * @memberof TasksApiInterface
      */
-    getApiAuthenticatedTasks(page: number, limit: number, expand?: string, embed?: string, q?: string, boardMemberId?: string, boardColumnId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): AxiosPromise<GetApiAuthenticatedTasks200Response>;
+    getApiAuthenticatedTasks(page: number, limit: number, expand?: string, embed?: string, q?: string, boardMemberId?: string, boardColumnId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): AxiosPromise<TaskListResponse>;
 
     /**
      * Get a task by Id

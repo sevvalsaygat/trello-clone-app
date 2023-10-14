@@ -24,11 +24,11 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { BoardColumn } from '../model';
 // @ts-ignore
+import { BoardColumnListResponse } from '../model';
+// @ts-ignore
 import { CreateBoardColumnRequest } from '../model';
 // @ts-ignore
-import { GetApiAuthenticatedBoardColumns201Response } from '../model';
-// @ts-ignore
-import { PostApiAuthLogin400Response } from '../model';
+import { ErrorResponse } from '../model';
 // @ts-ignore
 import { UpdateBoardColumnRequest } from '../model';
 /**
@@ -311,7 +311,7 @@ export const BoardColumnsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getApiAuthenticatedBoardColumns(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetApiAuthenticatedBoardColumns201Response>> {
+        async getApiAuthenticatedBoardColumns(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BoardColumnListResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getApiAuthenticatedBoardColumns(page, limit, expand, embed, q, boardId, sort, order, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -385,7 +385,7 @@ export const BoardColumnsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getApiAuthenticatedBoardColumns(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, sort?: string, order?: string, options?: any): AxiosPromise<GetApiAuthenticatedBoardColumns201Response> {
+        getApiAuthenticatedBoardColumns(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, sort?: string, order?: string, options?: any): AxiosPromise<BoardColumnListResponse> {
             return localVarFp.getApiAuthenticatedBoardColumns(page, limit, expand, embed, q, boardId, sort, order, options).then((request) => request(axios, basePath));
         },
         /**
@@ -455,7 +455,7 @@ export interface BoardColumnsApiInterface {
      * @throws {RequiredError}
      * @memberof BoardColumnsApiInterface
      */
-    getApiAuthenticatedBoardColumns(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): AxiosPromise<GetApiAuthenticatedBoardColumns201Response>;
+    getApiAuthenticatedBoardColumns(page: number, limit: number, expand?: string, embed?: string, q?: string, boardId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): AxiosPromise<BoardColumnListResponse>;
 
     /**
      * Get a board column by ID

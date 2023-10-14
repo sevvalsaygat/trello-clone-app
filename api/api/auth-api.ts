@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { PostApiAuthLogin200Response } from '../model';
+import { AuthenticationResponse } from '../model';
 // @ts-ignore
-import { PostApiAuthLogin400Response } from '../model';
+import { ErrorResponse } from '../model';
 // @ts-ignore
 import { UserLoginRequest } from '../model';
 // @ts-ignore
@@ -123,7 +123,7 @@ export const AuthApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postApiAuthLogin(userLoginRequest?: UserLoginRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostApiAuthLogin200Response>> {
+        async postApiAuthLogin(userLoginRequest?: UserLoginRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthenticationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.postApiAuthLogin(userLoginRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -134,7 +134,7 @@ export const AuthApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postApiAuthRegister(userRegisterRequest?: UserRegisterRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PostApiAuthLogin200Response>> {
+        async postApiAuthRegister(userRegisterRequest?: UserRegisterRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthenticationResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.postApiAuthRegister(userRegisterRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -155,7 +155,7 @@ export const AuthApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postApiAuthLogin(userLoginRequest?: UserLoginRequest, options?: any): AxiosPromise<PostApiAuthLogin200Response> {
+        postApiAuthLogin(userLoginRequest?: UserLoginRequest, options?: any): AxiosPromise<AuthenticationResponse> {
             return localVarFp.postApiAuthLogin(userLoginRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -165,7 +165,7 @@ export const AuthApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postApiAuthRegister(userRegisterRequest?: UserRegisterRequest, options?: any): AxiosPromise<PostApiAuthLogin200Response> {
+        postApiAuthRegister(userRegisterRequest?: UserRegisterRequest, options?: any): AxiosPromise<AuthenticationResponse> {
             return localVarFp.postApiAuthRegister(userRegisterRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -185,7 +185,7 @@ export interface AuthApiInterface {
      * @throws {RequiredError}
      * @memberof AuthApiInterface
      */
-    postApiAuthLogin(userLoginRequest?: UserLoginRequest, options?: AxiosRequestConfig): AxiosPromise<PostApiAuthLogin200Response>;
+    postApiAuthLogin(userLoginRequest?: UserLoginRequest, options?: AxiosRequestConfig): AxiosPromise<AuthenticationResponse>;
 
     /**
      * Register as a user
@@ -195,7 +195,7 @@ export interface AuthApiInterface {
      * @throws {RequiredError}
      * @memberof AuthApiInterface
      */
-    postApiAuthRegister(userRegisterRequest?: UserRegisterRequest, options?: AxiosRequestConfig): AxiosPromise<PostApiAuthLogin200Response>;
+    postApiAuthRegister(userRegisterRequest?: UserRegisterRequest, options?: AxiosRequestConfig): AxiosPromise<AuthenticationResponse>;
 
 }
 

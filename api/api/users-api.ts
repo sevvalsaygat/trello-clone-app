@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { GetApiAuthenticatedUsers200Response } from '../model';
-// @ts-ignore
 import { User } from '../model';
+// @ts-ignore
+import { UserListResponse } from '../model';
 /**
  * UsersApi - axios parameter creator
  * @export
@@ -173,7 +173,7 @@ export const UsersApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getApiAuthenticatedUsers(page: number, limit: number, expand?: string, embed?: string, q?: string, sort?: string, order?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetApiAuthenticatedUsers200Response>> {
+        async getApiAuthenticatedUsers(page: number, limit: number, expand?: string, embed?: string, q?: string, sort?: string, order?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserListResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getApiAuthenticatedUsers(page, limit, expand, embed, q, sort, order, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -213,7 +213,7 @@ export const UsersApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getApiAuthenticatedUsers(page: number, limit: number, expand?: string, embed?: string, q?: string, sort?: string, order?: string, options?: any): AxiosPromise<GetApiAuthenticatedUsers200Response> {
+        getApiAuthenticatedUsers(page: number, limit: number, expand?: string, embed?: string, q?: string, sort?: string, order?: string, options?: any): AxiosPromise<UserListResponse> {
             return localVarFp.getApiAuthenticatedUsers(page, limit, expand, embed, q, sort, order, options).then((request) => request(axios, basePath));
         },
         /**
@@ -251,7 +251,7 @@ export interface UsersApiInterface {
      * @throws {RequiredError}
      * @memberof UsersApiInterface
      */
-    getApiAuthenticatedUsers(page: number, limit: number, expand?: string, embed?: string, q?: string, sort?: string, order?: string, options?: AxiosRequestConfig): AxiosPromise<GetApiAuthenticatedUsers200Response>;
+    getApiAuthenticatedUsers(page: number, limit: number, expand?: string, embed?: string, q?: string, sort?: string, order?: string, options?: AxiosRequestConfig): AxiosPromise<UserListResponse>;
 
     /**
      * Get a user by Id
