@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import "react-datepicker/dist/react-datepicker.css";
+
 import ClientProviders from "./clientProviders";
 import "./globals.css";
 
