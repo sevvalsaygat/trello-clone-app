@@ -2,10 +2,11 @@
 
 import React, { createContext, useState, useContext } from "react";
 
+import Cookies from "js-cookie";
 import { I18n } from "i18n-js";
 import type { TranslateOptions } from "i18n-js";
 
-import { LANGUAGES } from "@app/constants";
+import { LANGUAGES, COOKIE_KEYS } from "@app/constants";
 
 type UseLocaleReturnsTypes = {
   t: (scope: string, options?: { [key: string]: string | number }) => string;
@@ -24,6 +25,14 @@ const translationGetters = {
 const i18n = new I18n(translationGetters);
 
 function getDefaultLocale() {
+  const availableLanguages = Object.keys(translationGetters);
+
+  const cookieLanguage = Cookies.get(COOKIE_KEYS.LANGUAGE);
+
+  if (cookieLanguage && availableLanguages.includes(cookieLanguage)) {
+    return cookieLanguage;
+  }
+
   return DEFAULT_LOCALE;
 }
 
@@ -36,6 +45,7 @@ export const LocaleProvider: React.FC<React.PropsWithChildren> = ({
 
   function changeLocale(localeParam: string) {
     setLocale(localeParam);
+    Cookies.set(COOKIE_KEYS.LANGUAGE, localeParam);
   }
 
   function t(scope: string, options?: TranslateOptions) {
