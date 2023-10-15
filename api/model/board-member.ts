@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { Board } from './board';
 
 /**
  * 
@@ -50,5 +53,11 @@ export interface BoardMember {
      * @memberof BoardMember
      */
     'updatedAt'?: string;
+    /**
+     * 
+     * @type {Board}
+     * @memberof BoardMember
+     */
+    'board'?: Board;
 }
 

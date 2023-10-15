@@ -13,6 +13,15 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { BoardColumn } from './board-column';
+// May contain unused imports in some cases
+// @ts-ignore
+import { BoardMember } from './board-member';
+// May contain unused imports in some cases
+// @ts-ignore
+import { User } from './user';
 
 /**
  * 
@@ -62,6 +71,24 @@ export interface Board {
      * @memberof Board
      */
     'updatedAt'?: string;
+    /**
+     * 
+     * @type {Array<BoardMember>}
+     * @memberof Board
+     */
+    'boardMembers'?: Array<BoardMember>;
+    /**
+     * 
+     * @type {Array<User>}
+     * @memberof Board
+     */
+    'user'?: Array<User>;
+    /**
+     * 
+     * @type {BoardColumn}
+     * @memberof Board
+     */
+    'boardColumns'?: BoardColumn;
 }
 
 export const BoardVisibilityEnum = {

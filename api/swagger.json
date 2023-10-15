@@ -44,9 +44,7 @@
         },
         "x-internal": false,
         "description": "Login as user",
-        "tags": [
-          "Auth"
-        ]
+        "tags": ["Auth"]
       }
     },
     "/api/auth/register": {
@@ -79,18 +77,14 @@
             }
           }
         },
-        "tags": [
-          "Auth"
-        ],
+        "tags": ["Auth"],
         "description": "Register as a user"
       }
     },
     "/api/authenticated/boards": {
       "get": {
         "summary": "Get All",
-        "tags": [
-          "boards"
-        ],
+        "tags": ["boards"],
         "responses": {
           "201": {
             "$ref": "#/components/responses/BoardListResponse"
@@ -175,9 +169,7 @@
             }
           }
         },
-        "tags": [
-          "boards"
-        ]
+        "tags": ["boards"]
       },
       "parameters": []
     },
@@ -189,9 +181,7 @@
       ],
       "get": {
         "summary": "Get By ID",
-        "tags": [
-          "boards"
-        ],
+        "tags": ["boards"],
         "responses": {
           "200": {
             "description": "OK",
@@ -266,9 +256,7 @@
             }
           }
         },
-        "tags": [
-          "boards"
-        ],
+        "tags": ["boards"],
         "description": "Update a board by ID"
       },
       "delete": {
@@ -291,18 +279,14 @@
         "x-stoplight": {
           "id": "4itut11ere6zk"
         },
-        "tags": [
-          "boards"
-        ],
+        "tags": ["boards"],
         "description": "Delete a board by ID"
       }
     },
     "/api/authenticated/boardColumns": {
       "get": {
         "summary": "Get All",
-        "tags": [
-          "boardColumns"
-        ],
+        "tags": ["boardColumns"],
         "responses": {
           "201": {
             "$ref": "#/components/responses/BoardColumnListResponse"
@@ -386,9 +370,7 @@
             }
           }
         },
-        "tags": [
-          "boardColumns"
-        ],
+        "tags": ["boardColumns"],
         "description": "Create a new board column"
       }
     },
@@ -400,9 +382,7 @@
       ],
       "get": {
         "summary": "Get By ID",
-        "tags": [
-          "boardColumns"
-        ],
+        "tags": ["boardColumns"],
         "responses": {
           "200": {
             "description": "OK",
@@ -477,9 +457,7 @@
             }
           }
         },
-        "tags": [
-          "boardColumns"
-        ],
+        "tags": ["boardColumns"],
         "description": "Update a board column by ID"
       },
       "delete": {
@@ -502,18 +480,14 @@
         "x-stoplight": {
           "id": "bws6kst7gj4qh"
         },
-        "tags": [
-          "boardColumns"
-        ],
+        "tags": ["boardColumns"],
         "description": "Delete a board column by ID"
       }
     },
     "/api/authenticated/boardMembers": {
       "get": {
         "summary": "Get All",
-        "tags": [
-          "boardMembers"
-        ],
+        "tags": ["boardMembers"],
         "responses": {
           "200": {
             "$ref": "#/components/responses/BoardMemberListResponse"
@@ -604,9 +578,7 @@
             }
           }
         },
-        "tags": [
-          "boardMembers"
-        ],
+        "tags": ["boardMembers"],
         "description": "Create a board member"
       }
     },
@@ -618,9 +590,7 @@
       ],
       "get": {
         "summary": "Get By ID",
-        "tags": [
-          "boardMembers"
-        ],
+        "tags": ["boardMembers"],
         "responses": {
           "200": {
             "description": "OK",
@@ -695,9 +665,7 @@
             }
           }
         },
-        "tags": [
-          "boardMembers"
-        ],
+        "tags": ["boardMembers"],
         "description": "Update board member by ID"
       },
       "delete": {
@@ -721,18 +689,14 @@
         "x-stoplight": {
           "id": "h40hz4ghpy11c"
         },
-        "tags": [
-          "boardMembers"
-        ],
+        "tags": ["boardMembers"],
         "description": "Delete board member by ID"
       }
     },
     "/api/authenticated/tasks": {
       "get": {
         "summary": "Get All",
-        "tags": [
-          "tasks"
-        ],
+        "tags": ["tasks"],
         "responses": {
           "200": {
             "$ref": "#/components/responses/TaskListResponse"
@@ -808,9 +772,7 @@
             }
           }
         },
-        "tags": [
-          "tasks"
-        ],
+        "tags": ["tasks"],
         "description": "Create a new task"
       }
     },
@@ -822,9 +784,7 @@
       ],
       "get": {
         "summary": "Get By ID",
-        "tags": [
-          "tasks"
-        ],
+        "tags": ["tasks"],
         "responses": {
           "200": {
             "description": "OK",
@@ -899,9 +859,7 @@
             }
           }
         },
-        "tags": [
-          "tasks"
-        ],
+        "tags": ["tasks"],
         "description": "Update a task by Id"
       },
       "delete": {
@@ -924,18 +882,14 @@
         "x-stoplight": {
           "id": "6eoc7i3f38t9x"
         },
-        "tags": [
-          "tasks"
-        ],
+        "tags": ["tasks"],
         "description": "Delete a task by Id"
       }
     },
     "/api/authenticated/users": {
       "get": {
         "summary": "Get All",
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "responses": {
           "200": {
             "$ref": "#/components/responses/UserListResponse"
@@ -979,9 +933,7 @@
       ],
       "get": {
         "summary": "Get By ID",
-        "tags": [
-          "users"
-        ],
+        "tags": ["users"],
         "responses": {
           "200": {
             "description": "OK",
@@ -1012,9 +964,7 @@
     "/api/authenticated/me": {
       "get": {
         "summary": "Current User",
-        "tags": [
-          "profile"
-        ],
+        "tags": ["profile"],
         "responses": {
           "200": {
             "description": "OK",
@@ -1090,14 +1040,27 @@
               "id": "94xpddsjoxbs1"
             },
             "format": "date-time"
+          },
+          "boards": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "50ooxvqhgi8ej"
+            },
+            "items": {
+              "$ref": "#/components/schemas/Board"
+            }
+          },
+          "boardMembers": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "ffgyej9ml04y0"
+            },
+            "items": {
+              "$ref": "#/components/schemas/BoardMember"
+            }
           }
         },
-        "required": [
-          "id",
-          "email",
-          "fullName",
-          "createdAt"
-        ]
+        "required": ["id", "email", "fullName", "createdAt"]
       },
       "UserLoginRequest": {
         "title": "UserLoginRequest",
@@ -1122,10 +1085,7 @@
             "maxLength": 128
           }
         },
-        "required": [
-          "email",
-          "password"
-        ]
+        "required": ["email", "password"]
       },
       "UserRegisterRequest": {
         "title": "UserRegisterRequest",
@@ -1156,11 +1116,7 @@
             }
           }
         },
-        "required": [
-          "email",
-          "password",
-          "fullName"
-        ]
+        "required": ["email", "password", "fullName"]
       },
       "CreateBoardRequest": {
         "title": "CreateBoardRequest",
@@ -1189,10 +1145,7 @@
             "x-stoplight": {
               "id": "rlsa2rnz1g766"
             },
-            "enum": [
-              "public",
-              "private"
-            ]
+            "enum": ["public", "private"]
           },
           "color": {
             "type": "string",
@@ -1201,26 +1154,11 @@
             }
           }
         },
-        "required": [
-          "userId",
-          "title",
-          "visibility",
-          "color"
-        ]
+        "required": ["userId", "title", "visibility", "color"]
       },
       "Board": {
         "type": "object",
-        "x-examples": {
-          "Example 1": {
-            "id": "22",
-            "userId": "11",
-            "title": "Board 1",
-            "visibility": "public",
-            "color": "#000000",
-            "createdAt": "2023-10-14T10:03:30.689Z",
-            "updatedAt": null
-          }
-        },
+        "x-examples": {},
         "properties": {
           "id": {
             "type": "string",
@@ -1235,10 +1173,7 @@
           },
           "visibility": {
             "type": "string",
-            "enum": [
-              "private",
-              "public"
-            ]
+            "enum": ["private", "public"]
           },
           "color": {
             "type": "string"
@@ -1253,6 +1188,27 @@
               "id": "myt1or47eumu2"
             },
             "format": "date-time"
+          },
+          "boardMembers": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "xxx61u270yn0m"
+            },
+            "items": {
+              "$ref": "#/components/schemas/BoardMember"
+            }
+          },
+          "user": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "ccz2sij2117lw"
+            },
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          },
+          "boardColumns": {
+            "$ref": "#/components/schemas/BoardColumn"
           }
         },
         "required": [
@@ -1266,20 +1222,7 @@
       },
       "Meta": {
         "type": "object",
-        "x-examples": {
-          "Example 1": {
-            "pagination": {
-              "currentPage": 1,
-              "previousPage": null,
-              "nextPage": null,
-              "limit": 25,
-              "totalPagesCount": 1,
-              "totalCount": 1,
-              "isFirstPage": true,
-              "isLastPage": true
-            }
-          }
-        },
+        "x-examples": {},
         "properties": {
           "pagination": {
             "type": "object",
@@ -1321,9 +1264,7 @@
             }
           }
         },
-        "required": [
-          "pagination"
-        ]
+        "required": ["pagination"]
       },
       "UpdateBoardRequest": {
         "title": "UpdateBoardRequest",
@@ -1345,10 +1286,7 @@
             "x-stoplight": {
               "id": "717frw2rd83cf"
             },
-            "enum": [
-              "private",
-              "public"
-            ]
+            "enum": ["private", "public"]
           },
           "color": {
             "type": "string",
@@ -1360,16 +1298,7 @@
       },
       "BoardColumn": {
         "type": "object",
-        "x-examples": {
-          "Example 1": {
-            "id": "3e6262ed-6ee3-400a-9fc6-af50f96b2e56",
-            "boardId": "9512adeb-f956-4e7e-be80-c73e081830de",
-            "title": "deneme",
-            "order": 1,
-            "createdAt": "2023-10-14T12:44:43.236Z",
-            "updatedAt": null
-          }
-        },
+        "x-examples": {},
         "properties": {
           "id": {
             "type": "string",
@@ -1393,26 +1322,25 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
+          },
+          "tasks": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "ct6b6c9ai12bu"
+            },
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            }
+          },
+          "board": {
+            "$ref": "#/components/schemas/Board"
           }
         },
-        "required": [
-          "id",
-          "boardId",
-          "title",
-          "order",
-          "createdAt"
-        ],
-        "title": ""
+        "required": ["id", "boardId", "title", "order", "createdAt"]
       },
       "CreateBoardColumnRequest": {
         "type": "object",
-        "x-examples": {
-          "Example 1": {
-            "boardId": "9512adeb-f956-4e7e-be80-c73e081830de",
-            "title": "deneme",
-            "order": 1
-          }
-        },
+        "x-examples": {},
         "properties": {
           "boardId": {
             "type": "string",
@@ -1425,33 +1353,8 @@
             "type": "integer"
           }
         },
-        "required": [
-          "boardId",
-          "title",
-          "order"
-        ],
+        "required": ["boardId", "title", "order"],
         "title": ""
-      },
-      "UpdateBoardColumnRequest": {
-        "type": "object",
-        "x-stoplight": {
-          "id": "89pcf7fci8t3t"
-        },
-        "x-examples": {
-          "Example 1": {
-            "boardId": "9512adeb-f956-4e7e-be80-c73e081830de",
-            "title": "deneme",
-            "order": 1
-          }
-        },
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "order": {
-            "type": "integer"
-          }
-        }
       },
       "CreateBoardMember": {
         "title": "CreateBoardMember",
@@ -1475,10 +1378,22 @@
             "format": "uuid"
           }
         },
-        "required": [
-          "boardId",
-          "userId"
-        ]
+        "required": ["boardId", "userId"]
+      },
+      "UpdateBoardColumnRequest": {
+        "type": "object",
+        "x-stoplight": {
+          "id": "89pcf7fci8t3t"
+        },
+        "x-examples": {},
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer"
+          }
+        }
       },
       "UpdateBoardMember": {
         "title": "UpdateBoardMember",
@@ -1544,14 +1459,12 @@
               "id": "dm6nvwtw5jpvj"
             },
             "format": "date-time"
+          },
+          "board": {
+            "$ref": "#/components/schemas/Board"
           }
         },
-        "required": [
-          "id",
-          "boardId",
-          "userId",
-          "createdAt"
-        ]
+        "required": ["id", "boardId", "userId", "createdAt"]
       },
       "Task": {
         "title": "Task",
@@ -1615,15 +1528,15 @@
               "id": "xwvds6wxu0c32"
             },
             "format": "date-time"
+          },
+          "boardColumn": {
+            "$ref": "#/components/schemas/BoardColumn"
+          },
+          "boardMember": {
+            "$ref": "#/components/schemas/BoardMember"
           }
         },
-        "required": [
-          "id",
-          "title",
-          "order",
-          "boardColumnId",
-          "createdAt"
-        ]
+        "required": ["id", "title", "order", "boardColumnId", "createdAt"]
       },
       "CreateTaskRequest": {
         "title": "CreateTaskRequest",
@@ -1668,11 +1581,7 @@
             "format": "uuid"
           }
         },
-        "required": [
-          "title",
-          "order",
-          "boardColumnId"
-        ]
+        "required": ["title", "order", "boardColumnId"]
       },
       "UpdateTaskRequest": {
         "title": "UpdateTaskRequest",
@@ -1769,12 +1678,7 @@
             }
           }
         },
-        "required": [
-          "accessToken",
-          "user",
-          "tokenType",
-          "expiresIn"
-        ]
+        "required": ["accessToken", "user", "tokenType", "expiresIn"]
       },
       "UserListResponse": {
         "title": "UserListResponse",
@@ -1799,10 +1703,7 @@
             }
           }
         },
-        "required": [
-          "data",
-          "meta"
-        ]
+        "required": ["data", "meta"]
       },
       "TaskListResponse": {
         "title": "TaskListResponse",
@@ -1824,10 +1725,7 @@
             "$ref": "#/components/schemas/Meta"
           }
         },
-        "required": [
-          "data",
-          "meta"
-        ]
+        "required": ["data", "meta"]
       },
       "BoardMemberListResponse": {
         "title": "BoardMemberListResponse",
@@ -1849,10 +1747,7 @@
             "$ref": "#/components/schemas/Meta"
           }
         },
-        "required": [
-          "data",
-          "meta"
-        ]
+        "required": ["data", "meta"]
       },
       "BoardListResponse": {
         "title": "BoardListResponse",
@@ -1874,10 +1769,7 @@
             "$ref": "#/components/schemas/Meta"
           }
         },
-        "required": [
-          "data",
-          "meta"
-        ]
+        "required": ["data", "meta"]
       },
       "BoardColumnListResponse": {
         "title": "BoardColumnListResponse",
@@ -1899,10 +1791,7 @@
             "$ref": "#/components/schemas/Meta"
           }
         },
-        "required": [
-          "data",
-          "meta"
-        ]
+        "required": ["data", "meta"]
       }
     },
     "requestBodies": {},

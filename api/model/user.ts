@@ -13,6 +13,12 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { Board } from './board';
+// May contain unused imports in some cases
+// @ts-ignore
+import { BoardMember } from './board-member';
 
 /**
  * 
@@ -50,5 +56,17 @@ export interface User {
      * @memberof User
      */
     'updatedAt'?: string;
+    /**
+     * 
+     * @type {Array<Board>}
+     * @memberof User
+     */
+    'boards'?: Array<Board>;
+    /**
+     * 
+     * @type {Array<BoardMember>}
+     * @memberof User
+     */
+    'boardMembers'?: Array<BoardMember>;
 }
 
