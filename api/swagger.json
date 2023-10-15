@@ -9,7 +9,7 @@
   },
   "servers": [
     {
-      "url": "https://trello-clone-api-v1.onrender.com"
+      "url": "http://localhost:3000"
     }
   ],
   "paths": {
@@ -1040,6 +1040,24 @@
               "id": "94xpddsjoxbs1"
             },
             "format": "date-time"
+          },
+          "boards": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "50ooxvqhgi8ej"
+            },
+            "items": {
+              "$ref": "#/components/schemas/Board"
+            }
+          },
+          "boardMembers": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "ffgyej9ml04y0"
+            },
+            "items": {
+              "$ref": "#/components/schemas/BoardMember"
+            }
           }
         },
         "required": ["id", "email", "fullName", "createdAt"]
@@ -1140,17 +1158,7 @@
       },
       "Board": {
         "type": "object",
-        "x-examples": {
-          "Example 1": {
-            "id": "22",
-            "userId": "11",
-            "title": "Board 1",
-            "visibility": "public",
-            "color": "#000000",
-            "createdAt": "2023-10-14T10:03:30.689Z",
-            "updatedAt": null
-          }
-        },
+        "x-examples": {},
         "properties": {
           "id": {
             "type": "string",
@@ -1180,6 +1188,27 @@
               "id": "myt1or47eumu2"
             },
             "format": "date-time"
+          },
+          "boardMembers": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "xxx61u270yn0m"
+            },
+            "items": {
+              "$ref": "#/components/schemas/BoardMember"
+            }
+          },
+          "user": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "ccz2sij2117lw"
+            },
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          },
+          "boardColumns": {
+            "$ref": "#/components/schemas/BoardColumn"
           }
         },
         "required": [
@@ -1193,20 +1222,7 @@
       },
       "Meta": {
         "type": "object",
-        "x-examples": {
-          "Example 1": {
-            "pagination": {
-              "currentPage": 1,
-              "previousPage": null,
-              "nextPage": null,
-              "limit": 25,
-              "totalPagesCount": 1,
-              "totalCount": 1,
-              "isFirstPage": true,
-              "isLastPage": true
-            }
-          }
-        },
+        "x-examples": {},
         "properties": {
           "pagination": {
             "type": "object",
@@ -1282,16 +1298,7 @@
       },
       "BoardColumn": {
         "type": "object",
-        "x-examples": {
-          "Example 1": {
-            "id": "3e6262ed-6ee3-400a-9fc6-af50f96b2e56",
-            "boardId": "9512adeb-f956-4e7e-be80-c73e081830de",
-            "title": "deneme",
-            "order": 1,
-            "createdAt": "2023-10-14T12:44:43.236Z",
-            "updatedAt": null
-          }
-        },
+        "x-examples": {},
         "properties": {
           "id": {
             "type": "string",
@@ -1315,20 +1322,25 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
+          },
+          "tasks": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "ct6b6c9ai12bu"
+            },
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            }
+          },
+          "board": {
+            "$ref": "#/components/schemas/Board"
           }
         },
-        "required": ["id", "boardId", "title", "order", "createdAt"],
-        "title": ""
+        "required": ["id", "boardId", "title", "order", "createdAt"]
       },
       "CreateBoardColumnRequest": {
         "type": "object",
-        "x-examples": {
-          "Example 1": {
-            "boardId": "9512adeb-f956-4e7e-be80-c73e081830de",
-            "title": "deneme",
-            "order": 1
-          }
-        },
+        "x-examples": {},
         "properties": {
           "boardId": {
             "type": "string",
@@ -1343,27 +1355,6 @@
         },
         "required": ["boardId", "title", "order"],
         "title": ""
-      },
-      "UpdateBoardColumnRequest": {
-        "type": "object",
-        "x-stoplight": {
-          "id": "89pcf7fci8t3t"
-        },
-        "x-examples": {
-          "Example 1": {
-            "boardId": "9512adeb-f956-4e7e-be80-c73e081830de",
-            "title": "deneme",
-            "order": 1
-          }
-        },
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "order": {
-            "type": "integer"
-          }
-        }
       },
       "CreateBoardMember": {
         "title": "CreateBoardMember",
@@ -1388,6 +1379,21 @@
           }
         },
         "required": ["boardId", "userId"]
+      },
+      "UpdateBoardColumnRequest": {
+        "type": "object",
+        "x-stoplight": {
+          "id": "89pcf7fci8t3t"
+        },
+        "x-examples": {},
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer"
+          }
+        }
       },
       "UpdateBoardMember": {
         "title": "UpdateBoardMember",
@@ -1453,6 +1459,9 @@
               "id": "dm6nvwtw5jpvj"
             },
             "format": "date-time"
+          },
+          "board": {
+            "$ref": "#/components/schemas/Board"
           }
         },
         "required": ["id", "boardId", "userId", "createdAt"]
@@ -1519,6 +1528,12 @@
               "id": "xwvds6wxu0c32"
             },
             "format": "date-time"
+          },
+          "boardColumn": {
+            "$ref": "#/components/schemas/BoardColumn"
+          },
+          "boardMember": {
+            "$ref": "#/components/schemas/BoardMember"
           }
         },
         "required": ["id", "title", "order", "boardColumnId", "createdAt"]
@@ -1611,6 +1626,172 @@
             "format": "uuid"
           }
         }
+      },
+      "ErrorResponse": {
+        "title": "ErrorResponse",
+        "x-stoplight": {
+          "id": "461tt42t9j5d7"
+        },
+        "type": "object",
+        "properties": {
+          "errors": {
+            "x-stoplight": {
+              "id": "q6ibd8275s54c"
+            },
+            "type": "array",
+            "items": {
+              "x-stoplight": {
+                "id": "u2xweg1xau2br"
+              },
+              "type": "string"
+            }
+          }
+        }
+      },
+      "AuthenticationResponse": {
+        "title": "AuthenticationResponse",
+        "x-stoplight": {
+          "id": "wgw1kspxv25ix"
+        },
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "rh37ump5u6rxk"
+            }
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "tokenType": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "p36444bpwbgnb"
+            },
+            "default": "Bearer"
+          },
+          "expiresIn": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "5qrrw815h4hlz"
+            }
+          }
+        },
+        "required": ["accessToken", "user", "tokenType", "expiresIn"]
+      },
+      "UserListResponse": {
+        "title": "UserListResponse",
+        "x-stoplight": {
+          "id": "0x6ink824s0zr"
+        },
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "lp9jcctmslp8h"
+            },
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          },
+          "meta": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "snvcyhpku2ay6"
+            }
+          }
+        },
+        "required": ["data", "meta"]
+      },
+      "TaskListResponse": {
+        "title": "TaskListResponse",
+        "x-stoplight": {
+          "id": "mj78om09yarth"
+        },
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "031qfkmqpofys"
+            },
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": ["data", "meta"]
+      },
+      "BoardMemberListResponse": {
+        "title": "BoardMemberListResponse",
+        "x-stoplight": {
+          "id": "q513pd8u7npqy"
+        },
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "n5ls3w7bzwmro"
+            },
+            "items": {
+              "$ref": "#/components/schemas/BoardMember"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": ["data", "meta"]
+      },
+      "BoardListResponse": {
+        "title": "BoardListResponse",
+        "x-stoplight": {
+          "id": "inwjein79856i"
+        },
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "uj6s6pova4ppf"
+            },
+            "items": {
+              "$ref": "#/components/schemas/Board"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": ["data", "meta"]
+      },
+      "BoardColumnListResponse": {
+        "title": "BoardColumnListResponse",
+        "x-stoplight": {
+          "id": "p93aju0h533u8"
+        },
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "x-stoplight": {
+              "id": "nje2tay8dfm65"
+            },
+            "items": {
+              "$ref": "#/components/schemas/BoardColumn"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": ["data", "meta"]
       }
     },
     "requestBodies": {},
@@ -1620,32 +1801,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "properties": {
-                "accessToken": {
-                  "type": "string",
-                  "x-stoplight": {
-                    "id": "qp66mbisx80xm"
-                  }
-                },
-                "user": {
-                  "$ref": "#/components/schemas/User"
-                },
-                "tokenType": {
-                  "type": "string",
-                  "x-stoplight": {
-                    "id": "ygkgu3yg8obhy"
-                  },
-                  "default": "Bearer"
-                },
-                "expiresIn": {
-                  "type": "string",
-                  "x-stoplight": {
-                    "id": "ydrkvgu3lga57"
-                  }
-                }
-              },
-              "required": ["accessToken", "user", "tokenType", "expiresIn"]
+              "$ref": "#/components/schemas/AuthenticationResponse"
             }
           }
         }
@@ -1655,22 +1811,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "properties": {
-                "errors": {
-                  "type": "array",
-                  "x-stoplight": {
-                    "id": "g7tzhj1ibiav6"
-                  },
-                  "items": {
-                    "x-stoplight": {
-                      "id": "nldc8xmk5thg6"
-                    },
-                    "type": "string"
-                  }
-                }
-              },
-              "required": ["errors"]
+              "$ref": "#/components/schemas/ErrorResponse"
             }
           }
         }
@@ -1680,36 +1821,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "x-examples": {
-                "Example 1": {
-                  "data": [],
-                  "meta": {
-                    "pagination": {
-                      "currentPage": 1,
-                      "previousPage": null,
-                      "nextPage": null,
-                      "limit": 25,
-                      "totalPagesCount": 1,
-                      "totalCount": 1,
-                      "isFirstPage": true,
-                      "isLastPage": true
-                    }
-                  }
-                }
-              },
-              "properties": {
-                "data": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Board"
-                  }
-                },
-                "meta": {
-                  "$ref": "#/components/schemas/Meta"
-                }
-              },
-              "required": ["data", "meta"]
+              "$ref": "#/components/schemas/BoardListResponse"
             }
           }
         }
@@ -1719,22 +1831,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "properties": {
-                "data": {
-                  "type": "array",
-                  "x-stoplight": {
-                    "id": "59zcnx02w3ncn"
-                  },
-                  "items": {
-                    "$ref": "#/components/schemas/BoardColumn"
-                  }
-                },
-                "meta": {
-                  "$ref": "#/components/schemas/Meta"
-                }
-              },
-              "required": ["data", "meta"]
+              "$ref": "#/components/schemas/BoardColumnListResponse"
             }
           }
         }
@@ -1744,22 +1841,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "properties": {
-                "data": {
-                  "type": "array",
-                  "x-stoplight": {
-                    "id": "mnujuc0ndh6wi"
-                  },
-                  "items": {
-                    "$ref": "#/components/schemas/BoardMember"
-                  }
-                },
-                "meta": {
-                  "$ref": "#/components/schemas/Meta"
-                }
-              },
-              "required": ["data", "meta"]
+              "$ref": "#/components/schemas/BoardMemberListResponse"
             }
           }
         }
@@ -1769,22 +1851,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "properties": {
-                "data": {
-                  "type": "array",
-                  "x-stoplight": {
-                    "id": "dn64eeae5n6kz"
-                  },
-                  "items": {
-                    "$ref": "#/components/schemas/Task"
-                  }
-                },
-                "meta": {
-                  "$ref": "#/components/schemas/Meta"
-                }
-              },
-              "required": ["data", "meta"]
+              "$ref": "#/components/schemas/TaskListResponse"
             }
           }
         }
@@ -1794,22 +1861,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "object",
-              "properties": {
-                "data": {
-                  "type": "array",
-                  "x-stoplight": {
-                    "id": "vi2qr2gkncd5v"
-                  },
-                  "items": {
-                    "$ref": "#/components/schemas/User"
-                  }
-                },
-                "meta": {
-                  "$ref": "#/components/schemas/Meta"
-                }
-              },
-              "required": ["data", "meta"]
+              "$ref": "#/components/schemas/UserListResponse"
             }
           }
         }

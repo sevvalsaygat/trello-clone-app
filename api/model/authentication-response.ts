@@ -15,49 +15,37 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { Board } from './board';
+import { User } from './user';
 
 /**
  * 
  * @export
- * @interface BoardMember
+ * @interface AuthenticationResponse
  */
-export interface BoardMember {
+export interface AuthenticationResponse {
     /**
      * 
      * @type {string}
-     * @memberof BoardMember
+     * @memberof AuthenticationResponse
      */
-    'id': string;
+    'accessToken': string;
+    /**
+     * 
+     * @type {User}
+     * @memberof AuthenticationResponse
+     */
+    'user': User;
     /**
      * 
      * @type {string}
-     * @memberof BoardMember
+     * @memberof AuthenticationResponse
      */
-    'boardId': string;
+    'tokenType': string;
     /**
      * 
      * @type {string}
-     * @memberof BoardMember
+     * @memberof AuthenticationResponse
      */
-    'userId': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BoardMember
-     */
-    'createdAt': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BoardMember
-     */
-    'updatedAt'?: string;
-    /**
-     * 
-     * @type {Board}
-     * @memberof BoardMember
-     */
-    'board'?: Board;
+    'expiresIn': string;
 }
 

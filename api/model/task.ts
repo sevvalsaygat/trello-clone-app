@@ -13,6 +13,12 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { BoardColumn } from './board-column';
+// May contain unused imports in some cases
+// @ts-ignore
+import { BoardMember } from './board-member';
 
 /**
  * 
@@ -68,5 +74,17 @@ export interface Task {
      * @memberof Task
      */
     'updatedAt'?: string;
+    /**
+     * 
+     * @type {BoardColumn}
+     * @memberof Task
+     */
+    'boardColumn'?: BoardColumn;
+    /**
+     * 
+     * @type {BoardMember}
+     * @memberof Task
+     */
+    'boardMember'?: BoardMember;
 }
 

@@ -24,11 +24,11 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { Board } from '../model';
 // @ts-ignore
+import { BoardListResponse } from '../model';
+// @ts-ignore
 import { CreateBoardRequest } from '../model';
 // @ts-ignore
-import { GetApiAuthenticatedBoards201Response } from '../model';
-// @ts-ignore
-import { PostApiAuthLogin400Response } from '../model';
+import { ErrorResponse } from '../model';
 // @ts-ignore
 import { UpdateBoardRequest } from '../model';
 /**
@@ -311,7 +311,7 @@ export const BoardsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getApiAuthenticatedBoards(page: number, limit: number, expand?: string, embed?: string, q?: string, userId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetApiAuthenticatedBoards201Response>> {
+        async getApiAuthenticatedBoards(page: number, limit: number, expand?: string, embed?: string, q?: string, userId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BoardListResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getApiAuthenticatedBoards(page, limit, expand, embed, q, userId, sort, order, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -385,7 +385,7 @@ export const BoardsApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getApiAuthenticatedBoards(page: number, limit: number, expand?: string, embed?: string, q?: string, userId?: string, sort?: string, order?: string, options?: any): AxiosPromise<GetApiAuthenticatedBoards201Response> {
+        getApiAuthenticatedBoards(page: number, limit: number, expand?: string, embed?: string, q?: string, userId?: string, sort?: string, order?: string, options?: any): AxiosPromise<BoardListResponse> {
             return localVarFp.getApiAuthenticatedBoards(page, limit, expand, embed, q, userId, sort, order, options).then((request) => request(axios, basePath));
         },
         /**
@@ -455,7 +455,7 @@ export interface BoardsApiInterface {
      * @throws {RequiredError}
      * @memberof BoardsApiInterface
      */
-    getApiAuthenticatedBoards(page: number, limit: number, expand?: string, embed?: string, q?: string, userId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): AxiosPromise<GetApiAuthenticatedBoards201Response>;
+    getApiAuthenticatedBoards(page: number, limit: number, expand?: string, embed?: string, q?: string, userId?: string, sort?: string, order?: string, options?: AxiosRequestConfig): AxiosPromise<BoardListResponse>;
 
     /**
      * Get a board by ID
