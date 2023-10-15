@@ -1,0 +1,10 @@
+{
+  "components": {},
+  "pages": {
+    "Home": {
+      "labels": {
+        "title": "Home Page"
+      }
+    }
+  }
+}
