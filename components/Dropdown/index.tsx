@@ -39,43 +39,39 @@ const Dropdown: React.FC<DropdownPropTypes> = ({
         <div className="px-1 py-1 ">
           {items.map(({ title, icon: Icon, onClick, href }, index) => (
             <Menu.Item key={index}>
-              {({ active }) => {
-                {
-                  return (
-                    <React.Fragment>
-                      {onClick ? (
-                        <button
-                          onClick={onClick}
-                          className={cn(
-                            "group flex w-full items-center rounded-md px-2 py-2 text-sm",
-                            {
-                              "bg-violet-500 text-white": active,
-                              "text-gray-900": !active,
-                            }
-                          )}
-                        >
-                          {title}
-                          {Icon && <Icon />}
-                        </button>
-                      ) : (
-                        <Link
-                          href={href as string}
-                          className={cn(
-                            "group flex w-full items-center rounded-md px-2 py-2 text-sm",
-                            {
-                              "bg-violet-500 text-white": active,
-                              "text-gray-900": !active,
-                            }
-                          )}
-                        >
-                          {title}
-                          {Icon && <Icon />}
-                        </Link>
+              {({ active }) => (
+                <React.Fragment>
+                  {onClick ? (
+                    <button
+                      onClick={onClick}
+                      className={cn(
+                        "group flex w-full items-center rounded-md px-2 py-2 text-sm",
+                        {
+                          "bg-violet-500 text-white": active,
+                          "text-gray-900": !active,
+                        }
                       )}
-                    </React.Fragment>
-                  );
-                }
-              }}
+                    >
+                      {title}
+                      {Icon && <Icon />}
+                    </button>
+                  ) : (
+                    <Link
+                      href={href as string}
+                      className={cn(
+                        "group flex w-full items-center rounded-md px-2 py-2 text-sm",
+                        {
+                          "bg-violet-500 text-white": active,
+                          "text-gray-900": !active,
+                        }
+                      )}
+                    >
+                      {title}
+                      {Icon && <Icon />}
+                    </Link>
+                  )}
+                </React.Fragment>
+              )}
             </Menu.Item>
           ))}
         </div>
