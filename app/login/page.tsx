@@ -72,17 +72,17 @@ export default function Page() {
           rules={{
             required: t("form.password.rules.required", SCOPE_OPTIONS),
             maxLength: {
-              value: AUTH.PASSWORD.MAX_LENGTH,
+              value: AUTH.FORM.PASSWORD.MAX_LENGTH,
               message: t("form.password.rules.maxLength", {
                 ...SCOPE_OPTIONS,
-                maxLen: AUTH.PASSWORD.MAX_LENGTH,
+                maxLen: AUTH.FORM.PASSWORD.MAX_LENGTH,
               }),
             },
             minLength: {
-              value: AUTH.PASSWORD.MIN_LENGTH,
+              value: AUTH.FORM.PASSWORD.MIN_LENGTH,
               message: t("form.password.rules.minLength", {
                 ...SCOPE_OPTIONS,
-                minLen: AUTH.PASSWORD.MIN_LENGTH,
+                minLen: AUTH.FORM.PASSWORD.MIN_LENGTH,
               }),
             },
           }}

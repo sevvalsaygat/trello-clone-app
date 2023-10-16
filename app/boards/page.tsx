@@ -7,6 +7,6 @@ export default function Page() {
   const currentUser = useAuth((state) => state.currentUser);
 
   return (
-    <div>11{isAuthenticated && <div>Welcome {currentUser?.fullName}</div>}</div>
+    <div>{isAuthenticated && <div>Welcome {currentUser?.fullName}</div>}</div>
   );
 }
