@@ -1,13 +1,15 @@
 "use client";
 
-import { useForm, Controller, FormProvider } from "react-hook-form";
+import { useRouter } from "next/navigation";
 
-import { AUTH } from "@app/constants";
+import { useForm, FormProvider } from "react-hook-form";
+
+import { AUTH, ROUTES } from "@app/constants";
 import { Form } from "@app/componets";
-import { string } from "@app/libs";
-import { useLocale } from "@app/hooks";
+import { string, error } from "@app/libs";
+import { useLocale, api, useAuth } from "@app/hooks";
 
-type FormType = {
+type LoginFormType = {
   email: string;
   password: string;
 };
@@ -17,14 +19,33 @@ export default function Page() {
     scope: "pages.Login",
   };
 
+  const router = useRouter();
   const { t } = useLocale();
-  const useFormMethods = useForm<FormType>();
+  const setAuth = useAuth((state) => state.setAuth);
+  const useFormMethods = useForm<LoginFormType>();
+  const {
+    mutate,
+    isError,
+    error: useLoginError,
+  } = api.useLogin({
+    onSuccess(data) {
+      setAuth(data);
+      router.push(ROUTES.boards);
+    },
+  });
 
   const { handleSubmit } = useFormMethods;
-  const onSubmit = (data: FormType) => console.log(data);
+  const onSubmit = (data: LoginFormType) => {
+    mutate(data);
+  };
+
+  const errors = error.extractApiErrors(useLoginError);
 
   return (
     <div className="p-8">
+      <div className="text-red-500">
+        {isError && errors.map((error, index) => <li key={index}>{error}</li>)}
+      </div>
       <FormProvider {...useFormMethods}>
         <Form.Input
           name="email"
