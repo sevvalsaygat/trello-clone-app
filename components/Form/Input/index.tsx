@@ -23,6 +23,7 @@ type InputPropTypes = {
   defaultValue?: string;
   variant?: "primary";
   className?: string;
+  type?: "text" | "password";
 };
 
 const Input: React.FC<InputPropTypes> = ({
@@ -30,9 +31,10 @@ const Input: React.FC<InputPropTypes> = ({
   label,
   rules,
   placeholder,
-  defaultValue = null,
+  defaultValue = "",
   variant,
   className,
+  type = "text",
 }) => {
   const {
     control,
@@ -61,6 +63,7 @@ const Input: React.FC<InputPropTypes> = ({
           render={({ field }) => (
             <input
               {...field}
+              type={type}
               placeholder={placeholder}
               className={cn(className, {
                 "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6":

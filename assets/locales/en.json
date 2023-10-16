@@ -5,6 +5,55 @@
       "labels": {
         "title": "Home Page"
       }
+    },
+    "Login": {
+      "form": {
+        "email": {
+          "label": "E-mail",
+          "placeholder": "Enter an email",
+          "rules": {
+            "required": "Email is required field",
+            "email": "Email is in invalid format"
+          }
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter an password",
+          "rules": {
+            "required": "Password is required field",
+            "maxLength": "Your password must be at most {{maxLen}} characters",
+            "minLength": "Your password must be at least {{minLen}} characters"
+          }
+        }
+      }
+    },
+    "Register": {
+      "form": {
+        "fullName": {
+          "label": "Full Name",
+          "placeholder": "Please enter an full name",
+          "rules": {
+            "required": "Full name is required field"
+          }
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "Enter an email",
+          "rules": {
+            "required": "Email is required field",
+            "email": "Email is in invalid format"
+          }
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter an password",
+          "rules": {
+            "required": "Password is required field",
+            "maxLength": "Your password must be at most {{maxLen}} characters",
+            "minLength": "Your password must be at least {{minLen}} characters"
+          }
+        }
+      }
     }
   }
 }

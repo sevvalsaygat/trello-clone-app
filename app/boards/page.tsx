@@ -1,5 +1,12 @@
 "use client";
 
+import { useAuth } from "@app/hooks";
+
 export default function Page() {
-  return <div>Boards</div>;
+  const isAuthenticated = useAuth((state) => state.isAuthenticated);
+  const currentUser = useAuth((state) => state.currentUser);
+
+  return (
+    <div>{isAuthenticated && <div>Welcome {currentUser?.fullName}</div>}</div>
+  );
 }
