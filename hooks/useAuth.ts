@@ -38,6 +38,7 @@ const useAuth = create<UseAuthType>()(
           })),
       }),
       {
+        skipHydration: true,
         name: LOCAL_STORAGE_KEYS.AUTH,
       }
     )
