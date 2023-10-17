@@ -10,7 +10,7 @@
       "form": {
         "email": {
           "label": "E-mail",
-          "placeholder": "Enter an email",
+          "placeholder": "Enter email",
           "rules": {
             "required": "Email is required field",
             "email": "Email is in invalid format"
@@ -18,7 +18,7 @@
         },
         "password": {
           "label": "Password",
-          "placeholder": "Enter an password",
+          "placeholder": "Enter password",
           "rules": {
             "required": "Password is required field",
             "maxLength": "Your password must be at most {{maxLen}} characters",

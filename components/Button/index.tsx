@@ -5,7 +5,7 @@ import cn from "classnames";
 type ButtonPropTypes = {
   title?: string;
   className?: string;
-  variant?: "primary" | "danger";
+  variant?: "primary" | "danger" | "socialauth";
   onClick: () => void;
   leftIcon?: React.FC;
   rightIcon?: React.FC;
@@ -27,6 +27,8 @@ const Button: React.FC<ButtonPropTypes> = ({
           variant === "primary",
         "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full":
           variant === "danger",
+        "flex mb-3 justify-center shadow-2xl font-bold leading-10 text-gray-150 w-full text-14 hover:bg-gray-200 border-transparent rounded-3":
+          variant === "socialauth",
       })}
     >
       {LeftIcon && <LeftIcon />}

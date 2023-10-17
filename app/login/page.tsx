@@ -8,6 +8,7 @@ import { AUTH, ROUTES } from "@app/constants";
 import { Form } from "@app/componets";
 import { string, error } from "@app/libs";
 import { useLocale, api, useAuth } from "@app/hooks";
+import { AuthLayout } from "@app/layouts";
 
 type LoginFormType = {
   email: string;
@@ -42,53 +43,54 @@ export default function Page() {
   const errors = error.extractApiErrors(useLoginError);
 
   return (
-    <div className="p-8">
-      <div className="text-red-500">
-        {isError && errors.map((error, index) => <li key={index}>{error}</li>)}
-      </div>
-      <FormProvider {...useFormMethods}>
-        <Form.Input
-          name="email"
-          label={t("form.email.label", SCOPE_OPTIONS)}
-          placeholder={t("form.email.placeholder", SCOPE_OPTIONS)}
-          variant="primary"
-          rules={{
-            required: t("form.email.rules.required", SCOPE_OPTIONS),
-            validate: (value) => {
-              if (!string.isValidEmail(value)) {
-                return t("form.email.rules.email", SCOPE_OPTIONS);
-              }
+    <AuthLayout>
+      <div>
+        <div className="text-red-500">
+          {isError &&
+            errors.map((error, index) => <li key={index}>{error}</li>)}
+        </div>
+        <FormProvider {...useFormMethods}>
+          <Form.Input
+            name="email"
+            placeholder={t("form.email.placeholder", SCOPE_OPTIONS)}
+            variant="primary"
+            rules={{
+              required: t("form.email.rules.required", SCOPE_OPTIONS),
+              validate: (value) => {
+                if (!string.isValidEmail(value)) {
+                  return t("form.email.rules.email", SCOPE_OPTIONS);
+                }
 
-              return true;
-            },
-          }}
-        />
-        <Form.Input
-          type="password"
-          name="password"
-          label={t("form.password.label", SCOPE_OPTIONS)}
-          placeholder={t("form.password.placeholder", SCOPE_OPTIONS)}
-          variant="primary"
-          rules={{
-            required: t("form.password.rules.required", SCOPE_OPTIONS),
-            maxLength: {
-              value: AUTH.FORM.PASSWORD.MAX_LENGTH,
-              message: t("form.password.rules.maxLength", {
-                ...SCOPE_OPTIONS,
-                maxLen: AUTH.FORM.PASSWORD.MAX_LENGTH,
-              }),
-            },
-            minLength: {
-              value: AUTH.FORM.PASSWORD.MIN_LENGTH,
-              message: t("form.password.rules.minLength", {
-                ...SCOPE_OPTIONS,
-                minLen: AUTH.FORM.PASSWORD.MIN_LENGTH,
-              }),
-            },
-          }}
-        />
-      </FormProvider>
-      <button onClick={handleSubmit(onSubmit)}>Login</button>
-    </div>
+                return true;
+              },
+            }}
+          />
+          <Form.Input
+            type="password"
+            name="password"
+            placeholder={t("form.password.placeholder", SCOPE_OPTIONS)}
+            variant="primary"
+            rules={{
+              required: t("form.password.rules.required", SCOPE_OPTIONS),
+              maxLength: {
+                value: AUTH.FORM.PASSWORD.MAX_LENGTH,
+                message: t("form.password.rules.maxLength", {
+                  ...SCOPE_OPTIONS,
+                  maxLen: AUTH.FORM.PASSWORD.MAX_LENGTH,
+                }),
+              },
+              minLength: {
+                value: AUTH.FORM.PASSWORD.MIN_LENGTH,
+                message: t("form.password.rules.minLength", {
+                  ...SCOPE_OPTIONS,
+                  minLen: AUTH.FORM.PASSWORD.MIN_LENGTH,
+                }),
+              },
+            }}
+          />
+        </FormProvider>
+        <button onClick={handleSubmit(onSubmit)}>Login</button>
+      </div>
+    </AuthLayout>
   );
 }
