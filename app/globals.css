@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+ul.list-with-divider > li:not(:first-child)::before {
+  content: '\2022';
+  margin: 0 8px 0px 4px;
+  cursor: none !important;
+}

@@ -22,9 +22,18 @@ const config: Config = {
           200: "#f9fafc",
           250: "#5e6c84",
           300: "#cccccc",
+          350: "EDEFF0",
         },
         blue: {
-          150: "#0052cc",
+          50: "#dfe1e6",
+          100: "#4d4d4d",
+          150: "#f4f5f7",
+          200: "#4c9aff",
+          250: "#0052cc",
+        },
+        green: {
+          100: "#61bd4f",
+          200: "#5AAC44",
         },
       },
       boxShadow: {
@@ -41,11 +50,26 @@ const config: Config = {
         11: "0.6875rem",
       },
       margin: {
+        0.4: "0.025rem",
+        7: "0.4375rem",
+        30: "1.875rem",
         14: "0.875rem",
       },
       lineHeight: {
         28: "1.75rem",
         29: "1.8125rem",
+      },
+      width: {
+        400: "25rem",
+        150: "9.375rem",
+      },
+      height: {
+        378: "23.625rem",
+      },
+      padding: {
+        7: "0.4375rem",
+        6: "0.375rem",
+        35: "2.1875rem",
       },
     },
   },

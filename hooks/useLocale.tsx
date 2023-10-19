@@ -12,6 +12,7 @@ type UseLocaleReturnsTypes = {
   t: (scope: string, options?: { [key: string]: string | number }) => string;
   locale: string;
   changeLocale: (localeParam: string) => void;
+  availableLanguages: string[];
 };
 
 const DEFAULT_LOCALE = LANGUAGES.ENGLISH;
@@ -21,12 +22,11 @@ const LocaleContext = createContext({} as UseLocaleReturnsTypes);
 const translationGetters = {
   [LANGUAGES.ENGLISH]: require("../assets/locales/en.json"),
 };
+const availableLanguages = Object.keys(translationGetters);
 
 const i18n = new I18n(translationGetters);
 
 function getDefaultLocale() {
-  const availableLanguages = Object.keys(translationGetters);
-
   const cookieLanguage = Cookies.get(COOKIE_KEYS.LANGUAGE);
 
   if (cookieLanguage && availableLanguages.includes(cookieLanguage)) {
@@ -58,6 +58,7 @@ export const LocaleProvider: React.FC<React.PropsWithChildren> = ({
         t,
         locale,
         changeLocale,
+        availableLanguages,
       }}
     >
       {children}

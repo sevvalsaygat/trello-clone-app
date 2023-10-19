@@ -21,7 +21,7 @@ type InputPropTypes = {
     | undefined;
   placeholder?: string;
   defaultValue?: string;
-  variant?: "primary";
+  variant?: "primary" | "opacity";
   className?: string;
   type?: "text" | "password";
 };
@@ -66,8 +66,10 @@ const Input: React.FC<InputPropTypes> = ({
               type={type}
               placeholder={placeholder}
               className={cn(className, {
-                "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6":
+                "w-full mb-4 bg-gray-50 border border-blue-50 rounded-3 p-7 placeholder:text-14 font-light text-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:bg-white text-14":
                   variant === "primary",
+                "w-full mb-4 bg-gray-50 border border-blue-150 rounded-3 p-7 placeholder:text-14 font-light text-blue-100 focus:outline-none text-14":
+                  variant === "opacity",
               })}
             />
           )}

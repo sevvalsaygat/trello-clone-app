@@ -1,11 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { useForm, FormProvider } from "react-hook-form";
 
 import { AUTH, ROUTES } from "@app/constants";
-import { Form } from "@app/componets";
+import { Form, Button, Icons } from "@app/componets";
 import { string, error } from "@app/libs";
 import { useLocale, api, useAuth } from "@app/hooks";
 import { AuthLayout } from "@app/layouts";
@@ -50,6 +51,9 @@ export default function Page() {
             errors.map((error, index) => <li key={index}>{error}</li>)}
         </div>
         <FormProvider {...useFormMethods}>
+          {/* <button className="cursor-pointer absolute">
+            <Icons.SvgPencil />
+          </button> */}
           <Form.Input
             name="email"
             placeholder={t("form.email.placeholder", SCOPE_OPTIONS)}
@@ -89,7 +93,11 @@ export default function Page() {
             }}
           />
         </FormProvider>
-        <button onClick={handleSubmit(onSubmit)}>Login</button>
+        <Button
+          onClick={() => {}}
+          variant="primary"
+          title={"Continue"}
+        ></Button>
       </div>
     </AuthLayout>
   );

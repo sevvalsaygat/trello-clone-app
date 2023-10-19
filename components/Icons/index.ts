@@ -6,6 +6,7 @@ import SvgMicrosoft from "./Microsoft";
 import SvgApple from "./Apple";
 import SvgSlack from "./Slack";
 import SvgAtlassian from "./Atlassian";
+import SvgPencil from "./Pencil";
 
 export default {
   SvgTrelloLeft,
@@ -16,4 +17,5 @@ export default {
   SvgApple,
   SvgSlack,
   SvgAtlassian,
+  SvgPencil,
 };

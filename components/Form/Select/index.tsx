@@ -8,6 +8,7 @@ import {
 } from "react-hook-form";
 import cn from "classnames";
 import ReactSelect, { OptionsOrGroups } from "react-select";
+import type { StylesConfig } from "react-select";
 
 type SelectPropTypes = {
   name: string;
@@ -26,6 +27,8 @@ type SelectPropTypes = {
   isMulti?: boolean;
   menuPlacement?: "auto" | "bottom" | "top";
   options: OptionsOrGroups<any, any>;
+  showIndicator?: boolean;
+  styles?: StylesConfig;
 };
 
 const Select: React.FC<SelectPropTypes> = ({
@@ -40,6 +43,8 @@ const Select: React.FC<SelectPropTypes> = ({
   isMulti = false,
   menuPlacement,
   options,
+  showIndicator = false,
+  styles,
 }) => {
   const {
     control,
@@ -69,6 +74,9 @@ const Select: React.FC<SelectPropTypes> = ({
           render={({ field }) => (
             <ReactSelect
               {...field}
+              components={{
+                ...(showIndicator ? {} : { IndicatorSeparator: () => null }),
+              }}
               instanceId={instanceId}
               className={className}
               isClearable={isClearable}
@@ -77,6 +85,7 @@ const Select: React.FC<SelectPropTypes> = ({
               isMulti={isMulti}
               menuPlacement={menuPlacement}
               options={options}
+              styles={styles}
             />
           )}
         />

@@ -1,5 +1,13 @@
 {
-  "components": {},
+  "components": {
+    "LanguageSelect": {
+      "options": {
+        "labels": {
+          "en": "English"
+        }
+      }
+    }
+  },
   "pages": {
     "Home": {
       "labels": {
