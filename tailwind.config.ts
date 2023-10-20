@@ -37,38 +37,39 @@ const config: Config = {
         },
       },
       boxShadow: {
-        "3xl": "rgba(0, 0, 0, 0.1) 0px 0px 10px",
         "2xl": "rgba(0, 0, 0, 0.2) 1px 1px 5px 0px",
+        "3xl": "rgba(0, 0, 0, 0.1) 0px 0px 10px",
       },
       borderRadius: {
         3: "0.1875rem",
       },
       fontSize: {
-        12: "0.75rem",
-        16: "1rem",
-        14: "0.875rem",
         11: "0.6875rem",
+        12: "0.75rem",
+        14: "0.875rem",
+        16: "1rem",
       },
       margin: {
         0.4: "0.025rem",
         7: "0.4375rem",
-        30: "1.875rem",
         14: "0.875rem",
+        28: "1.75rem",
+        30: "1.875rem",
       },
       lineHeight: {
         28: "1.75rem",
         29: "1.8125rem",
       },
       width: {
-        400: "25rem",
         150: "9.375rem",
+        400: "25rem",
       },
       height: {
         378: "23.625rem",
       },
       padding: {
-        7: "0.4375rem",
         6: "0.375rem",
+        7: "0.4375rem",
         35: "2.1875rem",
       },
     },

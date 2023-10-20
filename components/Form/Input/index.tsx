@@ -68,8 +68,6 @@ const Input: React.FC<InputPropTypes> = ({
               className={cn(className, {
                 "w-full mb-4 bg-gray-50 border border-blue-50 rounded-3 p-7 placeholder:text-14 font-light text-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:bg-white text-14":
                   variant === "primary",
-                "w-full mb-4 bg-gray-50 border border-blue-150 rounded-3 p-7 placeholder:text-14 font-light text-blue-100 focus:outline-none text-14":
-                  variant === "opacity",
               })}
             />
           )}
