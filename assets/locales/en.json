@@ -6,6 +6,16 @@
           "en": "English"
         }
       }
+    },
+    "labels": {
+      "templates": "Templates",
+      "pricing": "Pricing",
+      "apps": "Apps",
+      "jobs": "Jobs",
+      "blog": "Blog",
+      "developers": "Developers",
+      "about": "About",
+      "help": "Help"
     }
   },
   "pages": {
@@ -32,6 +42,26 @@
             "maxLength": "Your password must be at most {{maxLen}} characters",
             "minLength": "Your password must be at least {{minLen}} characters"
           }
+        },
+        "button": {
+          "login": "Login",
+          "continue": "Continue"
+        }
+      },
+      "auth": {
+        "labels": {
+          "login": "Log in to Trello",
+          "or": "OR",
+          "cantLogin": "Can't log in?",
+          "account": "Sign up for an account",
+          "privacy": "Privacy Policy",
+          "service": "Terms of Service"
+        },
+        "socialLogins": {
+          "google": "Continue with Google",
+          "microsoft": "Continue with Microsoft",
+          "apple": "Continue with Apple",
+          "slack": "Continue with Slack"
         }
       }
     },

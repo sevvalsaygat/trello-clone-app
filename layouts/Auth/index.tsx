@@ -3,10 +3,17 @@ import React, { PropsWithChildren } from "react";
 import { Icons, Button, Layouts } from "@app/componets";
 import { ROUTES } from "@app/constants";
 import Link from "next/link";
+import { useLocale } from "@/hooks";
 
 type AuthPropTypes = {};
 
 const Auth: React.FC<PropsWithChildren<AuthPropTypes>> = ({ children }) => {
+  const SCOPE_OPTIONS = {
+    scope: "pages.Login",
+  };
+
+  const { t } = useLocale();
+
   const options = [{ value: "English", label: "Chocolate" }];
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col z-0">
@@ -24,18 +31,20 @@ const Auth: React.FC<PropsWithChildren<AuthPropTypes>> = ({ children }) => {
         </div>
         <div className="bg-white p-35 rounded-3 shadow-3xl w-full mx-auto">
           <h1 className="flex mb-6 text-16 text-gray-250 font-semibold leading-28 justify-center">
-            Log in to Trello
+            {t("auth.labels.login", SCOPE_OPTIONS)}
           </h1>
           {children}
           <div className="flex flex-col justify-center items-center">
             <div className="my-4">
-              <div className="text-blue-100 leading-3 text-11">OR</div>
+              <div className="text-blue-100 leading-3 text-11">
+                {t("auth.labels.or", SCOPE_OPTIONS)}
+              </div>
             </div>
             <div className="flex flex-col w-full bg-white">
               <Button
                 onClick={() => {}}
                 variant="socialauth"
-                title="Continue with Google"
+                title={t("auth.socialLogins.google", SCOPE_OPTIONS)}
                 leftIcon={() => (
                   <div className="flex justify-center items-center mr-2">
                     <Icons.SvgGoogle className="h-5" />
@@ -45,7 +54,7 @@ const Auth: React.FC<PropsWithChildren<AuthPropTypes>> = ({ children }) => {
               <Button
                 onClick={() => {}}
                 variant="socialauth"
-                title="Continue with Microsoft"
+                title={t("auth.socialLogins.microsoft", SCOPE_OPTIONS)}
                 leftIcon={() => (
                   <div className="flex justify-center items-center mr-2">
                     <Icons.SvgMicrosoft className="h-5" />
@@ -55,7 +64,7 @@ const Auth: React.FC<PropsWithChildren<AuthPropTypes>> = ({ children }) => {
               <Button
                 onClick={() => {}}
                 variant="socialauth"
-                title="Continue with Apple"
+                title={t("auth.socialLogins.apple", SCOPE_OPTIONS)}
                 leftIcon={() => (
                   <div className="flex justify-center items-center mr-2">
                     <Icons.SvgApple className="h-5" />
@@ -65,7 +74,7 @@ const Auth: React.FC<PropsWithChildren<AuthPropTypes>> = ({ children }) => {
               <Button
                 onClick={() => {}}
                 variant="socialauth"
-                title="Continue with Slack"
+                title={t("auth.socialLogins.slack", SCOPE_OPTIONS)}
                 leftIcon={() => (
                   <div className="flex justify-center items-center mr-2">
                     <Icons.SvgSlack className="h-5" />
@@ -76,12 +85,12 @@ const Auth: React.FC<PropsWithChildren<AuthPropTypes>> = ({ children }) => {
               <ul className="mt-14 flex flex-row justify-center list-with-divider">
                 <li className="text-blue-250 text-14 leading-29 font-extralight">
                   <Link className="hover:underline" href={ROUTES.login}>
-                    Can&rsquo;t log in?
+                    {t("auth.labels.cantLogin", SCOPE_OPTIONS)}
                   </Link>
                 </li>
                 <li className="text-blue-250 text-14 leading-29 font-extralight">
                   <Link className="hover:underline" href={ROUTES.register}>
-                    Sign up for an account
+                    {t("auth.labels.account", SCOPE_OPTIONS)}
                   </Link>
                 </li>
               </ul>
@@ -91,12 +100,12 @@ const Auth: React.FC<PropsWithChildren<AuthPropTypes>> = ({ children }) => {
         <ul className="mt-14 mb-30 flex flex-row justify-center list-with-divider">
           <li className=" text-blue-250 text-12 leading-29 font-extralight">
             <Link className="hover:underline" href={ROUTES.login}>
-              Privacy Policy
+              {t("auth.labels.privacy", SCOPE_OPTIONS)}
             </Link>
           </li>
           <li className="text-blue-250 text-12 leading-29 font-extralight">
             <Link className="hover:underline" href={ROUTES.login}>
-              Terms of Service
+              {t("auth.labels.service", SCOPE_OPTIONS)}
             </Link>
           </li>
         </ul>

@@ -141,7 +141,11 @@ export default function Page() {
             handleContinue();
           }}
           variant="primary"
-          title={formStep === "emailStep" ? "Continue" : "Login"}
+          title={
+            formStep === "emailStep"
+              ? t("form.button.continue", SCOPE_OPTIONS)
+              : t("form.button.login", SCOPE_OPTIONS)
+          }
         />
       </div>
     </AuthLayout>
