@@ -1,13 +1,13 @@
 import React from "react";
 
 import { LanguageSelect, Icons } from "@app/componets";
-import { useLocale } from "@/hooks";
+import { useLocale } from "@app/hooks";
 
 type FooterPropTypes = {};
 
 const Footer: React.FC<FooterPropTypes> = () => {
   const SCOPE_OPTIONS = {
-    scope: "components",
+    scope: "components.Layouts.Auth.Footer",
   };
 
   const { t } = useLocale();

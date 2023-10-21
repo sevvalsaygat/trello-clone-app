@@ -39,7 +39,6 @@ export default function Page() {
   const [formStep, setFormStep] = useState<"emailStep" | "passwordStep">(
     "emailStep"
   );
-
   const { trigger, getValues, watch, getFieldState } = useFormMethods;
 
   const errors = error.extractApiErrors(useLoginError);
@@ -143,8 +142,8 @@ export default function Page() {
           variant="primary"
           title={
             formStep === "emailStep"
-              ? t("form.button.continue", SCOPE_OPTIONS)
-              : t("form.button.login", SCOPE_OPTIONS)
+              ? t("actions.continue", SCOPE_OPTIONS)
+              : t("actions.login", SCOPE_OPTIONS)
           }
         />
       </div>
