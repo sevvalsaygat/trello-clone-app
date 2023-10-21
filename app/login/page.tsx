@@ -7,7 +7,7 @@ import { useForm, FormProvider } from "react-hook-form";
 
 import { AUTH, ROUTES } from "@app/constants";
 import { Form, Button, Icons } from "@app/componets";
-import { string, error } from "@app/libs";
+import { string, error, time } from "@app/libs";
 import { useLocale, api, useAuth } from "@app/hooks";
 import { AuthLayout } from "@app/layouts";
 
@@ -39,7 +39,7 @@ export default function Page() {
   const [formStep, setFormStep] = useState<"emailStep" | "passwordStep">(
     "emailStep"
   );
-  const { trigger, getValues, watch, getFieldState } = useFormMethods;
+  const { trigger, getValues, watch, getFieldState, setFocus } = useFormMethods;
 
   const errors = error.extractApiErrors(useLoginError);
   const emailWatch = watch("email");
@@ -48,20 +48,20 @@ export default function Page() {
     if (formStep === "emailStep") {
       trigger("email");
 
-      setTimeout(() => {
+      time.wait(350, () => {
         if (!getFieldState("email").invalid) {
           setFormStep("passwordStep");
         }
-      }, 350);
+      });
     }
     if (formStep === "passwordStep") {
       trigger("password");
 
-      setTimeout(() => {
+      time.wait(350, () => {
         if (!getFieldState("password").invalid) {
           mutate(getValues());
         }
-      }, 350);
+      });
     }
   }
 
@@ -94,6 +94,9 @@ export default function Page() {
               <button
                 onClick={() => {
                   setFormStep("emailStep");
+                  time.wait(250, () => {
+                    setFocus("email");
+                  });
                 }}
                 className="cursor-pointer -ml-28 -mt-1 absolute text-blue-100"
               >
@@ -103,6 +106,9 @@ export default function Page() {
                 className="w-full mb-4 border-2 border-transparent hover:bg-gray-50 hover:border-2 hover:border-blue-150 rounded-3 p-7 placeholder:text-14 font-light text-blue-100 focus:outline-none text-14 transition-all duration-300"
                 onClick={() => {
                   setFormStep("emailStep");
+                  time.wait(250, () => {
+                    setFocus("email");
+                  });
                 }}
               >
                 {emailWatch}
