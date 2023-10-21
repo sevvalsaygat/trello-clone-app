@@ -1,5 +1,37 @@
 {
-  "components": {},
+  "components": {
+    "LanguageSelect": {
+      "options": {
+        "labels": {
+          "en": "English"
+        }
+      }
+    },
+    "Layouts": {
+      "Auth": {
+        "Footer": {
+          "labels": {
+            "templates": "Templates",
+            "pricing": "Pricing",
+            "apps": "Apps",
+            "jobs": "Jobs",
+            "blog": "Blog",
+            "developers": "Developers",
+            "about": "About",
+            "help": "Help"
+          }
+        },
+        "OmniauthButtonGroup": {
+          "actions": {
+            "google": "Continue with Google",
+            "microsoft": "Continue with Microsoft",
+            "apple": "Continue with Apple",
+            "slack": "Continue with Slack"
+          }
+        }
+      }
+    }
+  },
   "pages": {
     "Home": {
       "labels": {
@@ -10,7 +42,7 @@
       "form": {
         "email": {
           "label": "E-mail",
-          "placeholder": "Enter an email",
+          "placeholder": "Enter email",
           "rules": {
             "required": "Email is required field",
             "email": "Email is in invalid format"
@@ -18,13 +50,17 @@
         },
         "password": {
           "label": "Password",
-          "placeholder": "Enter an password",
+          "placeholder": "Enter password",
           "rules": {
             "required": "Password is required field",
             "maxLength": "Your password must be at most {{maxLen}} characters",
             "minLength": "Your password must be at least {{minLen}} characters"
           }
         }
+      },
+      "actions": {
+        "login": "Login",
+        "continue": "Continue"
       }
     },
     "Register": {
@@ -53,6 +89,18 @@
             "minLength": "Your password must be at least {{minLen}} characters"
           }
         }
+      }
+    }
+  },
+  "layouts": {
+    "Auth": {
+      "labels": {
+        "login": "Log in to Trello",
+        "or": "OR",
+        "cantLogin": "Can't log in?",
+        "account": "Sign up for an account",
+        "privacy": "Privacy Policy",
+        "service": "Terms of Service"
       }
     }
   }

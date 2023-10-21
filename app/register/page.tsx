@@ -43,7 +43,7 @@ export default function Page() {
   const errors = error.extractApiErrors(useRegisterError);
 
   return (
-    <div className="p-8">
+    <div className="p-2">
       <div className="text-red-500">
         {isError && errors.map((error, index) => <li key={index}>{error}</li>)}
       </div>
