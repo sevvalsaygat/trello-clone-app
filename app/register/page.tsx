@@ -15,6 +15,7 @@ type RegisterFormType = {
   email: string;
   password: string;
   fullName: string;
+  passwordConfirmation: string;
 };
 
 export default function Page() {
@@ -45,6 +46,7 @@ export default function Page() {
   const errors = error.extractApiErrors(useRegisterError);
   const emailWatch = watch("email");
   const fullNameWatch = watch("fullName");
+  const passwordWatch = watch("password");
 
   function handleContinue() {
     if (formStep === "emailStep") {
@@ -62,10 +64,13 @@ export default function Page() {
     }
     if (formStep === "passwordStep") {
       trigger("password");
-      // trigger("passwordConfirm");
+      trigger("passwordConfirmation");
 
       time.wait(350, () => {
-        if (!getFieldState("password").invalid) {
+        if (
+          !getFieldState("password").invalid &&
+          !getFieldState("passwordConfirmation").invalid
+        ) {
           mutate(getValues());
         }
       });
@@ -161,30 +166,54 @@ export default function Page() {
             </div>
           )}
           {formStep === "passwordStep" && (
-            <Form.Input
-              type="password"
-              name="password"
-              label={t("form.password.label", SCOPE_OPTIONS)}
-              placeholder={t("form.password.placeholder", SCOPE_OPTIONS)}
-              variant="primary"
-              rules={{
-                required: t("form.password.rules.required", SCOPE_OPTIONS),
-                maxLength: {
-                  value: AUTH.FORM.PASSWORD.MAX_LENGTH,
-                  message: t("form.password.rules.maxLength", {
-                    ...SCOPE_OPTIONS,
-                    maxLen: AUTH.FORM.PASSWORD.MAX_LENGTH,
-                  }),
-                },
-                minLength: {
-                  value: AUTH.FORM.PASSWORD.MIN_LENGTH,
-                  message: t("form.password.rules.minLength", {
-                    ...SCOPE_OPTIONS,
-                    minLen: AUTH.FORM.PASSWORD.MIN_LENGTH,
-                  }),
-                },
-              }}
-            />
+            <div>
+              <Form.Input
+                type="password"
+                name="password"
+                label={t("form.password.label", SCOPE_OPTIONS)}
+                placeholder={t("form.password.placeholder", SCOPE_OPTIONS)}
+                variant="primary"
+                rules={{
+                  required: t("form.password.rules.required", SCOPE_OPTIONS),
+                  maxLength: {
+                    value: AUTH.FORM.PASSWORD.MAX_LENGTH,
+                    message: t("form.password.rules.maxLength", {
+                      ...SCOPE_OPTIONS,
+                      maxLen: AUTH.FORM.PASSWORD.MAX_LENGTH,
+                    }),
+                  },
+                  minLength: {
+                    value: AUTH.FORM.PASSWORD.MIN_LENGTH,
+                    message: t("form.password.rules.minLength", {
+                      ...SCOPE_OPTIONS,
+                      minLen: AUTH.FORM.PASSWORD.MIN_LENGTH,
+                    }),
+                  },
+                }}
+              />
+              <Form.Input
+                type="password"
+                name="passwordConfirmation"
+                label={t("form.passwordConfirmation.label", SCOPE_OPTIONS)}
+                placeholder={t(
+                  "form.passwordConfirmation.placeholder",
+                  SCOPE_OPTIONS
+                )}
+                variant="primary"
+                rules={{
+                  validate: (value) => {
+                    if (value !== passwordWatch) {
+                      return t(
+                        "form.passwordConfirmation.rules.samePassword",
+                        SCOPE_OPTIONS
+                      );
+                    }
+
+                    return true;
+                  },
+                }}
+              />
+            </div>
           )}
         </FormProvider>
         <Button
