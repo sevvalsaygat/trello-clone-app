@@ -93,7 +93,7 @@
           "label": "Password Confirmation",
           "placeholder": "Enter an password confirmation",
           "rules": {
-            "samePassword": "Password confirmation does not match"
+            "samePassword": "Passwords does not match"
           }
         }
       }

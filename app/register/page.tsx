@@ -1,7 +1,7 @@
 "use client";
 
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 import { useForm, FormProvider } from "react-hook-form";
 
@@ -86,7 +86,7 @@ export default function Page() {
         </div>
         <FormProvider {...useFormMethods}>
           {formStep === "emailStep" ? (
-            <div>
+            <React.Fragment>
               <Form.Input
                 name="fullName"
                 label={t("form.fullName.label", SCOPE_OPTIONS)}
@@ -112,9 +112,9 @@ export default function Page() {
                   },
                 }}
               />
-            </div>
+            </React.Fragment>
           ) : (
-            <div>
+            <React.Fragment>
               <div className="flex flex-row w-full relative">
                 <button
                   onClick={() => {
@@ -163,10 +163,10 @@ export default function Page() {
                   {emailWatch}
                 </div>
               </div>
-            </div>
+            </React.Fragment>
           )}
           {formStep === "passwordStep" && (
-            <div>
+            <React.Fragment>
               <Form.Input
                 type="password"
                 name="password"
@@ -213,7 +213,7 @@ export default function Page() {
                   },
                 }}
               />
-            </div>
+            </React.Fragment>
           )}
         </FormProvider>
         <Button
