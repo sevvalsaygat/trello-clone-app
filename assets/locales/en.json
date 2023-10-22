@@ -88,6 +88,13 @@
             "maxLength": "Your password must be at most {{maxLen}} characters",
             "minLength": "Your password must be at least {{minLen}} characters"
           }
+        },
+        "passwordConfirmation": {
+          "label": "Password Confirmation",
+          "placeholder": "Enter an password confirmation",
+          "rules": {
+            "samePassword": "Passwords does not match"
+          }
         }
       }
     }
