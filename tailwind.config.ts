@@ -22,7 +22,10 @@ const config: Config = {
           200: "#f9fafc",
           250: "#5e6c84",
           300: "#cccccc",
-          350: "EDEFF0",
+          350: "#f7f8f9",
+          400: "#282e33",
+          450: "#d9dde2",
+          500: "#a9b0bd",
         },
         blue: {
           50: "#dfe1e6",
@@ -30,10 +33,19 @@ const config: Config = {
           150: "#f4f5f7",
           200: "#4c9aff",
           250: "#0052cc",
+          400: "#0c66e4",
+          450: "#0055cc",
+          500: "#dcdfe4",
         },
         green: {
           100: "#61bd4f",
           200: "#5AAC44",
+        },
+        slate: {
+          100: "#44546f",
+          400: "#445471",
+          450: "#acb3bf",
+          500: "#626f86",
         },
       },
       boxShadow: {
@@ -41,6 +53,7 @@ const config: Config = {
         "3xl": "rgba(0, 0, 0, 0.1) 0px 0px 10px",
       },
       borderRadius: {
+        5: "0.3125rem",
         3: "0.1875rem",
       },
       fontSize: {
@@ -50,6 +63,7 @@ const config: Config = {
         16: "1rem",
       },
       margin: {
+        6: "0.375rem",
         0.4: "0.025rem",
         7: "0.4375rem",
         14: "0.875rem",
@@ -63,6 +77,9 @@ const config: Config = {
       width: {
         150: "9.375rem",
         400: "25rem",
+      },
+      maxWidth: {
+        200: "12.5rem",
       },
       height: {
         378: "23.625rem",

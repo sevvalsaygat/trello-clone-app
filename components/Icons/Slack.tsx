@@ -1,12 +1,13 @@
 import React, { SVGProps } from "react";
 
-const SvgSlack = (props: SVGProps<SVGSVGElement>) => {
+const SvgSlack = ({ className }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 48 48"
       width="18px"
       height="18px"
+      className={className}
     >
       <path
         fill="#33d375"

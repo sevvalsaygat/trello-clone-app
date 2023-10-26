@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-const SvgTrelloLogo = (props: SVGProps<SVGSVGElement>) => {
+const SvgTrelloLogo = ({ className }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox="0 0 94 24"
@@ -10,6 +10,7 @@ const SvgTrelloLogo = (props: SVGProps<SVGSVGElement>) => {
       xmlns="http://www.w3.org/2000/svg"
       focusable="false"
       aria-hidden="true"
+      className={className}
     >
       <defs>
         <linearGradient
