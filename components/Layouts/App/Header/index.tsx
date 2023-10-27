@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-// import { Tooltip } from "@nextui-org/react";
 
 import { FormProvider, useForm } from "react-hook-form";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import { useLocale } from "@app/hooks";
 import { Icons, Form } from "@app/componets";
@@ -37,25 +37,49 @@ const Header: React.FC<HeaderPropTypes> = () => {
           </div>
         </div>
         <div className="flex flex-row items-center gap-1">
-          <div className="flex flex-row items-center hover:bg-blue-500 rounded-3 transition-all duration-100 leading-8 px-3 cursor-pointer">
+          <div
+            className="flex flex-row items-center hover:bg-blue-500 rounded-3 transition-all duration-100 leading-8 px-3 cursor-pointer"
+            data-tooltip-id="workspaces-tooltip"
+            data-tooltip-content="workspaces"
+            data-tooltip-delay-show={500}
+          >
+            <ReactTooltip id="workspaces-tooltip" />
             <button className="text-14 text-slate-400 font-medium">
               Workspaces
             </button>
             <Icons.SvgArrowDown className="text-slate-400 ml-1 font-medium" />
           </div>
-          <div className="flex flex-row items-center hover:bg-blue-500 rounded-3 transition-all duration-100 leading-8 px-3 cursor-pointer">
+          <div
+            className="flex flex-row items-center hover:bg-blue-500 rounded-3 transition-all duration-100 leading-8 px-3 cursor-pointer"
+            data-tooltip-id="recent-tooltip"
+            data-tooltip-content="recent"
+            data-tooltip-delay-show={500}
+          >
+            <ReactTooltip id="recent-tooltip" />
             <button className="text-14 text-slate-400 font-medium">
               Recent
             </button>
             <Icons.SvgArrowDown className="text-slate-400 ml-1 font-medium" />
           </div>
-          <div className="flex flex-row items-center hover:bg-blue-500 rounded-3 transition-all duration-100 leading-8 px-3 cursor-pointer">
+          <div
+            className="flex flex-row items-center hover:bg-blue-500 rounded-3 transition-all duration-100 leading-8 px-3 cursor-pointer"
+            data-tooltip-id="starred-tooltip"
+            data-tooltip-content="starred"
+            data-tooltip-delay-show={500}
+          >
+            <ReactTooltip id="starred-tooltip" />
             <button className="text-14 text-slate-400 font-medium">
               Starred
             </button>
             <Icons.SvgArrowDown className="text-slate-400 ml-1 font-medium" />
           </div>
-          <div className="flex flex-row items-center hover:bg-blue-500 rounded-3 transition-all duration-100 leading-8 px-3 cursor-pointer">
+          <div
+            className="flex flex-row items-center hover:bg-blue-500 rounded-3 transition-all duration-100 leading-8 px-3 cursor-pointer"
+            data-tooltip-id="templates-tooltip"
+            data-tooltip-content="templates"
+            data-tooltip-delay-show={500}
+          >
+            <ReactTooltip id="templates-tooltip" />
             <button className="text-14 text-slate-400 font-medium">
               Templates
             </button>
@@ -79,13 +103,31 @@ const Header: React.FC<HeaderPropTypes> = () => {
             <Icons.SvgSearch className="ml-6 text-slate-500 absolute" />
           </FormProvider>
         </div>
-        <div className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100">
+        <div
+          className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
+          data-tooltip-id="notifications-tooltip"
+          data-tooltip-content="Notifications"
+          data-tooltip-delay-show={100}
+        >
+          <ReactTooltip id="notifications-tooltip" />
           <Icons.SvgNotification className="text-slate-100" />
         </div>
-        <div className="p-6 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100">
+        <div
+          className="p-6 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
+          data-tooltip-id="information-tooltip"
+          data-tooltip-content="Information"
+          data-tooltip-delay-show={100}
+        >
+          <ReactTooltip id="information-tooltip" />
           <Icons.SvgInformation className="text-slate-100" />
         </div>
-        <div className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100">
+        <div
+          className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
+          data-tooltip-id="account-tooltip"
+          data-tooltip-content="Account"
+          data-tooltip-delay-show={100}
+        >
+          <ReactTooltip id="account-tooltip" />
           <Image src="/account.png" width={24} height={24} alt="account" />
         </div>
       </div>
