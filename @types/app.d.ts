@@ -16,3 +16,11 @@ type SortingType = {
 type SearchType = {
   q?: string;
 };
+
+type DropdownItemType = {
+  title?: string;
+  icon?: React.FC;
+  href?: string;
+  onClick?: () => void;
+  component?: React.FC;
+};

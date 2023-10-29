@@ -5,7 +5,7 @@ import cn from "classnames";
 type ButtonPropTypes = {
   title?: string;
   className?: string;
-  variant?: "primary" | "danger" | "omniauth";
+  variant?: "primary" | "danger" | "omniauth" | "info";
   onClick: () => void;
   leftIcon?: React.FC;
   rightIcon?: React.FC;
@@ -29,6 +29,8 @@ const Button: React.FC<ButtonPropTypes> = ({
           variant === "omniauth",
         "cursor-pointer py-7 border-transparent w-full bg-green-200 text-14 text-white font-bold rounded-3 hover:bg-green-100":
           variant === "primary",
+        "bg-blue-400 hover:bg-blue-450 text-white leading-8 px-3 text-14 rounded-3 font-medium transition-all duration-100":
+          variant === "info",
       })}
     >
       {LeftIcon && <LeftIcon />}

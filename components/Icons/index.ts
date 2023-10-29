@@ -12,6 +12,10 @@ import SvgArrowDown from "./ArrowDown";
 import SvgSearch from "./Search";
 import SvgNotification from "./Notification";
 import SvgInformation from "./Information";
+import SvgStar from "./Star";
+import SvgStarBackground from "./StarBackground";
+import SvgArrowUp from "./ArrowUp";
+import SvgTemplate from "./Template";
 
 export default {
   SvgTrelloLeft,
@@ -28,4 +32,8 @@ export default {
   SvgSearch,
   SvgNotification,
   SvgInformation,
+  SvgStar,
+  SvgStarBackground,
+  SvgArrowUp,
+  SvgTemplate,
 };

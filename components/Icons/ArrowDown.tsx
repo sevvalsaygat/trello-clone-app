@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-const SvgPresentation = ({ className }: SVGProps<SVGSVGElement>) => {
+const SvgArrowDown = ({ className }: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       width="16"
@@ -19,4 +19,4 @@ const SvgPresentation = ({ className }: SVGProps<SVGSVGElement>) => {
   );
 };
 
-export default React.memo(SvgPresentation);
+export default React.memo(SvgArrowDown);
