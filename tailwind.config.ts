@@ -45,6 +45,7 @@ const config: Config = {
         },
         green: {
           100: "#61bd4f",
+          150: "#1f845a",
           200: "#5AAC44",
         },
         slate: {
@@ -102,6 +103,7 @@ const config: Config = {
         400: "25rem",
       },
       maxWidth: {
+        336: "21rem",
         200: "12.5rem",
       },
       height: {

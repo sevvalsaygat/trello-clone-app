@@ -20,6 +20,7 @@ type DropdownPropTypes = {
   };
   menuActiveClassName?: string;
   menuInactiveClassName?: string;
+  menuClassName?: string;
   className?: string;
   menuItemsClassName?: string;
 };
@@ -31,6 +32,7 @@ const Dropdown: React.FC<DropdownPropTypes> = ({
   tooltip,
   menuActiveClassName = "bg-blue-600 hover:bg-blue-650 text-blue-400",
   menuInactiveClassName = "hover:bg-blue-500 text-slate-400",
+  menuClassName = "relative inline-block text-left",
   className = "flex flex-row items-center rounded-3 transition-all duration-100 leading-8 px-3 cursor-pointer text-14 font-medium",
   menuItemsClassName = "flex border rounded-md max-h-887 w-304 shadow-4xl absolute bg-white focus:outline-none mt-3",
 }) => {
@@ -58,7 +60,7 @@ const Dropdown: React.FC<DropdownPropTypes> = ({
   };
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className={menuClassName}>
       {({ open }) => (
         <React.Fragment>
           <div>

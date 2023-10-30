@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 import { FormProvider, useForm } from "react-hook-form";
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import { Switch } from "@headlessui/react";
 
 import { useLocale } from "@app/hooks";
 import { Icons, Form, Dropdown, Button } from "@app/componets";
@@ -17,6 +18,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
   };
 
   const { t } = useLocale();
+  const [enabled, setEnabled] = useState(false);
   const useFormMethods = useForm<HeaderPropTypes>();
 
   const workspacesItems: DropdownItemType[] = [
@@ -64,7 +66,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
         <div className="p-3">
           <ul>
             <li className="my-1">
-              <div className="flex justify-between p-1 border-transparent rounded-8 hover:bg-gray-550 text-black cursor-pointer">
+              <div className="group/item flex justify-between p-1 border-transparent rounded-8 hover:bg-gray-550 text-black cursor-pointer">
                 <div className="flex flex-row gap-2">
                   <Image
                     src="/board.jpg"
@@ -82,13 +84,13 @@ const Header: React.FC<HeaderPropTypes> = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex justify-center items-center mr-2">
+                <div className="flex justify-center items-center mr-2 invisible group-hover/item:visible">
                   <Icons.SvgStar className="flex justify-end text-slate-400 hover:text-yellow-100" />
                 </div>
               </div>
             </li>
             <li className="my-1">
-              <div className="flex justify-between p-1 border-transparent rounded-8 hover:bg-gray-550 text-black cursor-pointer">
+              <div className="group/item flex justify-between p-1 border-transparent rounded-8 hover:bg-gray-550 text-black cursor-pointer">
                 <div className="flex flex-row gap-2">
                   <Image
                     src="/pink-background.jpg"
@@ -109,7 +111,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
                   </div>
                 </div>
                 <div className="flex justify-center items-center mr-2">
-                  <Icons.SvgStar className="flex justify-end text-slate-400 hover:text-yellow-100" />
+                  <Icons.SvgStar className="hidden group-hover/item:block text-end text-slate-400 hover:text-yellow-100" />
                 </div>
               </div>
             </li>
@@ -136,14 +138,15 @@ const Header: React.FC<HeaderPropTypes> = () => {
     {
       component: () => (
         <div>
-          <div className="px-3 pt-3 w-fit">
+          <div className="px-3 pt-3">
             <Dropdown
               items={topTemplatesItems}
               title="Top Templates"
               // className="text-red-500"
+              menuClassName="flex flex-col"
               menuActiveClassName="text-slate-100"
               menuInactiveClassName="text-slate-100 "
-              menuItemsClassName="flex focus:outline-none w-fit"
+              menuItemsClassName="flex focus:outline-none"
             />
           </div>
           <div className="border-t border-blue-500 shadow-5xl w-full"></div>
@@ -168,7 +171,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
   const topTemplatesItems: DropdownItemType[] = [
     {
       component: () => (
-        <div className="mt-3 w-fit">
+        <div className="mt-3">
           <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
             <div className="p-1 gap-3 flex flex-row">
               <div>
@@ -387,6 +390,127 @@ const Header: React.FC<HeaderPropTypes> = () => {
               </div>
             </div>
           </div>
+          <h2 className="text-slate-500 text-11 leading-4 font-semibold px-5 mt-4 mb-2">
+            TRELLO
+          </h2>
+          <div className="border-b border-blue-500">
+            <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
+              Profile and visibility
+            </div>
+            <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
+              Activity
+            </div>
+            <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
+              Cards
+            </div>
+            <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
+              Settings
+            </div>
+            <div className="flex flex-row items-center px-5 py-2 justify-between hover:bg-gray-550 mb-2 cursor-pointer">
+              <div className="text-blue-300 text-14 leading-5">Theme</div>
+              <Icons.SvgArrowRight className="text-blue-300" />
+            </div>
+          </div>
+          <div className="border-b border-blue-500 py-2">
+            <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
+              Help
+            </div>
+            <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
+              Shortcuts
+            </div>
+          </div>
+          <div className="py-2">
+            <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
+              Log out
+            </div>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  const ınformationItems: DropdownItemType[] = [
+    {
+      component: () => (
+        <div className="p-3">
+          <div className="px-3">
+            <div className="flex flex-col max-w-336 hover:bg-gray-550 cursor-pointer rounded-3">
+              <Image src="/world.png" width={336} height={168} alt="world" />
+              <h3 className="text-16 leading-5 text-blue-300 p-2 font-semibold text-center mb-2">
+                Make boards more powerful with Trello Power-Ups
+              </h3>
+            </div>
+            <div className="flex justify-center mb-5">
+              <button className="text-14 leading-5 text-blue-400 hover:underline font-medium w-full">
+                Get a new tip.
+              </button>
+            </div>
+            <div className="border-b border-blue-500"></div>
+            <div className="flex flex-wrap py-2 gap-1 max-w-336 justify-center px-9">
+              <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
+                Pricing
+              </div>
+              <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
+                Apps
+              </div>
+              <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
+                Blog
+              </div>
+              <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
+                Privacy
+              </div>
+              <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
+                Notice at Collection
+              </div>
+              <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
+                More...
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  const notificationItems: DropdownItemType[] = [
+    {
+      component: () => (
+        <div className="mt-5 mx-3 pb-5 w-[432px] mb-24">
+          <div className="flex flex-row items-center justify-between mb-5">
+            <div className="text-20 text-blue-300 leading-6 font-semibold">
+              Notifications
+            </div>
+            <div className="flex flex-row items-center">
+              <div className="text-slate-500 leading-4 text-12 mr-2">
+                Only show unread
+              </div>
+              <Switch
+                checked={enabled}
+                onChange={setEnabled}
+                className={`${
+                  enabled ? "bg-green-150" : "bg-slate-100"
+                } relative inline-flex h-5 w-10 items-center rounded-full`}
+              >
+                <span
+                  className={`${
+                    enabled ? "translate-x-6" : "translate-x-1"
+                  } inline-block h-3 w-3 transform rounded-full bg-white transition`}
+                />
+              </Switch>
+              <button className="p-6 hover:bg-blue-500 rounded-3 ml-2">
+                <Icons.SvgDots className="text-blue-300" />
+              </button>
+            </div>
+          </div>
+          <div className="border-b border-blue-500"></div>
+          <div className="flex flex-col">
+            <div className="flex justify-center items-center py-11">
+              <Icons.SvgDog />
+            </div>
+            <div className="flex items-center justify-center text-20 leading-6 text-blue-300">
+              No unread notifications
+            </div>
+          </div>
         </div>
       ),
     },
@@ -532,51 +656,54 @@ const Header: React.FC<HeaderPropTypes> = () => {
             <Icons.SvgSearch className="ml-6 text-slate-500 absolute" />
           </FormProvider>
         </div>
-        <div
+        <Dropdown
+          items={notificationItems}
+          icon={() => <Icons.SvgNotification className="text-slate-100" />}
           className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
-          data-tooltip-id="notifications-tooltip"
-          data-tooltip-content="Notifications"
-          data-tooltip-delay-show={100}
-        >
-          <ReactTooltip
-            id="notifications-tooltip"
-            style={{
+          menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
+          tooltip={{
+            id: "notifications-tooltip",
+            content: "Notifications",
+            delay: 100,
+            style: {
               backgroundColor: "#4b5563",
               color: "white",
               paddingLeft: "0.25rem",
               paddingRight: "0.25rem",
               fontSize: "12px",
-            }}
-          />
-          <Icons.SvgNotification className="text-slate-100" />
-        </div>
-        <div
-          className="p-6 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
-          data-tooltip-id="information-tooltip"
-          data-tooltip-content="Information"
-          data-tooltip-delay-show={100}
-        >
-          <ReactTooltip
-            id="information-tooltip"
-            style={{
+              zIndex: "1",
+            },
+          }}
+        />
+        <Dropdown
+          items={ınformationItems}
+          icon={() => <Icons.SvgInformation className="text-slate-100" />}
+          className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
+          menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
+          tooltip={{
+            id: "information-tooltip",
+            content: "Information",
+            delay: 100,
+            style: {
               backgroundColor: "#4b5563",
               color: "white",
               paddingLeft: "0.25rem",
               paddingRight: "0.25rem",
               fontSize: "12px",
-            }}
-          />
-          <Icons.SvgInformation className="text-slate-100" />
-        </div>
+              zIndex: "1",
+            },
+          }}
+        />
         <Dropdown
           items={accountItems}
           icon={() => (
             <Image src="/account.png" width={24} height={24} alt="account" />
           )}
           className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
+          menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
           tooltip={{
-            id: "templates-tooltip",
-            content: "Templates",
+            id: "account-tooltip",
+            content: "Account",
             delay: 500,
             style: {
               backgroundColor: "#4b5563",
