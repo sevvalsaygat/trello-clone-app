@@ -16,6 +16,7 @@ import SvgStar from "./Star";
 import SvgStarBackground from "./StarBackground";
 import SvgArrowUp from "./ArrowUp";
 import SvgTemplate from "./Template";
+import SvgDirect from "./Direct";
 
 export default {
   SvgTrelloLeft,
@@ -36,4 +37,5 @@ export default {
   SvgStarBackground,
   SvgArrowUp,
   SvgTemplate,
+  SvgDirect,
 };

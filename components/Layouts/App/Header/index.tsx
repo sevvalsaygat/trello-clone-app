@@ -136,194 +136,15 @@ const Header: React.FC<HeaderPropTypes> = () => {
     {
       component: () => (
         <div>
-          <div className="px-3 pt-3 overflow-scroll">
-            <div className="pb-2 pr-3">
-              <h1 className="flex flex-row justify-between text-12 text-slate-100 leading-4 font-medium">
-                Top Templates
-                <div className="flex relative mr-2">
-                  <Icons.SvgArrowUp className="absolute" />
-                  <Icons.SvgArrowDown className="absolute" />
-                </div>
-              </h1>
-            </div>
-            <div className="mt-3">
-              <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-                <div className="p-1 gap-3 flex flex-row">
-                  <div>
-                    <Image
-                      src="/meet.jpg"
-                      width={45}
-                      height={32}
-                      alt="meet"
-                      className="border-transparent rounded-4 object-scale-down"
-                    />
-                  </div>
-                  <div className="flex text-14 leading-4 text-blue-300 items-center font-medium">
-                    1-on-1 Meeting Agenda
-                  </div>
-                </div>
-              </button>
-              <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-                <div className="p-1 gap-3 flex flex-row">
-                  <div>
-                    <Image
-                      src="/agile.jpg"
-                      width={45}
-                      height={32}
-                      alt="agile"
-                      className="border-transparent rounded-4 object-scale-down"
-                    />
-                  </div>
-                  <div className="flex text-14 leading-4 text-blue-300 items-center font-medium">
-                    Agile Board Template | Trello
-                  </div>
-                </div>
-              </button>
-              <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-                <div className="p-1 gap-3 flex flex-row">
-                  <div>
-                    <Image
-                      src="/company.jpg"
-                      width={45}
-                      height={32}
-                      alt="company"
-                      className="border-transparent rounded-4 object-scale-down"
-                    />
-                  </div>
-                  <div className="flex text-14 leading-4 text-blue-300 items-center font-medium">
-                    Company Overview
-                  </div>
-                </div>
-              </button>
-              <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-                <div className="p-1 gap-3 flex flex-row">
-                  <div>
-                    <Image
-                      src="/design.jpg"
-                      width={45}
-                      height={32}
-                      alt="design"
-                      className="border-transparent rounded-4 object-scale-down"
-                    />
-                  </div>
-                  <div className="flex text-14 leading-4 text-blue-300 items-center font-medium">
-                    Design Huddle
-                  </div>
-                </div>
-              </button>
-              <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-                <div className="p-1 gap-3 flex flex-row">
-                  <div>
-                    <Image
-                      src="/balloon.jpg"
-                      width={45}
-                      height={32}
-                      alt="balloon"
-                      className="border-transparent rounded-4 object-scale-down"
-                    />
-                  </div>
-                  <div className="flex text-14 leading-4 text-blue-300 items-center font-medium">
-                    Go To Market Strategy Template
-                  </div>
-                </div>
-              </button>
-              <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-                <div className="p-1 gap-3 flex flex-row">
-                  <div>
-                    <Image
-                      src="/kanban.jpg"
-                      width={45}
-                      height={32}
-                      alt="kanban"
-                      className="border-transparent rounded-4 object-scale-down"
-                    />
-                  </div>
-                  <div className="flex text-14 leading-4 text-blue-300 items-center font-medium">
-                    Kanban Template
-                  </div>
-                </div>
-              </button>
-              <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-                <div className="p-1 gap-3 flex flex-row">
-                  <div>
-                    <Image
-                      src="/typewriter.jpg"
-                      width={45}
-                      height={32}
-                      alt="typewriter"
-                      className="border-transparent rounded-4 object-scale-down"
-                    />
-                  </div>
-                  <div className="flex text-14 leading-4 text-blue-300 items-center font-medium">
-                    Mise-En-Place Personal Productivity System
-                  </div>
-                </div>
-              </button>
-              <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-                <div className="p-1 gap-3 flex flex-row">
-                  <div>
-                    <Image
-                      src="/pink-background.jpg"
-                      width={50}
-                      height={32}
-                      alt="pink-background"
-                      className="border-transparent rounded-4 object-scale-down"
-                    />
-                  </div>
-                  <div className="flex text-14 leading-4 text-blue-300 items-center font-medium">
-                    Project Management
-                  </div>
-                </div>
-              </button>
-              <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-                <div className="p-1 gap-3 flex flex-row">
-                  <div>
-                    <Image
-                      src="/cloudy.jpg"
-                      width={50}
-                      height={32}
-                      alt="cloudy"
-                      className="border-transparent rounded-4 object-scale-down"
-                    />
-                  </div>
-                  <div className="flex text-14 leading-4 text-blue-300 items-center font-medium">
-                    Remote Team Meetings
-                  </div>
-                </div>
-              </button>
-              <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-                <div className="p-1 gap-3 flex flex-row">
-                  <div>
-                    <Image
-                      src="/leaf.jpg"
-                      width={50}
-                      height={32}
-                      alt="leaf"
-                      className="border-transparent rounded-4 object-scale-down"
-                    />
-                  </div>
-                  <div className="flex text-14 leading-4 text-blue-300 items-center font-medium">
-                    Simple Project Board
-                  </div>
-                </div>
-              </button>
-              <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-                <div className="p-1 gap-3 flex flex-row">
-                  <div>
-                    <Image
-                      src="/orange.png"
-                      width={50}
-                      height={32}
-                      alt="orange"
-                      className="border-transparent rounded-4 object-scale-down"
-                    />
-                  </div>
-                  <div className="flex text-14 leading-4 text-blue-300 items-center font-medium">
-                    Simple Project Board
-                  </div>
-                </div>
-              </button>
-            </div>
+          <div className="px-3 pt-3 w-fit">
+            <Dropdown
+              items={topTemplatesItems}
+              title="Top Templates"
+              // className="text-red-500"
+              menuActiveClassName="text-slate-100"
+              menuInactiveClassName="text-slate-100 "
+              menuItemsClassName="flex focus:outline-none w-fit"
+            />
           </div>
           <div className="border-t border-blue-500 shadow-5xl w-full"></div>
           <div className="p-3 flex flex-row mt-2">
@@ -338,6 +159,233 @@ const Header: React.FC<HeaderPropTypes> = () => {
             <button className="text-14 leading-5 text-slate-100 px-3 py-6">
               Explore Templates
             </button>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  const topTemplatesItems: DropdownItemType[] = [
+    {
+      component: () => (
+        <div className="mt-3 w-fit">
+          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+            <div className="p-1 gap-3 flex flex-row">
+              <div>
+                <Image
+                  src="/meet.jpg"
+                  width={45}
+                  height={32}
+                  alt="meet"
+                  className="border-transparent rounded-4 w-45 h-8"
+                />
+              </div>
+              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                1-on-1 Meeting Agenda
+              </div>
+            </div>
+          </button>
+          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+            <div className="p-1 gap-3 flex flex-row">
+              <div className="">
+                <Image
+                  src="/agile.jpg"
+                  width={45}
+                  height={32}
+                  alt="agile"
+                  className="border-transparent rounded-4 w-45 h-8"
+                />
+              </div>
+              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                Agile Board Template | Trello
+              </div>
+            </div>
+          </button>
+          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+            <div className="p-1 gap-3 flex flex-row">
+              <div>
+                <Image
+                  src="/company.jpg"
+                  width={45}
+                  height={32}
+                  alt="company"
+                  className="border-transparent rounded-4 w-45 h-8"
+                />
+              </div>
+              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                Company Overview
+              </div>
+            </div>
+          </button>
+          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+            <div className="p-1 gap-3 flex flex-row">
+              <div>
+                <Image
+                  src="/design.jpg"
+                  width={45}
+                  height={32}
+                  alt="design"
+                  className="border-transparent rounded-4 w-45 h-8"
+                />
+              </div>
+              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                Design Huddle
+              </div>
+            </div>
+          </button>
+          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+            <div className="p-1 gap-3 flex flex-row">
+              <div>
+                <Image
+                  src="/balloon.jpg"
+                  width={45}
+                  height={32}
+                  alt="balloon"
+                  className="border-transparent rounded-4 w-45 h-8"
+                />
+              </div>
+              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                Go To Market Strategy Template
+              </div>
+            </div>
+          </button>
+          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+            <div className="p-1 gap-3 flex flex-row">
+              <div>
+                <Image
+                  src="/kanban.jpg"
+                  width={45}
+                  height={32}
+                  alt="kanban"
+                  className="border-transparent rounded-4 w-45 h-8"
+                />
+              </div>
+              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                Kanban Template
+              </div>
+            </div>
+          </button>
+          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+            <div className="p-1 gap-3 flex flex-row">
+              <div>
+                <Image
+                  src="/typewriter.jpg"
+                  width={45}
+                  height={32}
+                  alt="typewriter"
+                  className="border-transparent rounded-4 w-45 h-8"
+                />
+              </div>
+              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                Mise-En-Place Personal Productivity System
+              </div>
+            </div>
+          </button>
+          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+            <div className="p-1 gap-3 flex flex-row">
+              <div>
+                <Image
+                  src="/pink-background.jpg"
+                  width={50}
+                  height={32}
+                  alt="pink-background"
+                  className="border-transparent rounded-4 w-45 h-8"
+                />
+              </div>
+              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                Project Management
+              </div>
+            </div>
+          </button>
+          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+            <div className="p-1 gap-3 flex flex-row">
+              <div>
+                <Image
+                  src="/cloudy.jpg"
+                  width={50}
+                  height={32}
+                  alt="cloudy"
+                  className="border-transparent rounded-4 w-45 h-8"
+                />
+              </div>
+              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                Remote Team Meetings
+              </div>
+            </div>
+          </button>
+          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+            <div className="p-1 gap-3 flex flex-row">
+              <div>
+                <Image
+                  src="/leaf.jpg"
+                  width={50}
+                  height={32}
+                  alt="leaf"
+                  className="border-transparent rounded-4 w-45 h-8"
+                />
+              </div>
+              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                Simple Project Board
+              </div>
+            </div>
+          </button>
+          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+            <div className="p-1 gap-3 flex flex-row">
+              <div>
+                <Image
+                  src="/orange.png"
+                  width={55}
+                  height={32}
+                  alt="orange"
+                  className="border-transparent rounded-4 w-45 h-8"
+                />
+              </div>
+              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                Simple Project Board
+              </div>
+            </div>
+          </button>
+        </div>
+      ),
+    },
+  ];
+
+  const accountItems: DropdownItemType[] = [
+    {
+      component: () => (
+        <div className="flex flex-col">
+          <h2 className="text-11 leading-4 text-slate-500 px-5 mt-4 mb-2 font-semibold">
+            ACCOUNT
+          </h2>
+          <div>
+            <div className="flex flex-row px-5 py-2">
+              <Image
+                src="/account.png"
+                width={40}
+                height={40}
+                alt="account"
+                className="mr-2"
+              />
+              <div className="flex flex-col">
+                <div className="text-blue-300 text-14 leading-5">
+                  Şevval Saygat
+                </div>
+                <div className="text-slate-100 text-12 leading-4">
+                  sevvallsstt@gmail.com
+                </div>
+              </div>
+            </div>
+            <div className="border-b border-blue-500">
+              <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
+                Switch accounts
+              </div>
+              <div className="flex flex-row items-center px-5 py-2 justify-between hover:bg-gray-550 mb-2 cursor-pointer">
+                <div className="text-blue-300 text-14 leading-5">
+                  Manage account
+                </div>
+                <Icons.SvgDirect className="text-blue-300" />
+              </div>
+            </div>
           </div>
         </div>
       ),
@@ -520,24 +568,26 @@ const Header: React.FC<HeaderPropTypes> = () => {
           />
           <Icons.SvgInformation className="text-slate-100" />
         </div>
-        <div
+        <Dropdown
+          items={accountItems}
+          icon={() => (
+            <Image src="/account.png" width={24} height={24} alt="account" />
+          )}
           className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
-          data-tooltip-id="account-tooltip"
-          data-tooltip-content="Account"
-          data-tooltip-delay-show={100}
-        >
-          <ReactTooltip
-            id="account-tooltip"
-            style={{
+          tooltip={{
+            id: "templates-tooltip",
+            content: "Templates",
+            delay: 500,
+            style: {
               backgroundColor: "#4b5563",
               color: "white",
               paddingLeft: "0.25rem",
               paddingRight: "0.25rem",
               fontSize: "12px",
-            }}
-          />
-          <Image src="/account.png" width={24} height={24} alt="account" />
-        </div>
+              zIndex: "1",
+            },
+          }}
+        />
       </div>
     </div>
   );

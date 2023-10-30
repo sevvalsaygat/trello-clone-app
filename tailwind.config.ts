@@ -96,6 +96,7 @@ const config: Config = {
         29: "1.8125rem",
       },
       width: {
+        45: "2.8125rem",
         304: "19rem",
         150: "9.375rem",
         400: "25rem",
@@ -110,6 +111,7 @@ const config: Config = {
         887: "55.4375rem",
       },
       padding: {
+        24: "1.5rem",
         6: "0.375rem",
         7: "0.4375rem",
         35: "2.1875rem",

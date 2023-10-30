@@ -19,6 +19,9 @@ type DropdownPropTypes = {
     style?: React.CSSProperties;
   };
   menuActiveClassName?: string;
+  menuInactiveClassName?: string;
+  className?: string;
+  menuItemsClassName?: string;
 };
 
 const Dropdown: React.FC<DropdownPropTypes> = ({
@@ -27,6 +30,9 @@ const Dropdown: React.FC<DropdownPropTypes> = ({
   items,
   tooltip,
   menuActiveClassName = "bg-blue-600 hover:bg-blue-650 text-blue-400",
+  menuInactiveClassName = "hover:bg-blue-500 text-slate-400",
+  className = "flex flex-row items-center rounded-3 transition-all duration-100 leading-8 px-3 cursor-pointer text-14 font-medium",
+  menuItemsClassName = "flex border rounded-md max-h-887 w-304 shadow-4xl absolute bg-white focus:outline-none mt-3",
 }) => {
   const isTooltipUsed = tooltip && tooltip.id && tooltip.content;
 
@@ -57,13 +63,10 @@ const Dropdown: React.FC<DropdownPropTypes> = ({
         <React.Fragment>
           <div>
             <Menu.Button
-              className={cn(
-                "flex flex-row items-center rounded-3 transition-all duration-100 leading-8 px-3 cursor-pointer text-14 font-medium",
-                {
-                  "hover:bg-blue-500 text-slate-400": !open,
-                  [menuActiveClassName]: open,
-                }
-              )}
+              className={cn(className, {
+                [menuActiveClassName]: open,
+                [menuInactiveClassName]: !open,
+              })}
             >
               <MenuContainer>
                 {title}
@@ -75,8 +78,7 @@ const Dropdown: React.FC<DropdownPropTypes> = ({
               </MenuContainer>
             </Menu.Button>
           </div>
-
-          <Menu.Items className="flex border rounded-md max-h-887 w-304 shadow-4xl absolute bg-white focus:outline-none mt-3">
+          <Menu.Items className={menuItemsClassName}>
             <div className="w-full">
               {items.map(
                 (

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Layouts.App.Header />
-      <div className="text-white p-9">{t("labels.title", SCOPE_OPTIONS)}</div>
+      <div className="text-black p-9">{t("labels.title", SCOPE_OPTIONS)}</div>
     </div>
   );
 }
