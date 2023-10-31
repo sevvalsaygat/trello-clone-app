@@ -142,7 +142,6 @@ const Header: React.FC<HeaderPropTypes> = () => {
             <Dropdown
               items={topTemplatesItems}
               title="Top Templates"
-              // className="text-red-500"
               menuClassName="flex flex-col"
               menuActiveClassName="text-slate-100"
               menuInactiveClassName="text-slate-100 "

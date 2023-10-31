@@ -12,6 +12,7 @@ type DropdownPropTypes = {
   title?: string;
   icon?: React.FC;
   items: DropdownItemType[];
+  content?: React.FC;
   tooltip?: {
     id: string;
     content: string;
@@ -29,6 +30,7 @@ const Dropdown: React.FC<DropdownPropTypes> = ({
   title,
   icon: Icon,
   items,
+  content: Content,
   tooltip,
   menuActiveClassName = "bg-blue-600 hover:bg-blue-650 text-blue-400",
   menuInactiveClassName = "hover:bg-blue-500 text-slate-400",
@@ -63,23 +65,21 @@ const Dropdown: React.FC<DropdownPropTypes> = ({
     <Menu as="div" className={menuClassName}>
       {({ open }) => (
         <React.Fragment>
-          <div>
-            <Menu.Button
-              className={cn(className, {
-                [menuActiveClassName]: open,
-                [menuInactiveClassName]: !open,
-              })}
-            >
-              <MenuContainer>
-                {title}
-                {Icon ? (
-                  <Icon />
-                ) : (
-                  <Icons.SvgArrowDown className="text-slate-400 ml-1 font-medium" />
-                )}
-              </MenuContainer>
-            </Menu.Button>
-          </div>
+          <Menu.Button
+            className={cn(className, {
+              [menuActiveClassName]: open,
+              [menuInactiveClassName]: !open,
+            })}
+          >
+            <MenuContainer>
+              {title ? title : Content && <Content />}
+              {Icon ? (
+                <Icon />
+              ) : (
+                <Icons.SvgArrowDown className="text-slate-400 ml-1 font-medium" />
+              )}
+            </MenuContainer>
+          </Menu.Button>
           <Menu.Items className={menuItemsClassName}>
             <div className="w-full">
               {items.map(

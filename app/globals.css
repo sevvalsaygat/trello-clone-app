@@ -7,3 +7,7 @@ ul.list-with-divider > li:not(:first-child)::before {
   margin: 0 8px 0px 4px;
   cursor: none !important;
 }
+
+.premium-card {
+  box-shadow: 0 1px 0 rgb(9 30 66 / 10%)
+}
