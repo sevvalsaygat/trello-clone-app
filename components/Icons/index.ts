@@ -29,6 +29,9 @@ import SvgMember from "./Member";
 import SvgSetting from "./Setting";
 import SvgClose from "./Close";
 import SvgPremium from "./Premium";
+import SvgPen from "./Pen";
+import SvgLock from "./Lock";
+import SvgUser from "./User";
 
 export default {
   SvgTrelloLeft,
@@ -62,4 +65,7 @@ export default {
   SvgSetting,
   SvgClose,
   SvgPremium,
+  SvgPen,
+  SvgLock,
+  SvgUser,
 };

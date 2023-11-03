@@ -62,6 +62,9 @@ const config: Config = {
         yellow: {
           100: "#e4ba20",
         },
+        black: {
+          50: "#00000033",
+        },
       },
       boxShadow: {
         "2xl": "rgba(0, 0, 0, 0.2) 1px 1px 5px 0px",
@@ -72,13 +75,13 @@ const config: Config = {
           "var(--ds-shadow-overlay, 0px 8px 12px #091e4226, 0px 0px 1px #091e424f)",
       },
       borderRadius: {
-        //8px kaç rem
         8: "0.5rem",
         "4": "0.25rem",
         5: "0.3125rem",
         3: "0.1875rem",
       },
       fontSize: {
+        35: "2.1875rem",
         20: "1.25rem",
         11: "0.6875rem",
         12: "0.75rem",
@@ -86,6 +89,7 @@ const config: Config = {
         16: "1rem",
       },
       margin: {
+        24: "1.5rem",
         6: "0.375rem",
         0.4: "0.025rem",
         7: "0.4375rem",
@@ -98,6 +102,8 @@ const config: Config = {
         29: "1.8125rem",
       },
       width: {
+        190: "11.875rem",
+        60: "3.75rem",
         45: "2.8125rem",
         304: "19rem",
         150: "9.375rem",
@@ -108,6 +114,8 @@ const config: Config = {
         200: "12.5rem",
       },
       height: {
+        96: "6rem",
+        60: "3.75rem",
         378: "23.625rem",
       },
       maxHeight: {

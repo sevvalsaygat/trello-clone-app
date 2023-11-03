@@ -1,10 +1,12 @@
 "use client";
 
-import { useRef } from "react";
+import Image from "next/image";
+
+import { FormProvider, useForm } from "react-hook-form";
 
 import { useLocale } from "@app/hooks";
 import { AppLayout } from "@app/layouts";
-import { Icons } from "@app/componets";
+import { Icons, Form } from "@app/componets";
 
 export default function Home() {
   const SCOPE_OPTIONS = {
@@ -12,13 +14,26 @@ export default function Home() {
   };
 
   const { t } = useLocale();
+  const useFormMethods = useForm();
+
+  const options = [
+    { value: "Popular", label: "Popular" },
+    { value: "small business", label: "Small business" },
+    { value: "design", label: "Design" },
+    { value: "education", label: "Education" },
+    { value: "engineering-IT", label: "Engineering-IT" },
+    { value: "marketing", label: "Marketing" },
+    { value: "human resources", label: "Human Resources" },
+    { value: "operations", label: "Operations" },
+    { value: "sales CRM", label: "Sales CRM" },
+  ];
 
   return (
     <AppLayout>
       <div className="flex justify-center">
         <div
           className="flex bg-white justify-between mt-10"
-          style={{ maxWidth: "calc(115vh)" }}
+          style={{ maxWidth: "calc(200vh)" }}
         >
           <div className="text-black break-all whitespace-pre-line mx-4 w-[256px]">
             <div className="flex flex-col w-full border-b border-blue-500">
@@ -101,7 +116,7 @@ export default function Home() {
                         Members
                       </div>
                     </div>
-                    <div className="flex flex-row relative">
+                    <div className="flex flex-row relative gap-3">
                       <div className="ml-5">
                         <Icons.SvgPlus className="text-slate-100 w-4 h-4" />
                       </div>
@@ -132,7 +147,7 @@ export default function Home() {
                         <Icons.SvgClose className="text-slate-100 h-4 w-4" />
                       </button>
                     </div>
-                    <div className="text-14 leading-5 text-slate-100 mr-2 mb-4">
+                    <div className="text-14 leading-5 text-slate-100 mb-4">
                       Get unlimited boards, all the views, unlimited automation,
                       and more.
                     </div>
@@ -149,7 +164,183 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="w-[825px]">HAHAHAHHAHAHAHHAHA</div>
+          <div className="w-[825px] mx-4">
+            <div className="flex flex-col">
+              <div className="flex flex-row">
+                <button className="group/item flex relative mr-3">
+                  <div className="flex justify-center items-center w-60 h-60 border-transparent rounded-4 font-bold text-white text-35 bg-gradient-to-t from-blue-550 from-10% via-purple-150 via-70% to-purple-100 to-90%">
+                    T
+                  </div>
+                  <span className="hidden group-hover/item:block text-14 leading-8 absolute h-8 bottom-0 bg-black-50 text-white font-bold w-full justify-center items-center underline">
+                    Change
+                  </span>
+                </button>
+                <div className="flex flex-col mt-2">
+                  <div className="flex flex-row items-center">
+                    <div className="text-20 leading-6 text-blue-300">
+                      Travel Workspaces
+                    </div>
+                    <button className="hover:bg-blue-500 ml-2 mt-1 p-1 rounded-3">
+                      <Icons.SvgPen className="text-slate-100 h-4 w-4" />
+                    </button>
+                  </div>
+                  <div className="flex flex-row items-center">
+                    <Icons.SvgLock className="text-slate-500 h-4 w-4 mr-1" />
+                    <div className="text-12 leading-5 text-slate-100">
+                      Private
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full border-b border-blue-500 my-4"></div>
+              <div className="flex flex-col pl-4">
+                <div className="py-3 mb-24">
+                  <div className="flex flex-row justify-between">
+                    <div className="flex flex-row">
+                      <Icons.SvgTemplate className="text-slate-100 w-6 h-6 mr-1" />
+                      <div className="text-20 leading-6 text-blue-300 font-semibold">
+                        Most popular templates
+                      </div>
+                    </div>
+                    <button className="p-6 bg-gray-550 hover:bg-blue-500 rounded-3 mb-2">
+                      <Icons.SvgClose className="text-blue-300 h-5 w-5" />
+                    </button>
+                  </div>
+                  <div className="flex flex-row items-center">
+                    <div className="text-14 leading-5 text-slate-100">
+                      Get going faster with a template from the Trello community
+                      or
+                    </div>
+                    <FormProvider {...useFormMethods}>
+                      <Form.Select
+                        className="ml-2 text-14 leading-5 text-blue-300 w-[240px]"
+                        name="selectbox"
+                        options={options}
+                        placeholder="choose a category"
+                      />
+                    </FormProvider>
+                  </div>
+                  <div className="flex flex-row mt-8">
+                    <div className="flex relative mr-4 mb-4 cursor-pointer">
+                      <Image
+                        src="/pink-background.jpg"
+                        width={180}
+                        height={96}
+                        alt="account"
+                        className="rounded-3 w-190 h-96"
+                      />
+                      <div className="absolute hover:bg-black-50 w-full h-full">
+                        <div className="ml-2 mt-2">
+                          <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
+                            Template
+                          </div>
+                          <div className="text-white font-semibold text-16 leading-5">
+                            Project Management
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex relative mr-4 mb-4 cursor-pointer">
+                      <Image
+                        src="/kanban.jpg"
+                        width={180}
+                        height={96}
+                        alt="account"
+                        className="rounded-3 w-190 h-96"
+                      />
+                      <div className="absolute hover:bg-black-50 w-full h-full">
+                        <div className="ml-2 mt-2">
+                          <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
+                            Template
+                          </div>
+                          <div className="text-white font-semibold text-16 leading-5">
+                            Kanban Template
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex relative mr-4 mb-4 cursor-pointer">
+                      <Image
+                        src="/leaf.jpg"
+                        width={180}
+                        height={96}
+                        alt="account"
+                        className="rounded-3 w-190 h-96"
+                      />
+                      <div className="absolute hover:bg-black-50 w-full h-full">
+                        <div className="ml-2 mt-2">
+                          <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
+                            Template
+                          </div>
+                          <div className="text-white font-semibold text-16 leading-5">
+                            Simple Project Board
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex relative mr-4 mb-4 cursor-pointer">
+                      <Image
+                        src="/train.jpg"
+                        width={180}
+                        height={96}
+                        alt="account"
+                        className="rounded-3 w-190 h-96"
+                      />
+                      <div className="absolute hover:bg-black-50 w-full h-full">
+                        <div className="ml-2 mt-2">
+                          <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
+                            Template
+                          </div>
+                          <div className="text-white font-semibold text-16 leading-5">
+                            Remote Team Hub
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-14 leading-5 text-blue-400 cursor-pointer hover:underline mb-2">
+                    Browse the full template gallery
+                  </div>
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex flex-row pb-3">
+                    <div className="pr-3">
+                      <Icons.SvgUser className="text-slate-100 w-6 h-6 bold" />
+                    </div>
+                    <h1 className="text-16 leading-6 text-blue-300 font-bold">
+                      Your boards
+                    </h1>
+                  </div>
+                  <div className="flex flex-row">
+                    <div className="flex relative mr-4 mb-4 cursor-pointer w-190 h-96">
+                      <Image
+                        src="/board.jpg"
+                        width={180}
+                        height={96}
+                        alt="account"
+                        className="rounded-3 w-190 h-96"
+                      />
+                      <div className="absolute hover:bg-black-50 w-full h-full">
+                        <div className="group/item flex flex-col ml-2 mt-2 justify-between w-full h-full">
+                          <div className="text-white font-semibold text-16 leading-5">
+                            invoicing-app
+                          </div>
+                          <div className="flex mb-4 mr-5 justify-end">
+                            <Icons.SvgStar className="text-white w-4 h-4 hidden group-hover/item:block" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex mr-4 mb-4 p-2 cursor-pointer w-190 h-96 bg-gray-550 hover:bg-blue-500 rounded-3">
+                      <div className="flex justify-center items-center w-full h-full text-14 leading-5 text-blue-300">
+                        Create a new board
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </AppLayout>
