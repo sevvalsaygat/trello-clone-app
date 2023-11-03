@@ -9,7 +9,7 @@ const SvgDots = ({ className }: SVGProps<SVGSVGElement>) => {
       role="presentation"
       className={className}
     >
-      <g fill="currentColor" fill-rule="evenodd">
+      <g fill="currentColor" fillRule="evenodd">
         <circle cx="12" cy="19" r="2"></circle>
         <circle cx="12" cy="12" r="2"></circle>
         <circle cx="12" cy="5" r="2"></circle>

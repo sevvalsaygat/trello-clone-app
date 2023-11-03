@@ -82,8 +82,9 @@ export default function Home() {
                         Travel Workspaces
                       </div>
                     </div>
-                    <div className="flex items-center mr-3">
-                      <Icons.SvgArrowUp className="text-slate-100 h-4 w-4" />
+                    <div className="flex relative items-center mr-3">
+                      <Icons.SvgArrowUp className="text-slate-100 h-4 w-4 absolute" />
+                      <Icons.SvgArrowDown className="text-slate-100 h-4 w-4" />
                     </div>
                   </div>
                   <div className="flex flex-row items-center py-6 pl-11 pr-2 gap-3 cursor-pointer bg-blue-600 rounded-8 mb-1">
