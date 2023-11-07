@@ -548,7 +548,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
           </div>
         </div>
         <div className="flex flex-row items-center gap-1">
-          <div>
+          <div className="z-10">
             <Dropdown
               items={workspacesItems}
               title="Workspaces"
@@ -567,7 +567,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               }}
             />
           </div>
-          <div>
+          <div className="z-10">
             <Dropdown
               items={recentItems}
               title="Recent"
@@ -586,7 +586,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               }}
             />
           </div>
-          <div>
+          <div className="z-10">
             <Dropdown
               items={starredItems}
               title="Starred"
@@ -605,7 +605,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               }}
             />
           </div>
-          <div>
+          <div className="z-10">
             <Dropdown
               items={templatesItems}
               title="Templates"
@@ -650,70 +650,76 @@ const Header: React.FC<HeaderPropTypes> = () => {
             <Form.Input
               name="search"
               placeholder="Search"
-              className="pl-8 pr-3 leading-8 max-w-200 w-full bg-white border border-gray-450 rounded-5 text-14 focus:outline-none placeholder-slate-450 hover:bg-gray-350 transition-all duration-100"
+              className="search-input"
             />
             <Icons.SvgSearch className="ml-6 text-slate-500 absolute" />
           </FormProvider>
         </div>
-        <Dropdown
-          items={notificationItems}
-          icon={() => <Icons.SvgNotification className="text-slate-100" />}
-          className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
-          menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
-          tooltip={{
-            id: "notifications-tooltip",
-            content: "Notifications",
-            delay: 100,
-            style: {
-              backgroundColor: "#4b5563",
-              color: "white",
-              paddingLeft: "0.25rem",
-              paddingRight: "0.25rem",
-              fontSize: "12px",
-              zIndex: "1",
-            },
-          }}
-        />
-        <Dropdown
-          items={ınformationItems}
-          icon={() => <Icons.SvgInformation className="text-slate-100" />}
-          className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
-          menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
-          tooltip={{
-            id: "information-tooltip",
-            content: "Information",
-            delay: 100,
-            style: {
-              backgroundColor: "#4b5563",
-              color: "white",
-              paddingLeft: "0.25rem",
-              paddingRight: "0.25rem",
-              fontSize: "12px",
-              zIndex: "1",
-            },
-          }}
-        />
-        <Dropdown
-          items={accountItems}
-          icon={() => (
-            <Image src="/account.png" width={24} height={24} alt="account" />
-          )}
-          className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
-          menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
-          tooltip={{
-            id: "account-tooltip",
-            content: "Account",
-            delay: 500,
-            style: {
-              backgroundColor: "#4b5563",
-              color: "white",
-              paddingLeft: "0.25rem",
-              paddingRight: "0.25rem",
-              fontSize: "12px",
-              zIndex: "1",
-            },
-          }}
-        />
+        <div className="z-10">
+          <Dropdown
+            items={notificationItems}
+            icon={() => <Icons.SvgNotification className="text-slate-100" />}
+            className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
+            menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
+            tooltip={{
+              id: "notifications-tooltip",
+              content: "Notifications",
+              delay: 100,
+              style: {
+                backgroundColor: "#4b5563",
+                color: "white",
+                paddingLeft: "0.25rem",
+                paddingRight: "0.25rem",
+                fontSize: "12px",
+                zIndex: "1",
+              },
+            }}
+          />
+        </div>
+        <div className="z-10">
+          <Dropdown
+            items={ınformationItems}
+            icon={() => <Icons.SvgInformation className="text-slate-100" />}
+            className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
+            menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
+            tooltip={{
+              id: "information-tooltip",
+              content: "Information",
+              delay: 100,
+              style: {
+                backgroundColor: "#4b5563",
+                color: "white",
+                paddingLeft: "0.25rem",
+                paddingRight: "0.25rem",
+                fontSize: "12px",
+                zIndex: "1",
+              },
+            }}
+          />
+        </div>
+        <div className="z-10">
+          <Dropdown
+            items={accountItems}
+            icon={() => (
+              <Image src="/account.png" width={24} height={24} alt="account" />
+            )}
+            className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
+            menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
+            tooltip={{
+              id: "account-tooltip",
+              content: "Account",
+              delay: 500,
+              style: {
+                backgroundColor: "#4b5563",
+                color: "white",
+                paddingLeft: "0.25rem",
+                paddingRight: "0.25rem",
+                fontSize: "12px",
+                zIndex: "1",
+              },
+            }}
+          />
+        </div>
       </div>
     </div>
   );
