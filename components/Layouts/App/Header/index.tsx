@@ -21,6 +21,12 @@ const Header: React.FC<HeaderPropTypes> = () => {
   const [enabled, setEnabled] = useState(false);
   const useFormMethods = useForm<HeaderPropTypes>();
 
+  const [topTemplatesIsActive, setTopTemplatesIsActive] = useState(true);
+
+  const topTemplatesToggle = () => {
+    setTopTemplatesIsActive(!topTemplatesIsActive);
+  };
+
   const workspacesItems: DropdownItemType[] = [
     {
       component: () => (
@@ -139,17 +145,205 @@ const Header: React.FC<HeaderPropTypes> = () => {
       component: () => (
         <div>
           <div className="px-3 pt-3">
-            <Dropdown
-              items={topTemplatesItems}
-              title="Top Templates"
-              menuClassName="flex flex-col"
-              menuActiveClassName="text-slate-100"
-              menuInactiveClassName="text-slate-100 "
-              menuItemsClassName="flex focus:outline-none"
-            />
+            <button className="flex flex-row justify-between items-center w-full mb-2">
+              <div className="text-slate-100 text-12 leading-4 font-semibold">
+                Top Templates
+              </div>
+              <div onClick={topTemplatesToggle} className="flex relative">
+                {topTemplatesIsActive ? (
+                  <button className="hover:bg-blue-500 p-[2px] rounded-3">
+                    <Icons.SvgArrowUp className="text-slate-100 h-4 w-4" />
+                  </button>
+                ) : (
+                  <button className="hover:bg-blue-500 p-[2px] rounded-3">
+                    <Icons.SvgArrowDown className="text-slate-100 h-4 w-4" />
+                  </button>
+                )}
+              </div>
+            </button>
+            {topTemplatesIsActive && (
+              <div className="mt-3">
+                <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+                  <div className="p-1 gap-3 flex flex-row">
+                    <div>
+                      <Image
+                        src="/meet.jpg"
+                        width={45}
+                        height={32}
+                        alt="meet"
+                        className="border-transparent rounded-4 w-45 h-8"
+                      />
+                    </div>
+                    <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                      1-on-1 Meeting Agenda
+                    </div>
+                  </div>
+                </button>
+                <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+                  <div className="p-1 gap-3 flex flex-row">
+                    <div className="">
+                      <Image
+                        src="/agile.jpg"
+                        width={45}
+                        height={32}
+                        alt="agile"
+                        className="border-transparent rounded-4 w-45 h-8"
+                      />
+                    </div>
+                    <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                      Agile Board Template | Trello
+                    </div>
+                  </div>
+                </button>
+                <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+                  <div className="p-1 gap-3 flex flex-row">
+                    <div>
+                      <Image
+                        src="/company.jpg"
+                        width={45}
+                        height={32}
+                        alt="company"
+                        className="border-transparent rounded-4 w-45 h-8"
+                      />
+                    </div>
+                    <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                      Company Overview
+                    </div>
+                  </div>
+                </button>
+                <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+                  <div className="p-1 gap-3 flex flex-row">
+                    <div>
+                      <Image
+                        src="/design.jpg"
+                        width={45}
+                        height={32}
+                        alt="design"
+                        className="border-transparent rounded-4 w-45 h-8"
+                      />
+                    </div>
+                    <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                      Design Huddle
+                    </div>
+                  </div>
+                </button>
+                <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+                  <div className="p-1 gap-3 flex flex-row">
+                    <div>
+                      <Image
+                        src="/balloon.jpg"
+                        width={45}
+                        height={32}
+                        alt="balloon"
+                        className="border-transparent rounded-4 w-45 h-8"
+                      />
+                    </div>
+                    <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                      Go To Market Strategy Template
+                    </div>
+                  </div>
+                </button>
+                <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+                  <div className="p-1 gap-3 flex flex-row">
+                    <div>
+                      <Image
+                        src="/kanban.jpg"
+                        width={45}
+                        height={32}
+                        alt="kanban"
+                        className="border-transparent rounded-4 w-45 h-8"
+                      />
+                    </div>
+                    <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                      Kanban Template
+                    </div>
+                  </div>
+                </button>
+                <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+                  <div className="p-1 gap-3 flex flex-row">
+                    <div>
+                      <Image
+                        src="/typewriter.jpg"
+                        width={45}
+                        height={32}
+                        alt="typewriter"
+                        className="border-transparent rounded-4 w-45 h-8"
+                      />
+                    </div>
+                    <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                      Mise-En-Place Personal Productivity System
+                    </div>
+                  </div>
+                </button>
+                <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+                  <div className="p-1 gap-3 flex flex-row">
+                    <div>
+                      <Image
+                        src="/pink-background.jpg"
+                        width={50}
+                        height={32}
+                        alt="pink-background"
+                        className="border-transparent rounded-4 w-45 h-8"
+                      />
+                    </div>
+                    <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                      Project Management
+                    </div>
+                  </div>
+                </button>
+                <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+                  <div className="p-1 gap-3 flex flex-row">
+                    <div>
+                      <Image
+                        src="/cloudy.jpg"
+                        width={50}
+                        height={32}
+                        alt="cloudy"
+                        className="border-transparent rounded-4 w-45 h-8"
+                      />
+                    </div>
+                    <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                      Remote Team Meetings
+                    </div>
+                  </div>
+                </button>
+                <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+                  <div className="p-1 gap-3 flex flex-row">
+                    <div>
+                      <Image
+                        src="/leaf.jpg"
+                        width={50}
+                        height={32}
+                        alt="leaf"
+                        className="border-transparent rounded-4 w-45 h-8"
+                      />
+                    </div>
+                    <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                      Simple Project Board
+                    </div>
+                  </div>
+                </button>
+                <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
+                  <div className="p-1 gap-3 flex flex-row">
+                    <div>
+                      <Image
+                        src="/orange.png"
+                        width={55}
+                        height={32}
+                        alt="orange"
+                        className="border-transparent rounded-4 w-45 h-8"
+                      />
+                    </div>
+                    <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
+                      Simple Project Board
+                    </div>
+                  </div>
+                </button>
+              </div>
+            )}
           </div>
           <div className="border-t border-blue-500 shadow-5xl w-full"></div>
-          <div className="p-3 flex flex-row mt-2">
+          <div className="p-3 flex flex-row">
             <div className="flex px-3 py-1 items-center">
               <Icons.SvgTemplate className="text-blue-400" />
             </div>
@@ -162,191 +356,6 @@ const Header: React.FC<HeaderPropTypes> = () => {
               Explore Templates
             </button>
           </div>
-        </div>
-      ),
-    },
-  ];
-
-  const topTemplatesItems: DropdownItemType[] = [
-    {
-      component: () => (
-        <div className="mt-3">
-          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-            <div className="p-1 gap-3 flex flex-row">
-              <div>
-                <Image
-                  src="/meet.jpg"
-                  width={45}
-                  height={32}
-                  alt="meet"
-                  className="border-transparent rounded-4 w-45 h-8"
-                />
-              </div>
-              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                1-on-1 Meeting Agenda
-              </div>
-            </div>
-          </button>
-          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-            <div className="p-1 gap-3 flex flex-row">
-              <div className="">
-                <Image
-                  src="/agile.jpg"
-                  width={45}
-                  height={32}
-                  alt="agile"
-                  className="border-transparent rounded-4 w-45 h-8"
-                />
-              </div>
-              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                Agile Board Template | Trello
-              </div>
-            </div>
-          </button>
-          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-            <div className="p-1 gap-3 flex flex-row">
-              <div>
-                <Image
-                  src="/company.jpg"
-                  width={45}
-                  height={32}
-                  alt="company"
-                  className="border-transparent rounded-4 w-45 h-8"
-                />
-              </div>
-              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                Company Overview
-              </div>
-            </div>
-          </button>
-          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-            <div className="p-1 gap-3 flex flex-row">
-              <div>
-                <Image
-                  src="/design.jpg"
-                  width={45}
-                  height={32}
-                  alt="design"
-                  className="border-transparent rounded-4 w-45 h-8"
-                />
-              </div>
-              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                Design Huddle
-              </div>
-            </div>
-          </button>
-          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-            <div className="p-1 gap-3 flex flex-row">
-              <div>
-                <Image
-                  src="/balloon.jpg"
-                  width={45}
-                  height={32}
-                  alt="balloon"
-                  className="border-transparent rounded-4 w-45 h-8"
-                />
-              </div>
-              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                Go To Market Strategy Template
-              </div>
-            </div>
-          </button>
-          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-            <div className="p-1 gap-3 flex flex-row">
-              <div>
-                <Image
-                  src="/kanban.jpg"
-                  width={45}
-                  height={32}
-                  alt="kanban"
-                  className="border-transparent rounded-4 w-45 h-8"
-                />
-              </div>
-              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                Kanban Template
-              </div>
-            </div>
-          </button>
-          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-            <div className="p-1 gap-3 flex flex-row">
-              <div>
-                <Image
-                  src="/typewriter.jpg"
-                  width={45}
-                  height={32}
-                  alt="typewriter"
-                  className="border-transparent rounded-4 w-45 h-8"
-                />
-              </div>
-              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                Mise-En-Place Personal Productivity System
-              </div>
-            </div>
-          </button>
-          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-            <div className="p-1 gap-3 flex flex-row">
-              <div>
-                <Image
-                  src="/pink-background.jpg"
-                  width={50}
-                  height={32}
-                  alt="pink-background"
-                  className="border-transparent rounded-4 w-45 h-8"
-                />
-              </div>
-              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                Project Management
-              </div>
-            </div>
-          </button>
-          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-            <div className="p-1 gap-3 flex flex-row">
-              <div>
-                <Image
-                  src="/cloudy.jpg"
-                  width={50}
-                  height={32}
-                  alt="cloudy"
-                  className="border-transparent rounded-4 w-45 h-8"
-                />
-              </div>
-              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                Remote Team Meetings
-              </div>
-            </div>
-          </button>
-          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-            <div className="p-1 gap-3 flex flex-row">
-              <div>
-                <Image
-                  src="/leaf.jpg"
-                  width={50}
-                  height={32}
-                  alt="leaf"
-                  className="border-transparent rounded-4 w-45 h-8"
-                />
-              </div>
-              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                Simple Project Board
-              </div>
-            </div>
-          </button>
-          <button className="hover:bg-gray-550 w-full rounded-8 mb-1">
-            <div className="p-1 gap-3 flex flex-row">
-              <div>
-                <Image
-                  src="/orange.png"
-                  width={55}
-                  height={32}
-                  alt="orange"
-                  className="border-transparent rounded-4 w-45 h-8"
-                />
-              </div>
-              <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                Simple Project Board
-              </div>
-            </div>
-          </button>
         </div>
       ),
     },
