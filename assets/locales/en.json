@@ -133,7 +133,58 @@
   "pages": {
     "Home": {
       "labels": {
-        "title": "Home Page"
+        "change": "Change",
+        "private": "Private",
+        "content": "Get going faster with a template from the Trello community or",
+        "templategallery": "Browse the full template gallery",
+        "newboard": "Create new board",
+        "template": "Template",
+        "title": {
+          "travelworkspaces": "Travel Workspaces",
+          "populartemplates": "Most popular templates",
+          "yourboards": "Your boards"
+        },
+        "templates": {
+          "project": "Project Management",
+          "kanban": "Kanban Template",
+          "simple": "Simple Project Board",
+          "remote": "Remote Team Hub"
+        },
+        "options": {
+          "placeholder": "choose a category",
+          "labels": {
+            "popular": "Popular",
+            "smallbusiness": "Small business",
+            "design": "Design",
+            "education": "Education",
+            "engineeringıt": "Engineering-IT",
+            "marketing": "Marketing",
+            "humanresources": "Human Resources",
+            "operations": "Operations",
+            "salescrm": "Sales-CRM"
+          }
+        }
+      },
+      "sidebar": {
+        "labels": {
+          "title": {
+            "boards": "Boards",
+            "templates": "Templates",
+            "home": "Home",
+            "workspaces": "Workspaces",
+            "travelworkspaces": "Travel Workspaces",
+            "trytrellopremium": "Try Trello Premium"
+          },
+          "items": {
+            "boards": "Boards",
+            "highlights": "Highlights",
+            "view": "View",
+            "members": "Members",
+            "settings": "Settings"
+          },
+          "content": "Get unlimited boards, all the views, unlimited automation, and more.",
+          "startfree": "Start Free Trial"
+        }
       }
     },
     "Login": {

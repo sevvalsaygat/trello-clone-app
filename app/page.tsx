@@ -18,15 +18,42 @@ export default function Home() {
   const useFormMethods = useForm();
 
   const options = [
-    { value: "Popular", label: "Popular" },
-    { value: "small business", label: "Small business" },
-    { value: "design", label: "Design" },
-    { value: "education", label: "Education" },
-    { value: "engineering-IT", label: "Engineering-IT" },
-    { value: "marketing", label: "Marketing" },
-    { value: "human resources", label: "Human Resources" },
-    { value: "operations", label: "Operations" },
-    { value: "sales CRM", label: "Sales CRM" },
+    {
+      value: "Popular",
+      label: t("labels.options.labels.popular", SCOPE_OPTIONS),
+    },
+    {
+      value: "small business",
+      label: t("labels.options.labels.smallbusiness", SCOPE_OPTIONS),
+    },
+    {
+      value: "design",
+      label: t("labels.options.labels.design", SCOPE_OPTIONS),
+    },
+    {
+      value: "education",
+      label: t("labels.options.labels.education", SCOPE_OPTIONS),
+    },
+    {
+      value: "engineering-IT",
+      label: t("labels.options.labels.engineeringıt", SCOPE_OPTIONS),
+    },
+    {
+      value: "marketing",
+      label: t("labels.options.labels.marketing", SCOPE_OPTIONS),
+    },
+    {
+      value: "human resources",
+      label: t("labels.options.labels.humanresources", SCOPE_OPTIONS),
+    },
+    {
+      value: "operations",
+      label: t("labels.options.labels.operations", SCOPE_OPTIONS),
+    },
+    {
+      value: "sales CRM",
+      label: t("labels.options.labels.salescrm", SCOPE_OPTIONS),
+    },
   ];
 
   const [isActive, setIsActive] = useState(true);
@@ -51,7 +78,7 @@ export default function Home() {
                   <Icons.SvgBoardTrello className="text-slate-100" />
                 </div>
                 <div className="text-14 text-blue-300 leading-5 font-medium">
-                  Boards
+                  {t("sidebar.labels.title.boards", SCOPE_OPTIONS)}
                 </div>
               </div>
               <div className="flex flex-row px-2 py-6 items-center border-transparent rounded-8 hover:bg-blue-500 cursor-pointer transition-all duration-100 gap-3">
@@ -59,7 +86,7 @@ export default function Home() {
                   <Icons.SvgTemplate className="text-slate-100 w-4 h-4" />
                 </div>
                 <div className="text-14 text-blue-300 leading-5 font-medium">
-                  Templates
+                  {t("sidebar.labels.title.templates", SCOPE_OPTIONS)}
                 </div>
               </div>
               <div className="flex flex-row px-2 py-6 items-center border-transparent rounded-8 hover:bg-blue-500 cursor-pointer transition-all duration-100 gap-3 mb-1">
@@ -67,14 +94,14 @@ export default function Home() {
                   <Icons.SvgHeartbeat className="text-slate-100 h-4 w-4" />
                 </div>
                 <div className="text-14 text-blue-300 leading-5 font-medium">
-                  Home
+                  {t("sidebar.labels.title.home", SCOPE_OPTIONS)}
                 </div>
               </div>
             </div>
             <div className="py-3 w-full">
               <div className="flex flex-row items-center justify-between">
                 <div className="text-12 leading-4 text-slate-100 pl-3 py-2 font-medium">
-                  Workspaces
+                  {t("sidebar.labels.title.workspaces", SCOPE_OPTIONS)}
                 </div>
                 <button className="mr-2 border-transparent rounded-3 hover:bg-blue-500 p-1">
                   <Icons.SvgPlus className="text-slate-100 h-4 w-4" />
@@ -91,7 +118,10 @@ export default function Home() {
                         T
                       </div>
                       <div className="text-14 leading-5 text-blue-300 font-medium">
-                        Travel Workspaces
+                        {t(
+                          "sidebar.labels.title.travelworkspaces",
+                          SCOPE_OPTIONS
+                        )}
                       </div>
                     </div>
                     <div className="flex relative items-center mr-3">
@@ -107,20 +137,20 @@ export default function Home() {
                       <div className="flex flex-row items-center py-6 pl-11 pr-2 gap-3 cursor-pointer bg-blue-600 rounded-8 mb-1">
                         <Icons.SvgBoardTrello className="text-slate-100" />
                         <div className="text-blue-400 text-14 leading-5">
-                          Boards
+                          {t("sidebar.labels.items.boards", SCOPE_OPTIONS)}
                         </div>
                       </div>
                       <div className="flex flex-row items-center py-6 pl-11 pr-2 gap-3 cursor-pointer hover:bg-blue-500 rounded-8 transition-all duration-100 mb-1">
                         <Icons.SvgHeart className="text-slate-100 w-4 h-4" />
                         <div className="text-blue-300 text-14 leading-5">
-                          Highlights
+                          {t("sidebar.labels.items.highlights", SCOPE_OPTIONS)}
                         </div>
                       </div>
                       <div className="group/item flex flex-row items-center justify-between py-6 pl-11 pr-1 cursor-pointer hover:bg-blue-500 rounded-8 transition-all duration-100 mb-1">
                         <div className="flex flex-row items-center gap-3">
                           <Icons.SvgView className="text-slate-100 w-4 h-4" />
                           <div className="text-blue-300 text-14 leading-5">
-                            View
+                            {t("sidebar.labels.items.view", SCOPE_OPTIONS)}
                           </div>
                         </div>
                         <div className="mr-2">
@@ -131,7 +161,7 @@ export default function Home() {
                         <div className="flex flex-row items-center gap-3">
                           <Icons.SvgMember className="text-slate-100 w-4 h-4" />
                           <div className="text-blue-300 text-14 leading-5">
-                            Members
+                            {t("sidebar.labels.items.members", SCOPE_OPTIONS)}
                           </div>
                         </div>
                         <div className="flex flex-row relative gap-3">
@@ -147,7 +177,7 @@ export default function Home() {
                         <div className="flex flex-row items-center gap-3">
                           <Icons.SvgSetting className="text-slate-100 w-4 h-4" />
                           <div className="text-blue-300 text-14 leading-5">
-                            Settings
+                            {t("sidebar.labels.items.settings", SCOPE_OPTIONS)}
                           </div>
                         </div>
                         <div className="mr-2">
@@ -162,7 +192,10 @@ export default function Home() {
                     <div className="px-3">
                       <div className="flex flex-row justify-between items-center mt-4 mb-2">
                         <div className="text-blue-300 text-14 leading-4 font-medium">
-                          Try Trello Premium
+                          {t(
+                            "sidebar.labels.title.trytrellopremium",
+                            SCOPE_OPTIONS
+                          )}
                         </div>
                         <button
                           onClick={() => setIsClosed(true)}
@@ -172,12 +205,11 @@ export default function Home() {
                         </button>
                       </div>
                       <div className="text-14 leading-5 text-slate-100 mb-4">
-                        Get unlimited boards, all the views, unlimited
-                        automation, and more.
+                        {t("sidebar.labels.content", SCOPE_OPTIONS)}
                       </div>
                       <div className="flex flex-row justify-between mb-4">
                         <button className="text-slate-100 hover:text-blue-300 text-14 leading-5 underline">
-                          Start free trial
+                          {t("sidebar.labels.startfree", SCOPE_OPTIONS)}
                         </button>
                         <div className="rounded-3 bg-purple-200 p-1">
                           <Icons.SvgPremium className="text-white" />
@@ -197,13 +229,13 @@ export default function Home() {
                     T
                   </div>
                   <span className="hidden group-hover/item:block text-14 leading-8 absolute h-8 bottom-0 bg-black-50 text-white font-bold w-full justify-center items-center underline">
-                    Change
+                    {t("labels.change", SCOPE_OPTIONS)}
                   </span>
                 </button>
                 <div className="flex flex-col mt-2">
                   <div className="flex flex-row items-center">
                     <div className="text-20 leading-6 text-blue-300">
-                      Travel Workspaces
+                      {t("labels.title.travelworkspaces", SCOPE_OPTIONS)}
                     </div>
                     <button className="hover:bg-blue-500 ml-2 mt-1 p-1 rounded-3">
                       <Icons.SvgPen className="text-slate-100 h-4 w-4" />
@@ -212,7 +244,7 @@ export default function Home() {
                   <div className="flex flex-row items-center">
                     <Icons.SvgLock className="text-slate-500 h-4 w-4 mr-1" />
                     <div className="text-12 leading-5 text-slate-100">
-                      Private
+                      {t("labels.private", SCOPE_OPTIONS)}
                     </div>
                   </div>
                 </div>
@@ -224,7 +256,7 @@ export default function Home() {
                     <div className="flex flex-row">
                       <Icons.SvgTemplate className="text-slate-100 w-6 h-6 mr-1" />
                       <div className="text-20 leading-6 text-blue-300 font-semibold">
-                        Most popular templates
+                        {t("labels.title.populartemplates", SCOPE_OPTIONS)}
                       </div>
                     </div>
                     <button className="p-6 bg-gray-550 hover:bg-blue-500 rounded-3 mb-2">
@@ -233,15 +265,17 @@ export default function Home() {
                   </div>
                   <div className="flex flex-row items-center">
                     <div className="text-14 leading-5 text-slate-100">
-                      Get going faster with a template from the Trello community
-                      or
+                      {t("labels.content", SCOPE_OPTIONS)}
                     </div>
                     <FormProvider {...useFormMethods}>
                       <Form.Select
                         className="ml-2 text-14 leading-5 text-blue-300 w-[240px]"
                         name="selectbox"
                         options={options}
-                        placeholder="choose a category"
+                        placeholder={t(
+                          "labels.options.placeholder",
+                          SCOPE_OPTIONS
+                        )}
                       />
                     </FormProvider>
                   </div>
@@ -257,10 +291,10 @@ export default function Home() {
                       <div className="absolute hover:bg-black-50 w-full h-full">
                         <div className="ml-2 mt-2">
                           <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
-                            Template
+                            {t("labels.template", SCOPE_OPTIONS)}
                           </div>
                           <div className="text-white font-semibold text-16 leading-5">
-                            Project Management
+                            {t("labels.templates.project", SCOPE_OPTIONS)}
                           </div>
                         </div>
                       </div>
@@ -276,10 +310,10 @@ export default function Home() {
                       <div className="absolute hover:bg-black-50 w-full h-full">
                         <div className="ml-2 mt-2">
                           <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
-                            Template
+                            {t("labels.template", SCOPE_OPTIONS)}
                           </div>
                           <div className="text-white font-semibold text-16 leading-5">
-                            Kanban Template
+                            {t("labels.templates.kanban", SCOPE_OPTIONS)}
                           </div>
                         </div>
                       </div>
@@ -295,10 +329,10 @@ export default function Home() {
                       <div className="absolute hover:bg-black-50 w-full h-full">
                         <div className="ml-2 mt-2">
                           <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
-                            Template
+                            {t("labels.template", SCOPE_OPTIONS)}
                           </div>
                           <div className="text-white font-semibold text-16 leading-5">
-                            Simple Project Board
+                            {t("labels.templates.simple", SCOPE_OPTIONS)}
                           </div>
                         </div>
                       </div>
@@ -314,17 +348,17 @@ export default function Home() {
                       <div className="absolute hover:bg-black-50 w-full h-full">
                         <div className="ml-2 mt-2">
                           <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
-                            Template
+                            {t("labels.template", SCOPE_OPTIONS)}
                           </div>
                           <div className="text-white font-semibold text-16 leading-5">
-                            Remote Team Hub
+                            {t("labels.templates.remote", SCOPE_OPTIONS)}
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="text-14 leading-5 text-blue-400 cursor-pointer hover:underline mb-2">
-                    Browse the full template gallery
+                    {t("labels.templategallery", SCOPE_OPTIONS)}
                   </div>
                 </div>
                 <div className="flex flex-col">
@@ -333,7 +367,7 @@ export default function Home() {
                       <Icons.SvgUser className="text-slate-100 w-6 h-6 bold" />
                     </div>
                     <h1 className="text-16 leading-6 text-blue-300 font-bold">
-                      Your boards
+                      {t("labels.title.yourboards", SCOPE_OPTIONS)}
                     </h1>
                   </div>
                   <div className="flex flex-row">
@@ -358,7 +392,7 @@ export default function Home() {
                     </div>
                     <div className="flex mr-4 mb-4 p-2 cursor-pointer w-190 h-96 bg-gray-550 hover:bg-blue-500 rounded-3">
                       <div className="flex justify-center items-center w-full h-full text-14 leading-5 text-blue-300">
-                        Create a new board
+                        {t("labels.newboard", SCOPE_OPTIONS)}
                       </div>
                     </div>
                   </div>
