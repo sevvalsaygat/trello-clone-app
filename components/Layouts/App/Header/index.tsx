@@ -14,7 +14,7 @@ type HeaderPropTypes = {
 
 const Header: React.FC<HeaderPropTypes> = () => {
   const SCOPE_OPTIONS = {
-    scope: "components.Layouts.Auth.Footer",
+    scope: "components.Layouts.App.Header",
   };
 
   const { t } = useLocale();
@@ -34,21 +34,21 @@ const Header: React.FC<HeaderPropTypes> = () => {
           <div className="border-b border-gray-450">
             <div>
               <h1 className="mx-5 mt-4 mb-2 text-12 leading-4 text-slate-100 font-semibold">
-                Current Workspace
+                {t("labels.items.workspaces.current", SCOPE_OPTIONS)}
               </h1>
               <div className="flex flex-row pb-5 pt-1 gap-3 mx-5">
                 <div className="flex justify-center items-center w-10 h-10 border-transparent rounded-4 font-bold text-white text-20 bg-gradient-to-t from-blue-550 from-10% via-purple-150 via-70% to-purple-100 to-90%">
                   T
                 </div>
                 <div className="flex items-center text-blue-300 text-14 leading-5 font-semibold">
-                  Trello Workspace
+                  {t("labels.items.workspaces.trello", SCOPE_OPTIONS)}
                 </div>
               </div>
             </div>
           </div>
           <div>
             <h1 className="mx-5 mt-4 mb-2 text-12 leading-4 text-slate-100 font-semibold">
-              Your Workspace
+              {t("labels.items.workspaces.your", SCOPE_OPTIONS)}
             </h1>
             <div className="border-transparent rounded-4 hover:bg-gray-550 m-3 cursor-pointer transition-all duration-100">
               <div className="flex flex-row p-2 gap-3  mb-1">
@@ -56,7 +56,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
                   T
                 </div>
                 <div className="flex items-center text-blue-300 text-14 leading-5 font-semibold">
-                  Trello Workspace
+                  {t("labels.items.workspaces.trello", SCOPE_OPTIONS)}
                 </div>
               </div>
             </div>
@@ -86,7 +86,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       invoicing-app
                     </div>
                     <div className="text-12 left-4 text-slate-500">
-                      Travel Workspaces
+                      {t("labels.items.recent.travel", SCOPE_OPTIONS)}
                     </div>
                   </div>
                 </div>
@@ -107,12 +107,15 @@ const Header: React.FC<HeaderPropTypes> = () => {
                   />
                   <div className="flex flex-row">
                     <div className="flex items-center text-14 leading-4 text-blue-300 font-medium">
-                      Project Management
+                      {t("labels.items.recent.project", SCOPE_OPTIONS)}
                     </div>
                     <div className="flex items-center mr-3">
-                      <div className="px-2 py-1 border-transparent rounded-4 bg-blue-500 text-blue-300 font-medium text-11 leading-4 w-fit h-fit">
-                        Template
-                      </div>
+                      <button className="px-2 py-1 border-transparent rounded-4 bg-blue-500 text-blue-300 font-medium text-11 leading-4 w-fit h-fit">
+                        {t(
+                          "labels.items.recent.button.template",
+                          SCOPE_OPTIONS
+                        )}
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -133,7 +136,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
         <div className="p-3">
           <Icons.SvgStarBackground />
           <p className="mb-2 mt-3 text-slate-100 text-14 text-center">
-            Star important boards to access them quickly and easily.
+            {t("labels.items.starred.comment", SCOPE_OPTIONS)}
           </p>
         </div>
       ),
@@ -147,7 +150,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
           <div className="px-3 pt-3">
             <button className="flex flex-row justify-between items-center w-full mb-2">
               <div className="text-slate-100 text-12 leading-4 font-semibold">
-                Top Templates
+                {t("labels.items.templates.title", SCOPE_OPTIONS)}
               </div>
               <div onClick={topTemplatesToggle} className="flex relative">
                 {topTemplatesIsActive ? (
@@ -175,7 +178,10 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       />
                     </div>
                     <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                      1-on-1 Meeting Agenda
+                      {t(
+                        "labels.items.templates.buttons.title.meet",
+                        SCOPE_OPTIONS
+                      )}
                     </div>
                   </div>
                 </button>
@@ -191,7 +197,10 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       />
                     </div>
                     <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                      Agile Board Template | Trello
+                      {t(
+                        "labels.items.templates.buttons.title.agile",
+                        SCOPE_OPTIONS
+                      )}
                     </div>
                   </div>
                 </button>
@@ -207,7 +216,10 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       />
                     </div>
                     <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                      Company Overview
+                      {t(
+                        "labels.items.templates.buttons.title.company",
+                        SCOPE_OPTIONS
+                      )}
                     </div>
                   </div>
                 </button>
@@ -223,7 +235,10 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       />
                     </div>
                     <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                      Design Huddle
+                      {t(
+                        "labels.items.templates.buttons.title.design",
+                        SCOPE_OPTIONS
+                      )}
                     </div>
                   </div>
                 </button>
@@ -239,7 +254,10 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       />
                     </div>
                     <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                      Go To Market Strategy Template
+                      {t(
+                        "labels.items.templates.buttons.title.balloon",
+                        SCOPE_OPTIONS
+                      )}
                     </div>
                   </div>
                 </button>
@@ -255,7 +273,10 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       />
                     </div>
                     <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                      Kanban Template
+                      {t(
+                        "labels.items.templates.buttons.title.kanban",
+                        SCOPE_OPTIONS
+                      )}
                     </div>
                   </div>
                 </button>
@@ -271,7 +292,10 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       />
                     </div>
                     <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                      Mise-En-Place Personal Productivity System
+                      {t(
+                        "labels.items.templates.buttons.title.typewriter",
+                        SCOPE_OPTIONS
+                      )}
                     </div>
                   </div>
                 </button>
@@ -287,7 +311,10 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       />
                     </div>
                     <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                      Project Management
+                      {t(
+                        "labels.items.templates.buttons.title.pink",
+                        SCOPE_OPTIONS
+                      )}
                     </div>
                   </div>
                 </button>
@@ -303,7 +330,10 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       />
                     </div>
                     <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                      Remote Team Meetings
+                      {t(
+                        "labels.items.templates.buttons.title.cloudy",
+                        SCOPE_OPTIONS
+                      )}
                     </div>
                   </div>
                 </button>
@@ -319,7 +349,10 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       />
                     </div>
                     <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                      Simple Project Board
+                      {t(
+                        "labels.items.templates.buttons.title.leaf",
+                        SCOPE_OPTIONS
+                      )}
                     </div>
                   </div>
                 </button>
@@ -335,7 +368,10 @@ const Header: React.FC<HeaderPropTypes> = () => {
                       />
                     </div>
                     <div className="flex text-14 leading-4 text-blue-300 items-center font-medium truncate">
-                      Simple Project Board
+                      {t(
+                        "labels.items.templates.buttons.title.orange",
+                        SCOPE_OPTIONS
+                      )}
                     </div>
                   </div>
                 </button>
@@ -348,12 +384,12 @@ const Header: React.FC<HeaderPropTypes> = () => {
               <Icons.SvgTemplate className="text-blue-400" />
             </div>
             <div className="text-slate-100 text-14 leading-5">
-              See hundreds of templates from the Trello community
+              {t("labels.items.templates.comment.trello", SCOPE_OPTIONS)}
             </div>
           </div>
           <div className="flex justify-center items-center mx-3 mb-3 border-transparent rounded-3 bg-gray-550 hover:bg-blue-500">
             <button className="text-14 leading-5 text-slate-100 px-3 py-6">
-              Explore Templates
+              {t("labels.items.templates.buttons.explore", SCOPE_OPTIONS)}
             </button>
           </div>
         </div>
@@ -366,7 +402,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
       component: () => (
         <div className="flex flex-col">
           <h2 className="text-11 leading-4 text-slate-500 px-5 mt-4 mb-2 font-semibold">
-            ACCOUNT
+            {t("labels.items.account.title.account", SCOPE_OPTIONS)}
           </h2>
           <div>
             <div className="flex flex-row px-5 py-2">
@@ -388,48 +424,80 @@ const Header: React.FC<HeaderPropTypes> = () => {
             </div>
             <div className="border-b border-blue-500">
               <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
-                Switch accounts
+                {t(
+                  "labels.items.account.userdropdown.items.labels.switchaccount",
+                  SCOPE_OPTIONS
+                )}
               </div>
               <div className="flex flex-row items-center px-5 py-2 justify-between hover:bg-gray-550 mb-2 cursor-pointer">
                 <div className="text-blue-300 text-14 leading-5">
-                  Manage account
+                  {t(
+                    "labels.items.account.userdropdown.items.labels.manageaccount",
+                    SCOPE_OPTIONS
+                  )}
                 </div>
                 <Icons.SvgDirect className="text-blue-300" />
               </div>
             </div>
           </div>
           <h2 className="text-slate-500 text-11 leading-4 font-semibold px-5 mt-4 mb-2">
-            TRELLO
+            {t("labels.items.account.title.trello", SCOPE_OPTIONS)}
           </h2>
           <div className="border-b border-blue-500">
             <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
-              Profile and visibility
+              {t(
+                "labels.items.account.userdropdown.items.labels.profilevisibility",
+                SCOPE_OPTIONS
+              )}
             </div>
             <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
-              Activity
+              {t(
+                "labels.items.account.userdropdown.items.labels.activity",
+                SCOPE_OPTIONS
+              )}
             </div>
             <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
-              Cards
+              {t(
+                "labels.items.account.userdropdown.items.labels.cards",
+                SCOPE_OPTIONS
+              )}
             </div>
             <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
-              Settings
+              {t(
+                "labels.items.account.userdropdown.items.labels.settings",
+                SCOPE_OPTIONS
+              )}
             </div>
             <div className="flex flex-row items-center px-5 py-2 justify-between hover:bg-gray-550 mb-2 cursor-pointer">
-              <div className="text-blue-300 text-14 leading-5">Theme</div>
+              <div className="text-blue-300 text-14 leading-5">
+                {t(
+                  "labels.items.account.userdropdown.items.labels.theme",
+                  SCOPE_OPTIONS
+                )}
+              </div>
               <Icons.SvgArrowRight className="text-blue-300" />
             </div>
           </div>
           <div className="border-b border-blue-500 py-2">
             <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
-              Help
+              {t(
+                "labels.items.account.userdropdown.items.labels.help",
+                SCOPE_OPTIONS
+              )}
             </div>
             <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
-              Shortcuts
+              {t(
+                "labels.items.account.userdropdown.items.labels.shortcuts",
+                SCOPE_OPTIONS
+              )}
             </div>
           </div>
           <div className="py-2">
             <div className="text-blue-300 text-14 leading-5 px-5 py-2 cursor-pointer hover:bg-gray-550">
-              Log out
+              {t(
+                "labels.items.account.userdropdown.items.labels.logout",
+                SCOPE_OPTIONS
+              )}
             </div>
           </div>
         </div>
@@ -445,33 +513,33 @@ const Header: React.FC<HeaderPropTypes> = () => {
             <div className="flex flex-col max-w-336 hover:bg-gray-550 cursor-pointer rounded-3">
               <Image src="/world.png" width={336} height={168} alt="world" />
               <h3 className="text-16 leading-5 text-blue-300 p-2 font-semibold text-center mb-2">
-                Make boards more powerful with Trello Power-Ups
+                {t("labels.items.information.title", SCOPE_OPTIONS)}
               </h3>
             </div>
             <div className="flex justify-center mb-5">
               <button className="text-14 leading-5 text-blue-400 hover:underline font-medium w-full">
-                Get a new tip.
+                {t("labels.items.information.tip", SCOPE_OPTIONS)}
               </button>
             </div>
             <div className="border-b border-blue-500"></div>
             <div className="flex flex-wrap py-2 gap-1 max-w-336 justify-center px-9">
               <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
-                Pricing
+                {t("labels.items.information.labels.pricing", SCOPE_OPTIONS)}
               </div>
               <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
-                Apps
+                {t("labels.items.information.labels.apps", SCOPE_OPTIONS)}
               </div>
               <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
-                Blog
+                {t("labels.items.information.labels.blog", SCOPE_OPTIONS)}
               </div>
               <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
-                Privacy
+                {t("labels.items.information.labels.privacy", SCOPE_OPTIONS)}
               </div>
               <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
-                Notice at Collection
+                {t("labels.items.information.labels.notice", SCOPE_OPTIONS)}
               </div>
               <div className="text-14 leading-5 text-slate-100 hover:text-blue-300 py-6 px-2 hover:bg-blue-500 rounded-3 cursor-pointer transition-all duration-100">
-                More...
+                {t("labels.items.information.labels.more", SCOPE_OPTIONS)}
               </div>
             </div>
           </div>
@@ -486,11 +554,11 @@ const Header: React.FC<HeaderPropTypes> = () => {
         <div className="mt-5 mx-3 pb-5 w-[432px] mb-24">
           <div className="flex flex-row items-center justify-between mb-5">
             <div className="text-20 text-blue-300 leading-6 font-semibold">
-              Notifications
+              {t("labels.items.notifications.title", SCOPE_OPTIONS)}
             </div>
             <div className="flex flex-row items-center">
               <div className="text-slate-500 leading-4 text-12 mr-2">
-                Only show unread
+                {t("labels.items.notifications.switch", SCOPE_OPTIONS)}
               </div>
               <Switch
                 checked={enabled}
@@ -516,7 +584,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               <Icons.SvgDog />
             </div>
             <div className="flex items-center justify-center text-20 leading-6 text-blue-300">
-              No unread notifications
+              {t("labels.items.notifications.label", SCOPE_OPTIONS)}
             </div>
           </div>
         </div>
@@ -560,7 +628,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
           <div className="z-10">
             <Dropdown
               items={workspacesItems}
-              title="Workspaces"
+              title={t("labels.title.workspaces", SCOPE_OPTIONS)}
               tooltip={{
                 id: "workspaces-tooltip",
                 content: "Workspaces",
@@ -579,7 +647,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
           <div className="z-10">
             <Dropdown
               items={recentItems}
-              title="Recent"
+              title={t("labels.title.recent", SCOPE_OPTIONS)}
               tooltip={{
                 id: "recent-tooltip",
                 content: "Recent",
@@ -598,7 +666,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
           <div className="z-10">
             <Dropdown
               items={starredItems}
-              title="Starred"
+              title={t("labels.title.starred", SCOPE_OPTIONS)}
               tooltip={{
                 id: "starred-tooltip",
                 content: "Starred",
@@ -617,7 +685,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
           <div className="z-10">
             <Dropdown
               items={templatesItems}
-              title="Templates"
+              title={t("labels.title.templates", SCOPE_OPTIONS)}
               tooltip={{
                 id: "templates-tooltip",
                 content: "Templates",
@@ -634,7 +702,11 @@ const Header: React.FC<HeaderPropTypes> = () => {
             />
           </div>
           <div className="mx-2">
-            <Button onClick={() => {}} variant="info" title="Create" />
+            <Button
+              onClick={() => {}}
+              variant="info"
+              title={t("labels.button.title.create", SCOPE_OPTIONS)}
+            />
           </div>
         </div>
       </div>
@@ -658,7 +730,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
           <FormProvider {...useFormMethods}>
             <Form.Input
               name="search"
-              placeholder="Search"
+              placeholder={t("labels.placeholder.search", SCOPE_OPTIONS)}
               className="search-input"
             />
             <Icons.SvgSearch className="ml-6 text-slate-500 absolute" />

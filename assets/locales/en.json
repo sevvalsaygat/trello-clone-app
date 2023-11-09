@@ -29,6 +29,104 @@
             "slack": "Continue with Slack"
           }
         }
+      },
+      "App": {
+        "Header": {
+          "labels": {
+            "title": {
+              "workspaces": "Workspaces",
+              "recent": "Recent",
+              "starred": "Starred",
+              "templates": "Templates"
+            },
+            "placeholder": {
+              "search": "Search"
+            },
+            "button": {
+              "title": {
+                "create": "Create"
+              }
+            },
+            "items": {
+              "workspaces": {
+                "current": "Current Workspace",
+                "trello": "Trello Workspace",
+                "your": "Your Workspace"
+              },
+              "recent": {
+                "travel": "Travel Workspaces",
+                "project": "Project Management",
+                "button": {
+                  "template": "Template"
+                }
+              },
+              "starred": {
+                "comment": "Star important boards to access them quickly and easily."
+              },
+              "templates": {
+                "title": "Top Templates",
+                "buttons": {
+                  "title": {
+                    "meet": "1-on-1 Meeting Agenda",
+                    "agile": "Agile Board Template | Trello",
+                    "company": "Company Overview",
+                    "design": "Design Huddle",
+                    "balloon": "Go To Market Strategy Template",
+                    "kanban": "Kanban Template",
+                    "typewriter": "Mise-En-Place Personal Productivity System",
+                    "pink": "Project Management",
+                    "cloudy": "Remote Team Meetings",
+                    "leaf": "Simple Project Board",
+                    "orange": "Teaching: Weekly Planning"
+                  },
+                  "explore": "Explore Templates"
+                },
+                "comment": {
+                  "trello": "See hundreds of templates from the Trello community"
+                }
+              },
+              "notifications": {
+                "title": "Notifications",
+                "switch": "Only show unread",
+                "label": "No unread notifications"
+              },
+              "information": {
+                "title": "Make boards more powerful with Trello Power-Ups",
+                "tip": "Get a new tip.",
+                "labels": {
+                  "pricing": "Pricing",
+                  "apps": "Apps",
+                  "blog": "Blog",
+                  "privacy": "Privacy",
+                  "notice": "Notice at Collection",
+                  "more": "More..."
+                }
+              },
+              "account": {
+                "title": {
+                  "account": "ACCOUNT",
+                  "trello": "TRELLO"
+                },
+                "userdropdown": {
+                  "items": {
+                    "labels": {
+                      "switchaccount": "Switch Account",
+                      "manageaccount": "Manage Account",
+                      "profilevisibility": "Profile and visibility",
+                      "activity": "Activity",
+                      "cards": "Cards",
+                      "settings": "Settings",
+                      "theme": "Theme",
+                      "help": "Help",
+                      "shortcuts": "Shortcuts",
+                      "logout": "Log out"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
