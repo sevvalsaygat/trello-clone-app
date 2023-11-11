@@ -154,14 +154,14 @@
           "placeholder": "choose a category",
           "labels": {
             "popular": "Popular",
-            "smallbusiness": "Small business",
+            "smallBusiness": "Small business",
             "design": "Design",
             "education": "Education",
-            "engineeringıt": "Engineering-IT",
+            "engineering_it": "Engineering-IT",
             "marketing": "Marketing",
-            "humanresources": "Human Resources",
+            "humanResources": "Human Resources",
             "operations": "Operations",
-            "salescrm": "Sales-CRM"
+            "sales_crm": "Sales-CRM"
           }
         }
       },

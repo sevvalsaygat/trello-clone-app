@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-const SvgHeartbeat = ({ className }: SVGProps<SVGSVGElement>) => {
+const SvgHeartbeat = (props: SVGProps<SVGSVGElement>) => {
   return (
     <>
       <svg
@@ -13,7 +13,7 @@ const SvgHeartbeat = ({ className }: SVGProps<SVGSVGElement>) => {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 512 512"
         xmlSpace="preserve"
-        className={className}
+        {...props}
       >
         <g>
           <g>

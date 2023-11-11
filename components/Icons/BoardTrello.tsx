@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-const SvgBoardTrello = ({ className }: SVGProps<SVGSVGElement>) => {
+const SvgBoardTrello = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       width="16"
@@ -9,7 +9,7 @@ const SvgBoardTrello = ({ className }: SVGProps<SVGSVGElement>) => {
       focusable="false"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         fillRule="evenodd"

@@ -1,8 +1,8 @@
 import React, { SVGProps } from "react";
 
-const SvgDog = ({ className }: SVGProps<SVGSVGElement>) => {
+const SvgDog = (props: SVGProps<SVGSVGElement>) => {
   return (
-    <>
+    <React.Fragment>
       <svg
         width="107px"
         height="133px"
@@ -10,7 +10,7 @@ const SvgDog = ({ className }: SVGProps<SVGSVGElement>) => {
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        className={className}
+        {...props}
       >
         <title>taco</title>
         <desc>Created with Sketch.</desc>
@@ -245,7 +245,7 @@ const SvgDog = ({ className }: SVGProps<SVGSVGElement>) => {
           </g>
         </g>
       </svg>
-    </>
+    </React.Fragment>
   );
 };
 

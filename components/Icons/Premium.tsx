@@ -1,8 +1,8 @@
 import React, { SVGProps } from "react";
 
-const SvgPremium = ({ className }: SVGProps<SVGSVGElement>) => {
+const SvgPremium = (props: SVGProps<SVGSVGElement>) => {
   return (
-    <>
+    <React.Fragment>
       <svg
         width="22"
         height="22"
@@ -10,7 +10,7 @@ const SvgPremium = ({ className }: SVGProps<SVGSVGElement>) => {
         focusable="false"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
-        className={className}
+        {...props}
       >
         <path
           fillRule="evenodd"
@@ -27,7 +27,7 @@ const SvgPremium = ({ className }: SVGProps<SVGSVGElement>) => {
           fill="currentColor"
         ></path>
       </svg>
-    </>
+    </React.Fragment>
   );
 };
 

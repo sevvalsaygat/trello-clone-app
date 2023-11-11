@@ -1,13 +1,9 @@
 import React, { SVGProps } from "react";
 
-const SvgView = ({ className }: SVGProps<SVGSVGElement>) => {
+const SvgView = (props: SVGProps<SVGSVGElement>) => {
   return (
-    <>
-      <svg
-        viewBox="0 0 32 32"
-        xmlns="http://www.w3.org/2000/svg"
-        className={className}
-      >
+    <React.Fragment>
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" {...props}>
         <defs>
           <style
             dangerouslySetInnerHTML={{ __html: ".cls-1{fill:#606161;}" }}
@@ -21,7 +17,7 @@ const SvgView = ({ className }: SVGProps<SVGSVGElement>) => {
           />
         </g>
       </svg>
-    </>
+    </React.Fragment>
   );
 };
 

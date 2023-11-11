@@ -43,3 +43,7 @@ ul.list-with-divider > li:not(:first-child)::before {
 .search-input:focus:hover{
   background-color: initial;
 }
+
+.home-page {
+  max-width: calc(200vh);
+}

@@ -19,9 +19,8 @@ const Header: React.FC<HeaderPropTypes> = () => {
 
   const { t } = useLocale();
   const [enabled, setEnabled] = useState(false);
-  const useFormMethods = useForm<HeaderPropTypes>();
-
   const [topTemplatesIsActive, setTopTemplatesIsActive] = useState(true);
+  const useFormMethods = useForm<HeaderPropTypes>();
 
   const topTemplatesToggle = () => {
     setTopTemplatesIsActive(!topTemplatesIsActive);

@@ -1,12 +1,12 @@
 import React, { SVGProps } from "react";
 
-const SvgStarBackground = ({ className }: SVGProps<SVGSVGElement>) => {
+const SvgStarBackground = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 286.5 137.29"
-      className={className}
+      {...props}
     >
       <defs>
         <style

@@ -1,13 +1,13 @@
 import React, { SVGProps } from "react";
 
-const SvgDots = ({ className }: SVGProps<SVGSVGElement>) => {
+const SvgDots = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       width="16"
       height="16"
       viewBox="0 0 24 24"
       role="presentation"
-      className={className}
+      {...props}
     >
       <g fill="currentColor" fillRule="evenodd">
         <circle cx="12" cy="19" r="2"></circle>

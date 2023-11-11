@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-const SvgTemplate = ({ className }: SVGProps<SVGSVGElement>) => {
+const SvgTemplate = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       width="24"
@@ -9,7 +9,7 @@ const SvgTemplate = ({ className }: SVGProps<SVGSVGElement>) => {
       focusable="false"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      {...props}
     >
       <path
         d="M7 3C7 2.44772 7.44772 2 8 2H9C9.55228 2 10 2.44772 10 3C10 3.55228 9.55228 4 9 4H8C7.44772 4 7 3.55228 7 3Z"

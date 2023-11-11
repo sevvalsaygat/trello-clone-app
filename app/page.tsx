@@ -19,12 +19,12 @@ export default function Home() {
 
   const options = [
     {
-      value: "Popular",
+      value: "popular",
       label: t("labels.options.labels.popular", SCOPE_OPTIONS),
     },
     {
-      value: "small business",
-      label: t("labels.options.labels.smallbusiness", SCOPE_OPTIONS),
+      value: "smallBusiness",
+      label: t("labels.options.labels.smallBusiness", SCOPE_OPTIONS),
     },
     {
       value: "design",
@@ -35,16 +35,16 @@ export default function Home() {
       label: t("labels.options.labels.education", SCOPE_OPTIONS),
     },
     {
-      value: "engineering-IT",
-      label: t("labels.options.labels.engineeringıt", SCOPE_OPTIONS),
+      value: "engineering_it",
+      label: t("labels.options.labels.engineering_it", SCOPE_OPTIONS),
     },
     {
       value: "marketing",
       label: t("labels.options.labels.marketing", SCOPE_OPTIONS),
     },
     {
-      value: "human resources",
-      label: t("labels.options.labels.humanresources", SCOPE_OPTIONS),
+      value: "humanResources",
+      label: t("labels.options.labels.humanResources", SCOPE_OPTIONS),
     },
     {
       value: "operations",
@@ -52,25 +52,23 @@ export default function Home() {
     },
     {
       value: "sales CRM",
-      label: t("labels.options.labels.salescrm", SCOPE_OPTIONS),
+      label: t("labels.options.labels.sales_crm", SCOPE_OPTIONS),
     },
   ];
 
-  const [isActive, setIsActive] = useState(true);
+  const [travelWorkspacesisActive, setTravelWorkspacesIsActive] =
+    useState(true);
 
-  const handleClick = () => {
-    setIsActive(!isActive);
+  const travelWorkspacesHandleClick = () => {
+    setTravelWorkspacesIsActive(!travelWorkspacesisActive);
   };
 
-  const [isClosed, setIsClosed] = useState(false);
+  const [premiumCardIsClosed, setPremiumCardIsClosed] = useState(false);
 
   return (
     <AppLayout>
       <div className="flex justify-center">
-        <div
-          className="flex bg-white justify-between mt-10"
-          style={{ maxWidth: "calc(200vh)" }}
-        >
+        <div className="home-page flex bg-white justify-between mt-10">
           <div className="text-black break-all whitespace-pre-line mx-4 w-[256px]">
             <div className="flex flex-col w-full border-b border-blue-500">
               <div className="flex flex-row px-2 py-6 items-center border-transparent rounded-8 hover:bg-blue-500 cursor-pointer transition-all duration-100 gap-3">
@@ -110,7 +108,7 @@ export default function Home() {
               <div role="travel" className="flex flex-col">
                 <div className="flex flex-col">
                   <button
-                    onClick={handleClick}
+                    onClick={travelWorkspacesHandleClick}
                     className="flex flex-row justify-between hover:bg-blue-500 rounded-8 transition-all duration-100 cursor-pointer mb-1 w-full"
                   >
                     <div className="flex flex-row px-3 py-6 gap-2 items-center">
@@ -125,14 +123,14 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="flex relative items-center mr-3">
-                      {isActive ? (
+                      {travelWorkspacesisActive ? (
                         <Icons.SvgArrowUp className="text-slate-100 h-4 w-4" />
                       ) : (
                         <Icons.SvgArrowDown className="text-slate-100 h-4 w-4" />
                       )}
                     </div>
                   </button>
-                  {isActive && (
+                  {travelWorkspacesisActive && (
                     <div>
                       <div className="flex flex-row items-center py-6 pl-11 pr-2 gap-3 cursor-pointer bg-blue-600 rounded-8 mb-1">
                         <Icons.SvgBoardTrello className="text-slate-100" />
@@ -187,7 +185,7 @@ export default function Home() {
                     </div>
                   )}
                 </div>
-                {!isClosed && (
+                {!premiumCardIsClosed && (
                   <div className="premium-card border-y border-blue-500 rounded-3">
                     <div className="px-3">
                       <div className="flex flex-row justify-between items-center mt-4 mb-2">
@@ -198,7 +196,7 @@ export default function Home() {
                           )}
                         </div>
                         <button
-                          onClick={() => setIsClosed(true)}
+                          onClick={() => setPremiumCardIsClosed(true)}
                           className="rounded-3 hover:bg-blue-500"
                         >
                           <Icons.SvgClose className="text-slate-100 h-4 w-4" />

@@ -1,6 +1,6 @@
 import React, { SVGProps } from "react";
 
-const SvgPlus = ({ className }: SVGProps<SVGSVGElement>) => {
+const SvgPlus = (props: SVGProps<SVGSVGElement>) => {
   return (
     <>
       <svg
@@ -13,7 +13,7 @@ const SvgPlus = ({ className }: SVGProps<SVGSVGElement>) => {
         xmlSpace="preserve"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        className={className}
+        {...props}
       >
         <rect fill="none" height={50} width={50} />
         <line
