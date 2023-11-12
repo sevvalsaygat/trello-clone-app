@@ -21,7 +21,7 @@
     "typeRoots": ["./@types"],
     "paths": {
       "@/*": ["./*"],
-      "@app/componets": ["./components"],
+      "@app/components": ["./components"],
       "@app/constants": ["./constants"],
       "@app/hooks": ["./hooks"],
       "@app/hooks/*": ["./hooks/*"],

@@ -6,7 +6,7 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 import { Switch } from "@headlessui/react";
 
 import { useLocale } from "@app/hooks";
-import { Icons, Form, Dropdown, Button } from "@app/componets";
+import { Icons, Form, Dropdown, Button } from "@app/components";
 
 type HeaderPropTypes = {
   search?: string;

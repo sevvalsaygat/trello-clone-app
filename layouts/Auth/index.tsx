@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import Link from "next/link";
 
-import { Icons, Layouts } from "@app/componets";
+import { Icons, Layouts } from "@app/components";
 import { ROUTES } from "@app/constants";
 import { useLocale } from "@app/hooks";
 

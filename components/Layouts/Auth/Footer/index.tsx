@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LanguageSelect, Icons } from "@app/componets";
+import { LanguageSelect, Icons } from "@app/components";
 import { useLocale } from "@app/hooks";
 
 type FooterPropTypes = {};

@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useForm, FormProvider } from "react-hook-form";
 
 import { AUTH, ROUTES } from "@app/constants";
-import { Form, Icons, Button } from "@app/componets";
+import { Form, Icons, Button } from "@app/components";
 import { string, error, time } from "@app/libs";
 import { useLocale, api, useAuth } from "@app/hooks";
 import { AuthLayout } from "@app/layouts";

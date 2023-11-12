@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Form } from "@app/componets";
+import { Form } from "@app/components";
 import { useLocale } from "@app/hooks";
 
 import { FormProvider, useForm } from "react-hook-form";

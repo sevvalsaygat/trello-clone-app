@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 
-import { Layouts } from "@app/componets";
+import { Layouts } from "@app/components";
 
 type AppPropTypes = {};
 

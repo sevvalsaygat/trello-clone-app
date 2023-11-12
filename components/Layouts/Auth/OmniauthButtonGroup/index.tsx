@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Icons } from "@app/componets";
+import { Button, Icons } from "@app/components";
 import { useLocale } from "@app/hooks";
 
 type OmniauthButtonGroupPropTypes = {};
