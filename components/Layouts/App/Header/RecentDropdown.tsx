@@ -43,7 +43,7 @@ const RecentDropdown: React.FC<RecentDropdownPropTypes> = () => {
         <div className="group/item flex justify-between p-1 border-transparent rounded-8 hover:bg-gray-550 text-black cursor-pointer">
           <div className="flex flex-row gap-2">
             <Image
-              src="/pink-background.jpg"
+              src="/pink.jpg"
               width={55}
               height={32}
               alt="board"

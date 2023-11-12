@@ -84,7 +84,7 @@ const PopularTemplates: React.FC<PopularTemplatesPropTypes> = () => {
       <div className="flex flex-row mt-8">
         <div className="flex relative mr-4 mb-4 cursor-pointer">
           <Image
-            src="/pink-background.jpg"
+            src="/pink.jpg"
             width={180}
             height={96}
             alt="account"
