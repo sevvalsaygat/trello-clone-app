@@ -80,6 +80,9 @@ export default function Page() {
   return (
     <AuthLayout>
       <div className="p-2">
+        <h1 className="flex mb-6 text-base text-slate-800 font-semibold leading-7 justify-center">
+          {t("form.labels.register", SCOPE_OPTIONS)}
+        </h1>
         <div className="text-red-500">
           {isError &&
             errors.map((error, index) => <li key={index}>{error}</li>)}
@@ -89,7 +92,6 @@ export default function Page() {
             <React.Fragment>
               <Form.Input
                 name="fullName"
-                label={t("form.fullName.label", SCOPE_OPTIONS)}
                 placeholder={t("form.fullName.placeholder", SCOPE_OPTIONS)}
                 variant="primary"
                 rules={{
@@ -98,7 +100,6 @@ export default function Page() {
               />
               <Form.Input
                 name="email"
-                label={t("form.email.label", SCOPE_OPTIONS)}
                 placeholder={t("form.email.placeholder", SCOPE_OPTIONS)}
                 variant="primary"
                 rules={{
@@ -170,7 +171,6 @@ export default function Page() {
               <Form.Input
                 type="password"
                 name="password"
-                label={t("form.password.label", SCOPE_OPTIONS)}
                 placeholder={t("form.password.placeholder", SCOPE_OPTIONS)}
                 variant="primary"
                 rules={{
@@ -194,7 +194,6 @@ export default function Page() {
               <Form.Input
                 type="password"
                 name="passwordConfirmation"
-                label={t("form.passwordConfirmation.label", SCOPE_OPTIONS)}
                 placeholder={t(
                   "form.passwordConfirmation.placeholder",
                   SCOPE_OPTIONS

@@ -209,8 +209,11 @@
     },
     "Login": {
       "form": {
+        "labels": {
+          "login": "Log in to Trello",
+          "email": "E-mail"
+        },
         "email": {
-          "label": "E-mail",
           "placeholder": "Enter email",
           "rules": {
             "required": "Email is required field",
@@ -234,8 +237,11 @@
     },
     "Register": {
       "form": {
+        "labels": {
+          "register": "Sign up for your account",
+          "fullName": "Full Name"
+        },
         "fullName": {
-          "label": "Full Name",
           "placeholder": "Please enter an full name",
           "rules": {
             "required": "Full name is required field"
@@ -271,7 +277,6 @@
   "layouts": {
     "Auth": {
       "labels": {
-        "login": "Log in to Trello",
         "or": "OR",
         "cantLogin": "Can't log in?",
         "account": "Sign up for an account",

@@ -29,9 +29,6 @@ const Auth: React.FC<PropsWithChildren<AuthPropTypes>> = ({ children }) => {
           <Icons.SvgTrelloLogo width={196} height={50} />
         </div>
         <div className="auth-form-shadow bg-white p-35 rounded-3 w-full mx-auto">
-          <h1 className="flex mb-1.5 text-base text-slate-800 font-semibold leading-7 justify-center">
-            {t("labels.login", SCOPE_OPTIONS)}
-          </h1>
           {children}
           <div className="flex flex-col justify-center items-center">
             <div className="my-4">

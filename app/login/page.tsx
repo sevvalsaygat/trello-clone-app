@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { useForm, FormProvider } from "react-hook-form";
@@ -67,7 +67,10 @@ export default function Page() {
 
   return (
     <AuthLayout>
-      <div>
+      <React.Fragment>
+        <h1 className="flex mb-6 text-base text-slate-800 font-semibold leading-7 justify-center">
+          {t("form.labels.login", SCOPE_OPTIONS)}
+        </h1>
         <div className="text-red-500">
           {isError &&
             errors.map((error, index) => <li key={index}>{error}</li>)}
@@ -152,7 +155,7 @@ export default function Page() {
               : t("actions.login", SCOPE_OPTIONS)
           }
         />
-      </div>
+      </React.Fragment>
     </AuthLayout>
   );
 }
