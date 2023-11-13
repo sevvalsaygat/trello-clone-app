@@ -49,25 +49,25 @@ const Header: React.FC<HeaderPropTypes> = () => {
   };
 
   return (
-    <div className="flex flex-row items-center justify-between bg-white text-white px-2 py-7 border-b border-gray-450">
+    <div className="flex flex-row items-center justify-between bg-white text-white px-2 py-7 border-b border-zinc-400">
       <div className="flex flex-row items-center">
         <div className="flex flex-row gap-1">
           <button
-            className="p-6 w-fit hover:bg-blue-500 rounded-3 transition-all duration-100"
+            className="p-6 w-fit hover:bg-gray-350 rounded-3 transition-all duration-100"
             data-tooltip-id={TOOLTIPS.presentation}
             data-tooltip-content="More from atlassian"
             data-tooltip-delay-show={300}
           >
             <ReactTooltip id={TOOLTIPS.presentation} style={tooltipStyles} />
-            <Icons.SvgPresentation className="text-slate-400" />
+            <Icons.SvgPresentation className="text-gray-850" />
           </button>
-          <div className="hover:bg-blue-500 rounded-3 transition-all duration-100 leading-8 p-2 cursor-pointer mr-1">
+          <div className="hover:bg-gray-350 rounded-3 transition-all duration-100 leading-8 p-2 cursor-pointer mr-1">
             <Image
               src="/trello.gif"
               width={75}
               height={32}
               alt="trello"
-              className="bg-gray-250"
+              className="bg-slate-800"
             />
           </div>
         </div>
@@ -171,7 +171,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               placeholder={t("form.search.placeholder", SCOPE_OPTIONS)}
               className="search-input"
             />
-            <Icons.SvgSearch className="ml-6 text-slate-500 absolute" />
+            <Icons.SvgSearch className="ml-6 text-slate-850 absolute" />
           </FormProvider>
         </div>
         <div className="z-10">
@@ -181,8 +181,8 @@ const Header: React.FC<HeaderPropTypes> = () => {
                 component: () => <NotificationDropdown />,
               },
             ]}
-            icon={() => <Icons.SvgNotification className="text-slate-100" />}
-            className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
+            icon={() => <Icons.SvgNotification className="text-slate-900" />}
+            className="p-1 hover:bg-gray-350 border-transparent rounded-full cursor-pointer transition-all duration-100"
             menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
             tooltip={{
               id: TOOLTIPS.notification,
@@ -202,8 +202,8 @@ const Header: React.FC<HeaderPropTypes> = () => {
                 component: () => <InformationDropdown />,
               },
             ]}
-            icon={() => <Icons.SvgInformation className="text-slate-100" />}
-            className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
+            icon={() => <Icons.SvgInformation className="text-slate-900" />}
+            className="p-1 hover:bg-gray-350 border-transparent rounded-full cursor-pointer transition-all duration-100"
             menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
             tooltip={{
               id: TOOLTIPS.information,
@@ -226,7 +226,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
             icon={() => (
               <Image src="/account.png" width={24} height={24} alt="account" />
             )}
-            className="p-1 hover:bg-blue-500 border-transparent rounded-full cursor-pointer transition-all duration-100"
+            className="p-1 hover:bg-gray-350 border-transparent rounded-full cursor-pointer transition-all duration-100"
             menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
             tooltip={{
               id: TOOLTIPS.account,

@@ -59,22 +59,22 @@ const PopularTemplates: React.FC<PopularTemplatesPropTypes> = () => {
     <div className="py-3 mb-24">
       <div className="flex flex-row justify-between">
         <div className="flex flex-row">
-          <Icons.SvgTemplate className="text-slate-100 w-6 h-6 mr-1" />
-          <div className="text-20 leading-6 text-blue-300 font-semibold">
+          <Icons.SvgTemplate className="text-slate-900 w-6 h-6 mr-1" />
+          <div className="text-20 leading-6 text-slate-950 font-semibold">
             {t("labels.title", SCOPE_OPTIONS)}
           </div>
         </div>
-        <button className="p-6 bg-gray-550 hover:bg-blue-500 rounded-3 mb-2">
-          <Icons.SvgClose className="text-blue-300 h-5 w-5" />
+        <button className="p-6 bg-zinc-300 hover:bg-gray-350 rounded-3 mb-2">
+          <Icons.SvgClose className="text-slate-950 h-5 w-5" />
         </button>
       </div>
       <div className="flex flex-row items-center">
-        <div className="text-14 leading-5 text-slate-100">
+        <div className="text-14 leading-5 text-slate-900">
           {t("labels.content", SCOPE_OPTIONS)}
         </div>
         <FormProvider {...useFormMethods}>
           <Form.Select
-            className="ml-2 text-14 leading-5 text-blue-300 w-[240px]"
+            className="ml-2 text-14 leading-5 text-slate-950 w-[240px]"
             name="selectbox"
             options={templateCategoryOptions}
             placeholder={t("form.templateCategory.placeholder", SCOPE_OPTIONS)}
@@ -90,9 +90,9 @@ const PopularTemplates: React.FC<PopularTemplatesPropTypes> = () => {
             alt="account"
             className="rounded-3 w-190 h-96"
           />
-          <div className="absolute hover:bg-black-50 w-full h-full">
+          <div className="absolute hover:bg-neutral-500 w-full h-full">
             <div className="ml-2 mt-2">
-              <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
+              <div className="px-6 py-1 text-11 leading-4 text-slate-950 bg-gray-350 rounded-4 font-semibol w-min">
                 {t("labels.template", SCOPE_OPTIONS)}
               </div>
               <div className="text-white font-semibold text-16 leading-5">
@@ -109,9 +109,9 @@ const PopularTemplates: React.FC<PopularTemplatesPropTypes> = () => {
             alt="account"
             className="rounded-3 w-190 h-96"
           />
-          <div className="absolute hover:bg-black-50 w-full h-full">
+          <div className="absolute hover:bg-neutral-500 w-full h-full">
             <div className="ml-2 mt-2">
-              <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
+              <div className="px-6 py-1 text-11 leading-4 text-slate-950 bg-gray-350 rounded-4 font-semibol w-min">
                 {t("labels.template", SCOPE_OPTIONS)}
               </div>
               <div className="text-white font-semibold text-16 leading-5">
@@ -128,9 +128,9 @@ const PopularTemplates: React.FC<PopularTemplatesPropTypes> = () => {
             alt="account"
             className="rounded-3 w-190 h-96"
           />
-          <div className="absolute hover:bg-black-50 w-full h-full">
+          <div className="absolute hover:bg-neutral-500 w-full h-full">
             <div className="ml-2 mt-2">
-              <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
+              <div className="px-6 py-1 text-11 leading-4 text-slate-950 bg-gray-350 rounded-4 font-semibol w-min">
                 {t("labels.template", SCOPE_OPTIONS)}
               </div>
               <div className="text-white font-semibold text-16 leading-5">
@@ -147,9 +147,9 @@ const PopularTemplates: React.FC<PopularTemplatesPropTypes> = () => {
             alt="account"
             className="rounded-3 w-190 h-96"
           />
-          <div className="absolute hover:bg-black-50 w-full h-full">
+          <div className="absolute hover:bg-neutral-500 w-full h-full">
             <div className="ml-2 mt-2">
-              <div className="px-6 py-1 text-11 leading-4 text-blue-300 bg-blue-500 rounded-4 font-semibol w-min">
+              <div className="px-6 py-1 text-11 leading-4 text-slate-950 bg-gray-350 rounded-4 font-semibol w-min">
                 {t("labels.template", SCOPE_OPTIONS)}
               </div>
               <div className="text-white font-semibold text-16 leading-5">
@@ -159,7 +159,7 @@ const PopularTemplates: React.FC<PopularTemplatesPropTypes> = () => {
           </div>
         </div>
       </div>
-      <div className="text-14 leading-5 text-blue-400 cursor-pointer hover:underline mb-2">
+      <div className="text-14 leading-5 text-blue-800 cursor-pointer hover:underline mb-2">
         {t("labels.browseFullGallery", SCOPE_OPTIONS)}
       </div>
     </div>
