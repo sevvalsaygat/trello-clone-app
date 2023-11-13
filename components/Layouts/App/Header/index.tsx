@@ -53,7 +53,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
       <div className="flex flex-row items-center">
         <div className="flex flex-row gap-1">
           <button
-            className="p-6 w-fit hover:bg-gray-350 rounded-3 transition-all duration-100"
+            className="p-1.5 w-fit hover:bg-gray-350 rounded-3 transition-all duration-100"
             data-tooltip-id={TOOLTIPS.presentation}
             data-tooltip-content="More from atlassian"
             data-tooltip-delay-show={300}
@@ -171,7 +171,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               placeholder={t("form.search.placeholder", SCOPE_OPTIONS)}
               className="search-input"
             />
-            <Icons.SvgSearch className="ml-6 text-slate-850 absolute" />
+            <Icons.SvgSearch className="ml-1.5 text-slate-850 absolute" />
           </FormProvider>
         </div>
         <div className="z-10">
@@ -183,7 +183,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
             ]}
             icon={() => <Icons.SvgNotification className="text-slate-900" />}
             className="p-1 hover:bg-gray-350 border-transparent rounded-full cursor-pointer transition-all duration-100"
-            menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
+            menuItemsClassName="dropdown-shadow flex border rounded-md max-h-887 w-max absolute right-0 bg-white focus:outline-none mt-3"
             tooltip={{
               id: TOOLTIPS.notification,
               content: "Notifications",
@@ -204,7 +204,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
             ]}
             icon={() => <Icons.SvgInformation className="text-slate-900" />}
             className="p-1 hover:bg-gray-350 border-transparent rounded-full cursor-pointer transition-all duration-100"
-            menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
+            menuItemsClassName="dropdown-shadow flex border rounded-md max-h-887 w-max absolute right-0 bg-white focus:outline-none mt-3"
             tooltip={{
               id: TOOLTIPS.information,
               content: "Information",
@@ -227,7 +227,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               <Image src="/account.png" width={24} height={24} alt="account" />
             )}
             className="p-1 hover:bg-gray-350 border-transparent rounded-full cursor-pointer transition-all duration-100"
-            menuItemsClassName="flex border rounded-md max-h-887 w-max shadow-4xl absolute right-0 bg-white focus:outline-none mt-3"
+            menuItemsClassName="dropdown-shadow flex border rounded-md max-h-887 w-max absolute right-0 bg-white focus:outline-none mt-3"
             tooltip={{
               id: TOOLTIPS.account,
               content: "Account",

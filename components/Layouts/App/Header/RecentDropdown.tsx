@@ -16,20 +16,20 @@ const RecentDropdown: React.FC<RecentDropdownPropTypes> = () => {
   return (
     <ul className="p-3">
       <li className="my-1">
-        <div className="group/item flex justify-between p-1 border-transparent rounded-8 hover:bg-zinc-300 text-black cursor-pointer">
+        <div className="group/item flex justify-between p-1 border-transparent rounded-lg hover:bg-zinc-300 text-black cursor-pointer">
           <div className="flex flex-row gap-2">
             <Image
               src="/board.jpg"
               width={55}
               height={32}
               alt="board"
-              className="border-transparent rounded-4 object-scale-down"
+              className="border-transparent rounded object-scale-down"
             />
             <div className="flex flex-col">
-              <div className="text-14 leading-4 text-slate-950 font-medium">
+              <div className="text-sm leading-4 text-slate-950 font-medium">
                 invoicing-app
               </div>
-              <div className="text-12 left-4 text-slate-850">
+              <div className="text-xs left-4 text-slate-850">
                 {t("labels.travel", SCOPE_OPTIONS)}
               </div>
             </div>
@@ -40,21 +40,21 @@ const RecentDropdown: React.FC<RecentDropdownPropTypes> = () => {
         </div>
       </li>
       <li className="my-1">
-        <div className="group/item flex justify-between p-1 border-transparent rounded-8 hover:bg-zinc-300 text-black cursor-pointer">
+        <div className="group/item flex justify-between p-1 border-transparent rounded-lg hover:bg-zinc-300 text-black cursor-pointer">
           <div className="flex flex-row gap-2">
             <Image
               src="/pink.jpg"
               width={55}
               height={32}
               alt="board"
-              className="border-transparent rounded-4 object-scale-down"
+              className="border-transparent rounded object-scale-down"
             />
             <div className="flex flex-row">
-              <div className="flex items-center text-14 leading-4 text-slate-950 font-medium">
+              <div className="flex items-center text-sm leading-4 text-slate-950 font-medium">
                 {t("labels.project", SCOPE_OPTIONS)}
               </div>
               <div className="flex items-center mr-3">
-                <button className="px-2 py-1 border-transparent rounded-4 bg-gray-350 text-slate-950 font-medium text-11 leading-4 w-fit h-fit">
+                <button className="px-2 py-1 border-transparent rounded bg-gray-350 text-slate-950 font-medium text-xs leading-4 w-fit h-fit">
                   {t("actions.template", SCOPE_OPTIONS)}
                 </button>
               </div>

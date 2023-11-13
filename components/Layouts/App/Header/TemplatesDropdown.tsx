@@ -36,7 +36,7 @@ const TemplatesDropdown: React.FC<TemplatesDropdownPropTypes> = () => {
     <React.Fragment>
       <div className="px-3 pt-3">
         <button className="flex flex-row justify-between items-center w-full mb-2">
-          <div className="text-slate-900 text-12 leading-4 font-semibold">
+          <div className="text-slate-900 text-xs leading-4 font-semibold">
             {t("labels.title", SCOPE_OPTIONS)}
           </div>
           <div onClick={topTemplatesToggle} className="flex relative">
@@ -56,7 +56,7 @@ const TemplatesDropdown: React.FC<TemplatesDropdownPropTypes> = () => {
             {topTemplatesItems.map((item, index) => (
               <button
                 key={index}
-                className="hover:bg-zinc-300 w-full rounded-8 mb-1"
+                className="hover:bg-zinc-300 w-full rounded-lg mb-1"
               >
                 <div className="p-1 gap-3 flex flex-row">
                   <div>
@@ -65,10 +65,10 @@ const TemplatesDropdown: React.FC<TemplatesDropdownPropTypes> = () => {
                       width={45}
                       height={32}
                       alt={item}
-                      className="border-transparent rounded-4 w-45 h-8"
+                      className="border-transparent rounded w-11 h-8"
                     />
                   </div>
-                  <div className="flex text-14 leading-4 text-slate-950 items-center font-medium truncate">
+                  <div className="flex text-sm leading-4 text-slate-950 items-center font-medium truncate">
                     {t(`labels.topTemplatesItems.${item}`, SCOPE_OPTIONS)}
                   </div>
                 </div>
@@ -77,17 +77,17 @@ const TemplatesDropdown: React.FC<TemplatesDropdownPropTypes> = () => {
           </div>
         )}
       </div>
-      <div className="border-t border-gray-350 shadow-5xl w-full"></div>
+      <div className="dropdown-shadow border-t border-gray-350 w-full"></div>
       <div className="p-3 flex flex-row">
         <div className="flex px-3 py-1 items-center">
           <Icons.SvgTemplate className="text-blue-800" />
         </div>
-        <div className="text-slate-900 text-14 leading-5">
+        <div className="text-slate-900 text-sm leading-5">
           {t("labels.description", SCOPE_OPTIONS)}
         </div>
       </div>
       <div className="flex justify-center items-center mx-3 mb-3 border-transparent rounded-3 bg-zinc-300 hover:bg-gray-350">
-        <button className="text-14 leading-5 text-slate-900 px-3 py-6">
+        <button className="text-sm leading-5 text-slate-900 px-3 py-1.5">
           {t("actions.explore", SCOPE_OPTIONS)}
         </button>
       </div>

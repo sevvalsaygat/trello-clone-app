@@ -25,11 +25,11 @@ const Button: React.FC<ButtonPropTypes> = ({
       className={cn(className, {
         "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full":
           variant === "danger",
-        "flex mb-3 justify-center shadow-2xl font-bold leading-10 text-gray-800 w-full text-14 hover:bg-gray-200 border-transparent rounded-3":
+        "omniauth-button-shadow flex mb-3 justify-center font-bold leading-10 text-gray-800 w-full text-sm hover:bg-gray-200 border-transparent rounded-3":
           variant === "omniauth",
-        "cursor-pointer py-7 border-transparent w-full bg-lime-700 text-14 text-white font-bold rounded-3 hover:bg-green-600":
+        "cursor-pointer py-7 border-transparent w-full bg-lime-700 text-sm text-white font-bold rounded-3 hover:bg-green-600":
           variant === "primary",
-        "bg-blue-800 hover:bg-blue-900 text-white leading-8 px-3 text-14 rounded-3 font-medium transition-all duration-100":
+        "bg-blue-800 hover:bg-blue-900 text-white leading-8 px-3 text-sm rounded-3 font-medium transition-all duration-100":
           variant === "info",
       })}
     >

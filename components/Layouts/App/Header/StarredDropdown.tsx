@@ -15,7 +15,7 @@ const StarredDropdown: React.FC<StarredDropdownPropTypes> = () => {
   return (
     <div className="p-3">
       <Icons.SvgStarBackground />
-      <p className="mb-2 mt-3 text-slate-900 text-14 text-center">
+      <p className="mb-2 mt-3 text-slate-900 text-sm text-center">
         {t("labels.description", SCOPE_OPTIONS)}
       </p>
     </div>

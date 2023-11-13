@@ -98,12 +98,12 @@ export default function Page() {
                     setFocus("email");
                   });
                 }}
-                className="cursor-pointer -ml-28 -mt-1 absolute text-zinc-900"
+                className="cursor-pointer -ml-7 -mt-1 absolute text-zinc-900"
               >
                 <Icons.SvgPencil />
               </button>
               <div
-                className="w-full mb-4 border-2 border-transparent hover:bg-zinc-200 hover:border-2 hover:border-stone-300 rounded-3 p-7 placeholder:text-14 font-light text-zinc-900 focus:outline-none text-14 transition-all duration-300"
+                className="w-full mb-4 border-2 border-transparent hover:bg-zinc-200 hover:border-2 hover:border-stone-300 rounded-3 p-7 placeholder:text-sm font-light text-zinc-900 focus:outline-none text-sm transition-all duration-300"
                 onClick={() => {
                   setFormStep("emailStep");
                   time.wait(250, () => {
