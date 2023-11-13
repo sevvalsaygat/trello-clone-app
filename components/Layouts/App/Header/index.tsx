@@ -82,7 +82,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               title={t("labels.workspaces", SCOPE_OPTIONS)}
               tooltip={{
                 id: TOOLTIPS.workspaces,
-                content: "Workspaces",
+                content: t("tooltips.workspaces", SCOPE_OPTIONS),
                 delay: 500,
                 style: {
                   ...tooltipStyles,
@@ -101,7 +101,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               title={t("labels.recent", SCOPE_OPTIONS)}
               tooltip={{
                 id: TOOLTIPS.recent,
-                content: "Recent",
+                content: t("tooltips.recent", SCOPE_OPTIONS),
                 delay: 500,
                 style: {
                   ...tooltipStyles,
@@ -120,7 +120,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               title={t("labels.starred", SCOPE_OPTIONS)}
               tooltip={{
                 id: TOOLTIPS.starred,
-                content: "Starred",
+                content: t("tooltips.starred", SCOPE_OPTIONS),
                 delay: 500,
                 style: {
                   ...tooltipStyles,
@@ -139,7 +139,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               title={t("labels.templates", SCOPE_OPTIONS)}
               tooltip={{
                 id: TOOLTIPS.templates,
-                content: "Templates",
+                content: t("tooltips.templates", SCOPE_OPTIONS),
                 delay: 500,
                 style: {
                   ...tooltipStyles,
@@ -161,7 +161,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
         <div
           className="flex flex-row items-center"
           data-tooltip-id={TOOLTIPS.search}
-          data-tooltip-content="Search/"
+          data-tooltip-content={t("tooltips.search", SCOPE_OPTIONS)}
           data-tooltip-delay-show={100}
         >
           <ReactTooltip id={TOOLTIPS.search} style={tooltipStyles} />
@@ -186,7 +186,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
             menuItemsClassName="dropdown-shadow flex border rounded-md max-h-887 w-max absolute right-0 bg-white focus:outline-none mt-3"
             tooltip={{
               id: TOOLTIPS.notification,
-              content: "Notifications",
+              content: t("tooltips.notifications", SCOPE_OPTIONS),
               delay: 100,
               style: {
                 ...tooltipStyles,
@@ -207,7 +207,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
             menuItemsClassName="dropdown-shadow flex border rounded-md max-h-887 w-max absolute right-0 bg-white focus:outline-none mt-3"
             tooltip={{
               id: TOOLTIPS.information,
-              content: "Information",
+              content: t("tooltips.information", SCOPE_OPTIONS),
               delay: 100,
               style: {
                 ...tooltipStyles,
@@ -230,7 +230,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
             menuItemsClassName="dropdown-shadow flex border rounded-md max-h-887 w-max absolute right-0 bg-white focus:outline-none mt-3"
             tooltip={{
               id: TOOLTIPS.account,
-              content: "Account",
+              content: t("tooltips.account", SCOPE_OPTIONS),
               delay: 500,
               style: {
                 ...tooltipStyles,

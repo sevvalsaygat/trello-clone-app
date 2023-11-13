@@ -46,6 +46,16 @@
               "search": {
                 "placeholder": "Search"
               }
+            },
+            "tooltips": {
+              "workspaces": "Workspaces",
+              "recent": "Recent",
+              "starred": "Starred",
+              "templates": "Templates",
+              "search": "Search/",
+              "notifications": "Notifications",
+              "information": "Information",
+              "account": "Account"
             }
           },
           "WorkspacesDropdown": {
