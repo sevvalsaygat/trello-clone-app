@@ -1,9 +1,9 @@
 import React from "react";
 
+import { FormProvider, useForm } from "react-hook-form";
+
 import { Form } from "@app/components";
 import { useLocale } from "@app/hooks";
-
-import { FormProvider, useForm } from "react-hook-form";
 
 type LanguageSelectPropTypes = {};
 

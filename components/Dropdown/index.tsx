@@ -2,11 +2,10 @@ import React, { PropsWithChildren, useState } from "react";
 import Link from "next/link";
 
 import { Tooltip as ReactTooltip } from "react-tooltip";
-
-import { Icons } from "@app/components";
-
 import cn from "classnames";
 import { Menu } from "@headlessui/react";
+
+import { Icons } from "@app/components";
 
 type DropdownPropTypes = {
   title?: string;
