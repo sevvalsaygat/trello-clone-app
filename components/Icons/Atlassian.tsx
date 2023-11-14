@@ -2,7 +2,11 @@ import React, { SVGProps } from "react";
 
 const SvgAtlassian = (props: SVGProps<SVGSVGElement>) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 539.66872 67">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 539.66872 67"
+      {...props}
+    >
       <defs>
         <style
           dangerouslySetInnerHTML={{

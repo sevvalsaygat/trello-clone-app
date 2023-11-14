@@ -8,6 +8,7 @@ const SvgGoogle = (props: SVGProps<SVGSVGElement>) => {
       viewBox="0 0 18 18"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <title>Artboard</title>
       <desc>Created with Sketch.</desc>

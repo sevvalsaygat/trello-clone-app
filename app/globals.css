@@ -7,3 +7,55 @@ ul.list-with-divider > li:not(:first-child)::before {
   margin: 0 8px 0px 4px;
   cursor: none !important;
 }
+
+.premium-card {
+  box-shadow: 0 1px 0 rgb(9 30 66 / 10%)
+}
+
+.search-input {
+  width: 200px;
+  padding: 0px 12px 0px 32px;
+  line-height: 32px;
+  border: #d9dde2 solid 1px;
+  outline: none;
+  font-size: 14px;
+  color: #acb3bf;
+  border-radius: 5px;
+  background-color: #fff;
+  
+}
+
+.search-input:focus,
+.search-input:not(:placeholder-shown) {
+  width: 780px;
+  border: #388BFF solid 1px;
+  color: #acb3bf;
+  background-color: #fff;
+}
+.search-input::placeholder {
+  color: #acb3bf;
+}
+
+.search-input:hover{
+  background-color: #f7f8f9;
+}
+
+.search-input:focus:hover{
+  background-color: initial;
+}
+
+.home-page {
+  max-width: calc(200vh);
+}
+
+.omniauth-button-shadow {
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 5px 0px;
+}
+
+.auth-form-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px
+}
+
+.dropdown-shadow {
+  box-shadow: var(--ds-shadow-overlay, 0px 8px 12px #091e4226, 0px 0px 1px #091e424f);
+}

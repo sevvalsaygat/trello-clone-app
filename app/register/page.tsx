@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useForm, FormProvider } from "react-hook-form";
 
 import { AUTH, ROUTES } from "@app/constants";
-import { Form, Icons, Button } from "@app/componets";
+import { Form, Icons, Button } from "@app/components";
 import { string, error, time } from "@app/libs";
 import { useLocale, api, useAuth } from "@app/hooks";
 import { AuthLayout } from "@app/layouts";
@@ -80,6 +80,9 @@ export default function Page() {
   return (
     <AuthLayout>
       <div className="p-2">
+        <h1 className="flex mb-6 text-base text-slate-800 font-semibold leading-7 justify-center">
+          {t("form.labels.register", SCOPE_OPTIONS)}
+        </h1>
         <div className="text-red-500">
           {isError &&
             errors.map((error, index) => <li key={index}>{error}</li>)}
@@ -89,7 +92,6 @@ export default function Page() {
             <React.Fragment>
               <Form.Input
                 name="fullName"
-                label={t("form.fullName.label", SCOPE_OPTIONS)}
                 placeholder={t("form.fullName.placeholder", SCOPE_OPTIONS)}
                 variant="primary"
                 rules={{
@@ -98,7 +100,6 @@ export default function Page() {
               />
               <Form.Input
                 name="email"
-                label={t("form.email.label", SCOPE_OPTIONS)}
                 placeholder={t("form.email.placeholder", SCOPE_OPTIONS)}
                 variant="primary"
                 rules={{
@@ -123,12 +124,12 @@ export default function Page() {
                       setFocus("fullName");
                     });
                   }}
-                  className="cursor-pointer -ml-28 -mt-1 absolute text-blue-100"
+                  className="cursor-pointer -ml-7 -mt-1 absolute text-zinc-900"
                 >
                   <Icons.SvgPencil />
                 </button>
                 <div
-                  className="w-full mb-4 border-2 border-transparent hover:bg-gray-50 hover:border-2 hover:border-blue-150 rounded-3 p-7 placeholder:text-14 font-light text-blue-100 focus:outline-none text-14 transition-all duration-300"
+                  className="w-full mb-4 border-2 border-transparent hover:bg-zinc-200 hover:border-2 hover:border-stone-300 rounded-3 p-7 placeholder:text-sm font-light text-zinc-900 focus:outline-none text-sm transition-all duration-300"
                   onClick={() => {
                     setFormStep("emailStep");
                     time.wait(250, () => {
@@ -147,12 +148,12 @@ export default function Page() {
                       setFocus("email");
                     });
                   }}
-                  className="cursor-pointer -ml-28 -mt-1 absolute text-blue-100"
+                  className="cursor-pointer -ml-7 -mt-1 absolute text-zinc-900"
                 >
                   <Icons.SvgPencil />
                 </button>
                 <div
-                  className="w-full mb-4 border-2 border-transparent hover:bg-gray-50 hover:border-2 hover:border-blue-150 rounded-3 p-7 placeholder:text-14 font-light text-blue-100 focus:outline-none text-14 transition-all duration-300"
+                  className="w-full mb-4 border-2 border-transparent hover:bg-zinc-200 hover:border-2 hover:border-stone-300 rounded-3 p-7 placeholder:text-sm font-light text-zinc-900 focus:outline-none text-sm transition-all duration-300"
                   onClick={() => {
                     setFormStep("emailStep");
                     time.wait(250, () => {
@@ -170,7 +171,6 @@ export default function Page() {
               <Form.Input
                 type="password"
                 name="password"
-                label={t("form.password.label", SCOPE_OPTIONS)}
                 placeholder={t("form.password.placeholder", SCOPE_OPTIONS)}
                 variant="primary"
                 rules={{
@@ -194,7 +194,6 @@ export default function Page() {
               <Form.Input
                 type="password"
                 name="passwordConfirmation"
-                label={t("form.passwordConfirmation.label", SCOPE_OPTIONS)}
                 placeholder={t(
                   "form.passwordConfirmation.placeholder",
                   SCOPE_OPTIONS

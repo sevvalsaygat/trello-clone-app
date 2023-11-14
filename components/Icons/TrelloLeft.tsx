@@ -6,6 +6,7 @@ const SvgTrelloLeft = (props: SVGProps<SVGSVGElement>) => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 520 520"
+      {...props}
     >
       <defs>
         <linearGradient
@@ -825,7 +826,7 @@ const SvgTrelloLeft = (props: SVGProps<SVGSVGElement>) => {
         <style
           dangerouslySetInnerHTML={{
             __html:
-              "\n      .cls-2 {\n        fill: #c0b6f2\n      }\n\n      .cls-5 {\n        fill: #ffe380\n      }\n\n      .cls-8 {\n        fill: #eae6ff\n      }\n\n      .cls-50,\n      .cls-8,\n      .cls-9 {\n        fill-rule: evenodd\n      }\n\n      .cls-9 {\n        fill: #fff\n      }\n\n      .cls-11 {\n        fill: #b2d4ff\n      }\n    ",
+              "\n      .cls-2 {\n        fill: #c0b6f2\n      }\n\n      .cls-5 {\n        fill: #ffe380\n      }\n\n      .cls-8 {\n        fill: #eae6ff\n      }\n\n      .cls-50,\n      .cls-8,\n      .cls-9 {\n        fillRule: evenodd\n      }\n\n      .cls-9 {\n        fill: #fff\n      }\n\n      .cls-11 {\n        fill: #b2d4ff\n      }\n    ",
           }}
         />
       </defs>

@@ -7,6 +7,7 @@ const SvgMicrosoft = (props: SVGProps<SVGSVGElement>) => {
       width="21"
       height="21"
       viewBox="0 0 21 21"
+      {...props}
     >
       <title>MS-SymbolLockup</title>
       <rect x="1" y="1" width="9" height="9" fill="#f25022" />

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { LanguageSelect, Icons } from "@app/componets";
+import { LanguageSelect, Icons } from "@app/components";
 import { useLocale } from "@app/hooks";
 
 type FooterPropTypes = {};
@@ -13,13 +13,13 @@ const Footer: React.FC<FooterPropTypes> = () => {
   const { t } = useLocale();
 
   return (
-    <div className="container flex flex-col items-center justify-center mb-6">
+    <div className="container flex flex-col items-center justify-center mb-1.5">
       <LanguageSelect />
-      <hr className="my-9 border-gray-300 border-t w-full" />
+      <hr className="my-9 border-zinc-500 border-t w-full" />
       <div className="container w-150 mb-5">
         <Icons.SvgAtlassian />
       </div>
-      <ul className="flex container items-center justify-center mt-7 text-14 leading-5 text-gray-250 font-light mx-auto">
+      <ul className="flex container items-center justify-center mt-2 text-sm leading-5 text-slate-800 font-light mx-auto">
         <li className="mx-2 flex-grow cursor-pointer hover:underline">
           {t("labels.templates", SCOPE_OPTIONS)}
         </li>

@@ -29,19 +29,201 @@
             "slack": "Continue with Slack"
           }
         }
+      },
+      "App": {
+        "Header": {
+          "index": {
+            "labels": {
+              "workspaces": "Workspaces",
+              "recent": "Recent",
+              "starred": "Starred",
+              "templates": "Templates"
+            },
+            "actions": {
+              "create": "Create"
+            },
+            "form": {
+              "search": {
+                "placeholder": "Search"
+              }
+            },
+            "tooltips": {
+              "workspaces": "Workspaces",
+              "recent": "Recent",
+              "starred": "Starred",
+              "templates": "Templates",
+              "search": "Search/",
+              "notifications": "Notifications",
+              "information": "Information",
+              "account": "Account"
+            }
+          },
+          "WorkspacesDropdown": {
+            "labels": {
+              "currentWorkspaces": "Current Workspace",
+              "yourWorkspaces": "Your Workspace"
+            }
+          },
+          "RecentDropdown": {
+            "labels": {
+              "travel": "Travel Workspaces",
+              "project": "Project Management"
+            },
+            "actions": {
+              "template": "Template"
+            }
+          },
+          "StarredDropdown": {
+            "labels": {
+              "description": "Star important boards to access them quickly and easily."
+            }
+          },
+          "TemplatesDropdown": {
+            "actions": {
+              "explore": "Explore templates"
+            },
+            "labels": {
+              "description": "See hundreds of templates from the Trello community",
+              "title": "Top Templates",
+              "topTemplatesItems": {
+                "meet": "1-on-1 Meeting Agenda",
+                "agile": "Agile Board Template | Trello",
+                "company": "Company Overview",
+                "design": "Design Huddle",
+                "balloon": "Go To Market Strategy Template",
+                "kanban": "Kanban Template",
+                "typewriter": "Mise-En-Place Personal Productivity System",
+                "pink": "Project Management",
+                "cloudy": "Remote Team Meetings",
+                "leaf": "Simple Project Board",
+                "orange": "Teaching: Weekly Planning"
+              }
+            }
+          },
+          "AccountDropdown": {
+            "labels": {
+              "trello": "TRELLO",
+              "title": "ACCOUNT"
+            },
+            "actions": {
+              "switchAccount": "Switch Account",
+              "manageAccount": "Manage Account",
+              "profileVisibility": "Profile and visibility",
+              "activity": "Activity",
+              "cards": "Cards",
+              "settings": "Settings",
+              "theme": "Theme",
+              "help": "Help",
+              "shortcuts": "Shortcuts",
+              "logout": "Log out"
+            }
+          },
+          "InformationDropdown": {
+            "labels": {
+              "description": "Make boards more powerful with Trello Power-Ups"
+            },
+            "actions": {
+              "newTip": "Get a new tip.",
+              "pricing": "Pricing",
+              "apps": "Apps",
+              "blog": "Blog",
+              "privacy": "Privacy",
+              "notice": "Notice at Collection",
+              "more": "More..."
+            }
+          },
+          "NotificationDropdown": {
+            "labels": {
+              "title": "Notifications",
+              "switch": "Only show unread",
+              "noNotifications": "No unread notifications"
+            }
+          }
+        }
+      }
+    },
+    "Boards": {
+      "Sidebar": {
+        "labels": {
+          "boards": "Boards",
+          "templates": "Templates",
+          "home": "Home",
+          "workspaces": "Workspaces",
+          "travelWorkspaces": "Travel Workspaces"
+        },
+        "travelWorkspaceItems": {
+          "labels": {
+            "boards": "Boards",
+            "highlights": "Highlights",
+            "view": "View",
+            "members": "Members",
+            "settings": "Settings"
+          }
+        },
+        "premiumCard": {
+          "labels": {
+            "try": "Try Trello Premium",
+            "content": "Get unlimited boards, all the views, unlimited automation, and more.",
+            "startFree": "Start Free Trial"
+          }
+        }
+      },
+      "PopularTemplates": {
+        "form": {
+          "templateCategory": {
+            "placeholder": "choose a category",
+            "items": {
+              "popular": "Popular",
+              "smallBusiness": "Small business",
+              "design": "Design",
+              "education": "Education",
+              "engineering_it": "Engineering-IT",
+              "marketing": "Marketing",
+              "humanResources": "Human Resources",
+              "operations": "Operations",
+              "sales_crm": "Sales-CRM"
+            }
+          }
+        },
+        "labels": {
+          "title": "Most popular templates",
+          "content": "Get going faster with a template from the Trello community or",
+          "template": "Template",
+          "browseFullGallery": "Browse the full template gallery"
+        },
+        "templates": {
+          "labels": {
+            "project": "Project Management",
+            "kanban": "Kanban Template",
+            "simple": "Simple Project Board",
+            "remote": "Remote Team Hub"
+          }
+        }
+      },
+      "YourBoards": {
+        "labels": {
+          "title": "Your boards"
+        },
+        "actions": {
+          "newBoard": "Create new board"
+        }
       }
     }
   },
   "pages": {
     "Home": {
       "labels": {
-        "title": "Home Page"
+        "change": "Change",
+        "private": "Private"
       }
     },
     "Login": {
       "form": {
+        "labels": {
+          "login": "Log in to Trello",
+          "email": "E-mail"
+        },
         "email": {
-          "label": "E-mail",
           "placeholder": "Enter email",
           "rules": {
             "required": "Email is required field",
@@ -65,8 +247,11 @@
     },
     "Register": {
       "form": {
+        "labels": {
+          "register": "Sign up for your account",
+          "fullName": "Full Name"
+        },
         "fullName": {
-          "label": "Full Name",
           "placeholder": "Please enter an full name",
           "rules": {
             "required": "Full name is required field"
@@ -102,7 +287,6 @@
   "layouts": {
     "Auth": {
       "labels": {
-        "login": "Log in to Trello",
         "or": "OR",
         "cantLogin": "Can't log in?",
         "account": "Sign up for an account",

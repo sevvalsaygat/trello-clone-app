@@ -7,6 +7,7 @@ const SvgSlack = (props: SVGProps<SVGSVGElement>) => {
       viewBox="0 0 48 48"
       width="18px"
       height="18px"
+      {...props}
     >
       <path
         fill="#33d375"

@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "ts:check": "tsc --noEmit",
     "api:generate": "openapi-generator-cli generate -i ./api/swagger.json -g typescript-axios -o ./api/ -c ./api/config.yaml --skip-validate-spec",
     "prepare": "husky install"
   },
@@ -24,6 +25,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.47.0",
     "react-select": "^5.7.7",
+    "react-tooltip": "^5.21.6",
     "zustand": "^4.4.3"
   },
   "devDependencies": {
