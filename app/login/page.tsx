@@ -32,7 +32,7 @@ export default function Page() {
   } = api.useLogin({
     onSuccess(data) {
       setAuth(data);
-      router.push(ROUTES.boards);
+      router.push(ROUTES.home);
     },
   });
 

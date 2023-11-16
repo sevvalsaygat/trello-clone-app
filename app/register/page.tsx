@@ -34,7 +34,7 @@ export default function Page() {
   } = api.useRegister({
     onSuccess(data) {
       setAuth(data);
-      router.push(ROUTES.boards);
+      router.push(ROUTES.home);
     },
   });
 

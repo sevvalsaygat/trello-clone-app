@@ -2,13 +2,13 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 import { auth as authLib } from "@app/libs";
-import { LOCAL_STORAGE_KEYS } from "@app/constants";
+import { LOCAL_STORAGE_KEYS, ROUTES } from "@app/constants";
 
 export function middleware(request: NextRequest) {
   const auth = request.cookies.get(LOCAL_STORAGE_KEYS.AUTH);
   const isLoginOrRegister =
-    request.nextUrl.pathname === "/login" ||
-    request.nextUrl.pathname === "/register";
+    request.nextUrl.pathname === ROUTES.login ||
+    request.nextUrl.pathname === ROUTES.register;
 
   if (request.nextUrl.pathname.startsWith("/_next/")) {
     return NextResponse.next();
@@ -23,11 +23,11 @@ export function middleware(request: NextRequest) {
 
   if (isAuthenticated) {
     if (isLoginOrRegister) {
-      return NextResponse.redirect(new URL("/boards", request.nextUrl));
-    } else {
-      return NextResponse.next();
+      return NextResponse.redirect(new URL(ROUTES.home, request.nextUrl));
     }
-  } else {
-    return authLib.onRequest(request);
+
+    return NextResponse.next();
   }
+
+  return authLib.onRequest(request);
 }
