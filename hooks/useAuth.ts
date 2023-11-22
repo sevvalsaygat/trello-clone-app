@@ -2,6 +2,7 @@
 
 import { create } from "zustand";
 import { persist, devtools } from "zustand/middleware";
+import Cookies from "js-cookie";
 
 import { LOCAL_STORAGE_KEYS } from "@app/constants";
 import type {
@@ -40,6 +41,23 @@ const useAuth = create<UseAuthType>()(
       {
         skipHydration: true,
         name: LOCAL_STORAGE_KEYS.AUTH,
+        storage: {
+          getItem: (name) => {
+            const str = Cookies.get(name);
+
+            if (!str) {
+              return undefined;
+            }
+
+            return JSON.parse(str);
+          },
+          setItem: (name, newValue) => {
+            Cookies.set(name, JSON.stringify(newValue), {
+              expires: 7,
+            });
+          },
+          removeItem: (name) => Cookies.remove(name),
+        },
       }
     )
   )
