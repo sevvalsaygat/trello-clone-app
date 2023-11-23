@@ -5,5 +5,15 @@ import Icons from "./Icons";
 import LanguageSelect from "./LanguageSelect";
 import Layouts from "./Layouts";
 import Boards from "./Boards";
+import BoardDetails from "./BoardDetails";
 
-export { Form, Button, Dropdown, Icons, LanguageSelect, Layouts, Boards };
+export {
+  Form,
+  Button,
+  Dropdown,
+  Icons,
+  LanguageSelect,
+  Layouts,
+  Boards,
+  BoardDetails,
+};

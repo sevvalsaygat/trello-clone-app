@@ -59,3 +59,7 @@ ul.list-with-divider > li:not(:first-child)::before {
 .dropdown-shadow {
   box-shadow: var(--ds-shadow-overlay, 0px 8px 12px #091e4226, 0px 0px 1px #091e424f);
 }
+
+.board-details-sidebar {
+  box-shadow: 1px 0px 0px 0px var(--dynamic-text-transparent);
+}

@@ -32,6 +32,10 @@ import SvgPremium from "./Premium";
 import SvgPen from "./Pen";
 import SvgLock from "./Lock";
 import SvgUser from "./User";
+import SvgArrowLeft from "./ArrowLeft";
+import SvgTable from "./Table";
+import SvgTreePoint from "./TreePoint";
+import SvgCalendar from "./Calendar";
 
 export default {
   SvgTrelloLeft,
@@ -68,4 +72,8 @@ export default {
   SvgPen,
   SvgLock,
   SvgUser,
+  SvgArrowLeft,
+  SvgTable,
+  SvgTreePoint,
+  SvgCalendar,
 };

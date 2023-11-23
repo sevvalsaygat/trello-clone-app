@@ -20,7 +20,7 @@ const Sidebar: React.FC<SidebarPropTypes> = () => {
   };
 
   return (
-    <div className="text-black break-all whitespace-pre-line mx-4 w-[256px]">
+    <div className="text-black break-all whitespace-pre-line mx-4 w-64">
       <div className="flex flex-col w-full border-b border-gray-350 gap-1">
         <div className="flex flex-row px-2 py-1.5 items-center border-transparent rounded-lg hover:bg-gray-350 cursor-pointer transition-all duration-100 gap-3">
           <div className="p-1">
