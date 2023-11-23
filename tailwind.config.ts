@@ -57,6 +57,7 @@ const config: Config = {
           800: "#0c66e4",
           850: "#0052cc",
           900: "#0055cc",
+          950: "#1d2f56",
         },
         green: {
           600: "#61bd4f",
@@ -69,6 +70,7 @@ const config: Config = {
         },
         violet: {
           500: "#8f63c3",
+          700: "#5e54b0",
           800: "#6e5dc6",
           900: "#6d5dc6",
         },
@@ -76,6 +78,7 @@ const config: Config = {
           400: "#ce6fbd",
         },
         indigo: {
+          850: "#343c75",
           900: "#4f60cf",
         },
         yellow: {

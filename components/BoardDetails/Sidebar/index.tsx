@@ -127,7 +127,7 @@ const Sidebar: React.FC<SidebarPropTypes> = () => {
         </div>
       </div>
       <div className="flex text-white p-3 border-t border-blue-100">
-        <button className="flex flex-row bg-gradient-to-r from-violet-800 via-violet-500 to-pink-400 rounded-3 items-center px-2 py-2 pr-3 w-full">
+        <button className="flex flex-row bg-gradient-to-r from-violet-800 via-violet-500 to-pink-400 hover:bg-gradient-to-r hover:from-blue-950 hover:via-indigo-850 hover:to-violet-700 rounded-3 items-center px-2 py-2 pr-3 w-full">
           <div className="mr-2">
             <Icons.SvgPremium className="w-4 h-4 text-white" />
           </div>
