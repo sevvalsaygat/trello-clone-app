@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { useAuth } from "@app/hooks";
 import { AppLayout } from "@app/layouts";
@@ -16,16 +16,19 @@ export default function Page() {
 
   return (
     <AppLayout>
-      <div className="bg-gray-950 w-full">
+      <div className="dark-blue-background h-screen">
         <div className="flex flex-row">
           <BoardDetails.Sidebar />
-          <div>
+          <React.Fragment>
             {isAuthenticated && (
-              <div className="text-white p-5">
-                Welcome {currentUser?.fullName}
+              <div className="flex flex-col">
+                <BoardDetails.Header />
+                <div className="text-white p-5">
+                  Welcome {currentUser?.fullName}
+                </div>
               </div>
             )}
-          </div>
+          </React.Fragment>
         </div>
       </div>
     </AppLayout>

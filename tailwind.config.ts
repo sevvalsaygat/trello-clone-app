@@ -15,6 +15,9 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        black: {
+          50: "#0000003d",
+        },
         zinc: {
           200: "#fafbfc",
           300: "#f0f1f4",
@@ -28,6 +31,7 @@ const config: Config = {
           500: "#546271",
           550: "#314354",
           600: "#44576c",
+          650: "#A6C5E229",
           700: "#263a51",
           750: "#23384f",
           800: "#5e6c84",
@@ -43,6 +47,7 @@ const config: Config = {
           200: "#f9fafc",
           350: "#dcdfe4",
           400: "#dfe1e6",
+          450: "#30404e",
           800: "#505f79",
           850: "#445471",
           900: "#0d2134",

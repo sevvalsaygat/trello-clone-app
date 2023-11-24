@@ -3,9 +3,9 @@ import Image from "next/image";
 
 import { Icons } from "@app/components";
 
-type SidebarPropTypes = {};
+type BoardDetailsSidebarPropTypes = {};
 
-const Sidebar: React.FC<SidebarPropTypes> = () => {
+const Sidebar: React.FC<BoardDetailsSidebarPropTypes> = () => {
   return (
     <div className="flex flex-col justify-between board-details-sidebar max-w-260 h-screen bg-gray-950 border-r border-blue-100">
       <div className="w-260 flex flex-col">

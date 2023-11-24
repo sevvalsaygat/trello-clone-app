@@ -36,6 +36,11 @@ import SvgArrowLeft from "./ArrowLeft";
 import SvgTable from "./Table";
 import SvgTreePoint from "./TreePoint";
 import SvgCalendar from "./Calendar";
+import SvgThreeLines from "./ThreeLines";
+import SvgRocket from "./Rocket";
+import SvgFlash from "./Flash";
+import SvgFilter from "./Filter";
+import SvgAddAccount from "./AddAccount";
 
 export default {
   SvgTrelloLeft,
@@ -76,4 +81,9 @@ export default {
   SvgTable,
   SvgTreePoint,
   SvgCalendar,
+  SvgThreeLines,
+  SvgRocket,
+  SvgFlash,
+  SvgFilter,
+  SvgAddAccount,
 };

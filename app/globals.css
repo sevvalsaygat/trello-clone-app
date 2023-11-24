@@ -63,3 +63,13 @@ ul.list-with-divider > li:not(:first-child)::before {
 .board-details-sidebar {
   box-shadow: 1px 0px 0px 0px var(--dynamic-text-transparent);
 }
+
+.dark-blue-background {
+  background-image: url('/darkblue-background.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+}
+
+.board-details-header {
+  width: calc(100vw - 261px);
+}

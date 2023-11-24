@@ -1,3 +1,4 @@
 import Sidebar from "./Sidebar";
+import Header from "./Header";
 
-export default { Sidebar };
+export default { Sidebar, Header };
