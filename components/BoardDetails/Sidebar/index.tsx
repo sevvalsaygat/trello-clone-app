@@ -169,7 +169,7 @@ const Sidebar: React.FC<BoardDetailsSidebarPropTypes> = () => {
           onClick={travelWorkspacesDetailsHandleClick}
         >
           {!travelWorkspacesDetailsIsActive && (
-            <button className="flex z-10 absolute justify-center items-center bg-gray-950 group-hover:bg-neutral-50 border border-blue-100 rounded-full w-7 h-7 mt-4 ml-[2px]">
+            <button className="flex z-10 absolute justify-center items-center bg-gray-950 group-hover:bg-neutral-400 border border-blue-100 rounded-full w-7 h-7 mt-4 ml-[2px]">
               <Icons.SvgArrowRight className="flex w-6 h-6 text-white" />
             </button>
           )}
