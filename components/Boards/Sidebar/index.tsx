@@ -11,12 +11,12 @@ const Sidebar: React.FC<SidebarPropTypes> = () => {
   };
 
   const { t } = useLocale();
-  const [travelWorkspacesisActive, setTravelWorkspacesIsActive] =
+  const [travelWorkspacesIsActive, setTravelWorkspacesIsActive] =
     useState(true);
   const [premiumCardIsClosed, setPremiumCardIsClosed] = useState(false);
 
   const travelWorkspacesHandleClick = () => {
-    setTravelWorkspacesIsActive(!travelWorkspacesisActive);
+    setTravelWorkspacesIsActive(!travelWorkspacesIsActive);
   };
 
   return (
@@ -71,14 +71,14 @@ const Sidebar: React.FC<SidebarPropTypes> = () => {
                 </div>
               </div>
               <div className="flex relative items-center mr-3">
-                {travelWorkspacesisActive ? (
+                {travelWorkspacesIsActive ? (
                   <Icons.SvgArrowUp className="text-slate-900 h-4 w-4" />
                 ) : (
                   <Icons.SvgArrowDown className="text-slate-900 h-4 w-4" />
                 )}
               </div>
             </button>
-            {travelWorkspacesisActive && (
+            {travelWorkspacesIsActive && (
               <div>
                 <div className="flex flex-row items-center py-1.5 pl-11 pr-2 gap-3 cursor-pointer bg-blue-200 rounded-lg mb-1">
                   <Icons.SvgBoardTrello className="text-slate-900" />

@@ -25,6 +25,7 @@ const config: Config = {
           500: "#cccccc",
           600: "#9d9e9e",
           900: "#4d4d4d",
+          950: "#06121f",
         },
         slate: {
           400: "#44586c",
@@ -90,6 +91,7 @@ const config: Config = {
           600: "#e4ba20",
         },
         neutral: {
+          50: "#ffffff4d",
           500: "#00000033",
         },
       },
