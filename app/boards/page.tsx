@@ -21,7 +21,7 @@ export default function Page() {
           <BoardDetails.Sidebar />
           <React.Fragment>
             {isAuthenticated && (
-              <div className="flex flex-col">
+              <div className="flex flex-col w-full">
                 <BoardDetails.Header />
                 <div className="text-white p-5">
                   Welcome {currentUser?.fullName}

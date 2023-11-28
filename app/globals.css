@@ -69,7 +69,3 @@ ul.list-with-divider > li:not(:first-child)::before {
   background-size: cover; 
   background-repeat: no-repeat; 
 }
-
-.board-details-header {
-  width: calc(100vw - 261px);
-}
