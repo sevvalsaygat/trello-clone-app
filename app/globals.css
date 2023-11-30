@@ -64,6 +64,10 @@ ul.list-with-divider > li:not(:first-child)::before {
   box-shadow: 1px 0px 0px 0px var(--dynamic-text-transparent);
 }
 
+.board-details-taskBoard {
+  box-shadow: var(--ds-shadow-raised, 0px 1px 1px #091e4240, 0px 0px 1px #091e424f)
+}
+
 .dark-blue-background {
   background-image: url('/darkblue-background.jpg'); 
   background-size: cover; 

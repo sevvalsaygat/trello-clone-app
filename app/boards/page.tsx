@@ -23,8 +23,8 @@ export default function Page() {
             {isAuthenticated && (
               <div className="flex flex-col w-full">
                 <BoardDetails.Header />
-                <div className="text-white p-5">
-                  Welcome {currentUser?.fullName}
+                <div>
+                  <BoardDetails.TaskBoard />
                 </div>
               </div>
             )}
