@@ -17,6 +17,7 @@ const config: Config = {
       colors: {
         black: {
           50: "#0000003d",
+          100: "#ffffff3d",
         },
         zinc: {
           200: "#fafbfc",

@@ -42,6 +42,8 @@ import SvgFlash from "./Flash";
 import SvgFilter from "./Filter";
 import SvgAddAccount from "./AddAccount";
 import SvgLine from "./Line";
+import SvgEye from "./Eye";
+import SvgComment from "./Comment";
 
 export default {
   SvgTrelloLeft,
@@ -88,4 +90,6 @@ export default {
   SvgFilter,
   SvgAddAccount,
   SvgLine,
+  SvgEye,
+  SvgComment,
 };
