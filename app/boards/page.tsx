@@ -10,6 +10,25 @@ export default function Page() {
   const isAuthenticated = useAuth((state) => state.isAuthenticated);
   const currentUser = useAuth((state) => state.currentUser);
 
+  const BOARD_COLUMNS = [
+    {
+      title: "Backlog",
+      tasks: ["Modal template YAPILACAK"],
+    },
+    {
+      title: "To Do",
+      tasks: ["Modal template YAPIL"],
+    },
+    {
+      title: "Doing",
+      tasks: ["Modal template YAP"],
+    },
+    {
+      title: "Done",
+      tasks: ["Modal template YAPSIN"],
+    },
+  ];
+
   useEffect(() => {
     useAuth.persist.rehydrate();
   }, []);
@@ -25,22 +44,13 @@ export default function Page() {
                 <BoardDetails.Header />
                 <div className="flex flex-row">
                   <div className="flex flex-row">
-                    <BoardDetails.TaskBoard
-                      title="Backlog"
-                      content="-Modal template KURULDU."
-                    />
-                    <BoardDetails.TaskBoard
-                      title="To Do"
-                      content="-Modal template YAPILACAK."
-                    />
-                    <BoardDetails.TaskBoard
-                      title="Doing"
-                      content="-Modal template YAPILIYOR."
-                    />
-                    <BoardDetails.TaskBoard
-                      title="Done"
-                      content="-Modal template YAPILDI."
-                    />
+                    {BOARD_COLUMNS.map((boardColumn, i) => (
+                      <BoardDetails.BoardColumn
+                        key={i}
+                        title={boardColumn.title}
+                        tasks={boardColumn.tasks}
+                      />
+                    ))}
                   </div>
                   <button className="flex flex-row items-center gap-2 mx-[6px] h-fit mt-3 p-3 bg-black-100 hover:bg-slate-650 rounded-xl w-[272px] transition-all duration-100">
                     <Icons.SvgPlus className="w-4 h-4 text-white" />
