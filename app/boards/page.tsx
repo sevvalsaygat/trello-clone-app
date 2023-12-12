@@ -35,23 +35,26 @@ export default function Page() {
 
   return (
     <AppLayout>
-      <div className="dark-blue-background h-screen">
+      <div className="dark-blue-background">
         <div className="flex flex-row">
           <BoardDetails.Sidebar />
           <React.Fragment>
             {isAuthenticated && (
-              <div className="flex flex-col w-full">
+              <div
+                className="flex flex-col"
+                style={{
+                  width: "calc(100vw - 260px)",
+                }}
+              >
                 <BoardDetails.Header />
-                <div className="flex flex-row">
-                  <div className="flex flex-row">
-                    {BOARD_COLUMNS.map((boardColumn, i) => (
-                      <BoardDetails.BoardColumn
-                        key={i}
-                        title={boardColumn.title}
-                        tasks={boardColumn.tasks}
-                      />
-                    ))}
-                  </div>
+                <div className="flex flex-row h-full overflow-x-auto">
+                  {BOARD_COLUMNS.map((boardColumn, i) => (
+                    <BoardDetails.BoardColumn
+                      key={i}
+                      title={boardColumn.title}
+                      tasks={boardColumn.tasks}
+                    />
+                  ))}
                   <button className="flex flex-row items-center gap-2 mx-[6px] h-fit mt-3 p-3 bg-black-100 hover:bg-slate-650 rounded-xl w-[272px] transition-all duration-100">
                     <Icons.SvgPlus className="w-4 h-4 text-white" />
                     <div className="text-sm leading-5 font-medium text-white">

@@ -24,7 +24,12 @@ const Sidebar: React.FC<BoardDetailsSidebarPropTypes> = () => {
   return (
     <React.Fragment>
       {travelWorkspacesDetailsIsActive ? (
-        <div className="flex flex-col justify-between sticky board-details-sidebar max-w-260 h-screen bg-gray-950 border-r border-blue-100">
+        <div
+          className="flex flex-col justify-between sticky board-details-sidebar max-w-260 bg-gray-950 border-r border-blue-100"
+          style={{
+            height: "calc(100vh - 49px)",
+          }}
+        >
           <div className="w-260 flex flex-col">
             <div
               className="flex flex-row px-3 py-3 border-b border-blue-100"
