@@ -2,6 +2,9 @@
 
 import React from "react";
 
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+
 import { Icons, BoardDetails } from "@app/components";
 
 type BoardColumnPropTypes = {
@@ -10,8 +13,22 @@ type BoardColumnPropTypes = {
 };
 
 const BoardColumn: React.FC<BoardColumnPropTypes> = ({ title, tasks = [] }) => {
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id: title });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
   return (
-    <div className="flex flex-row mt-3">
+    <div
+      ref={setNodeRef}
+      style={style}
+      {...attributes}
+      {...listeners}
+      className="flex flex-row mt-3"
+    >
       <ul className="mb-2 px-7">
         <li className="flex flex-shrink h-full cursor-pointer">
           <div className="whitespace-normal w-[272px] scroll-m-2">
